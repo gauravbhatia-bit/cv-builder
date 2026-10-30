@@ -1,0 +1,2 @@
+# A shell hook with Windows line endings fails, so pin it to LF on every machine.
+scripts/hooks/* text eol=lf

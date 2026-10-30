@@ -1,0 +1,16 @@
+name: check
+
+# Runs the same guardrails as the local pre-commit hook, so the repo stays clean
+# even when a commit is made from a machine that does not have the hook installed.
+on: [push, pull_request]
+
+jobs:
+  guardrails:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/check.py
+      - run: python tests/test_check.py
