@@ -7,7 +7,8 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 | Path | What it is |
 |---|---|
 | `data/master.md` | Every fact, bullet, project and metric. **The only allowed source of CV content.** |
-| `RULES.md` | How a JD becomes a CV. Bullet budgets, project picking, honesty guardrails. |
+| `RULES.md` | How a JD becomes a CV. Bullet budgets, project picking, honesty guardrails. §10 maps JD requirements to the right experience. |
+| `COVER-LETTER-BUILDER.md` | The stories behind the facts, for cover letters. Narrative only — never a source of a number. |
 | `templates/base.html` | The neutral base CV. Rezume style, editable in a browser, prints to A4. |
 | `jd/` | One markdown note per job description, before building. |
 | `out/` | Finished CVs. **Gitignored** — these carry real contact details. |
@@ -27,7 +28,8 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
    - Swap the three `.entry` project blocks.
    - Set `<title>` — the "Save edited HTML" button uses it as the filename.
 6. **Verify** against the checklist in `RULES.md` §9.
-7. **Report** to Gaurav: what was picked, what was cut, and anything that had to be left out for honesty.
+7. **Cover letter**, if one is wanted: `COVER-LETTER-BUILDER.md`. Research the company first, pick two stories via `RULES.md` §10, respect each story's stated limit.
+8. **Report** to Gaurav: what was picked, what was cut, and anything that had to be left out for honesty.
 8. **Commit and push.** One commit per application: `cv: <Company> <Role>`.
 
 ## Contact details

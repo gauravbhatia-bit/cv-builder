@@ -166,9 +166,51 @@ Before handing over a CV:
 - [ ] Headline matches the JD's job title
 - [ ] Profile names the top 3 JD requirements and ends with the availability line
 - [ ] JD's top requirement appears in Skills row 1
-- [ ] Every one of the 4 jobs still present
+- [ ] All 3 jobs still present (Croud Control is not one of them — hard rule 3)
 - [ ] 3 projects, 2 bullets each, each with a number and a working repo link
 - [ ] No claim outside `master.md`
 - [ ] No unresolved `G#` question affecting a line on this CV
 - [ ] Filename `Gaurav_Bhatia_CV_<Company>.pdf`
 - [ ] Saved to `out/`, JD notes saved to `jd/`
+- [ ] If a cover letter goes with it: two stories, picked via §10, limits respected — see `COVER-LETTER-BUILDER.md`
+
+---
+
+## 10. Which experience answers which requirement
+
+When a JD asks for something, this is what to reach for. **CV** = may go on the CV as a bullet;
+**Letter** = cover letter and interview only, never a CV line. Stories marked Letter are in
+`COVER-LETTER-BUILDER.md`; facts and numbers still come only from `master.md`.
+
+| JD asks for | Reach for | Where |
+|---|---|---|
+| Ownership, autonomy, "own it end to end" | The ₹2.75M export order — handed the whole project, sourced at the manufacturer, freight, client, delivery | **CV** (S1) |
+| Negotiation, supplier or client management | Export-order renegotiation; 8 years of supplier terms across 20+ suppliers | **CV** (S1, S2) |
+| Deadline pressure, "thrives under pressure" | The sea-to-air freight switch that saved the order | **CV** (S1) |
+| Commercial acumen, P&L, pricing | 8 years running purchasing, pricing and stock; P1 elasticity on 15,000 SKUs | **CV** (S2) |
+| Supply chain, inventory, demand planning | Troika: 700+ vendors, 500+ SKUs, 10% excess-inventory cut; P3 demand forecasting | **CV** (S7) |
+| Import/export, international trade, customs | The Lithuania export order; freight-mode economics | **CV** (S1) |
+| ERP systems | Tally (Troika) — the only ERP he has used. Do not stretch it to SAP | **CV** (S7) |
+| Non-technical stakeholders, "translate data" | Troika Power BI across 3 divisions; logistics, vendor and client communication | **CV** (S7) |
+| Experimentation, A/B testing, causal inference | The KnowGuard paired A/B test and the pre-set 0.05 threshold | **CV** (S4) |
+| Statistical rigour, scientific method | Same — reporting a positive result as not worth shipping | **CV** (S4) |
+| Energy, utilities, grid, CleanTech | Thesis + 6 energy repos (P4–P7, P11, P13, P14) | **CV** (S9) |
+| E-commerce, online retail, marketplaces | Shopify stores and Guru Disha (venture); P1, P12, P15 (CV) | **CV** projects, **Letter** ventures (S3) |
+| Startup, 0-to-1, "wear many hats", generalist | The three side ventures — marketplace, e-commerce, restaurant | **CV** BIZ only, **Letter** elsewhere (S3) |
+| Entrepreneurial mindset | Same three ventures, plus 8 years of ownership | **CV** BIZ only (S2, S3) |
+| Self-starter, curiosity, continuous learning | Self-taught SQL while running the business; 19 repos | **Letter** (S5) |
+| "Career changer", non-traditional background | Self-taught SQL → own business's data → MSc | **Letter** (S5) |
+| Customer-facing, service, hospitality | Restaurant management; tutoring; Troika clients | **Letter** (S3, S7) |
+| Teaching, enablement, mentoring, documentation | Maths tutoring; Guru Disha tutor marketplace | **Letter** (S3) |
+| Resilience, discipline, team culture | Third-tier professional football, 2019–2020 | **Letter**, and sparingly (S8) |
+| Relocation, visa, availability | Deliberate exit Jul 2025, permit from Dec 2026 | **CV** one line, **Letter** close (S6) |
+
+Two rules for this table:
+
+1. **A Letter row never becomes a CV bullet to fill space.** If the CV is short, add a project
+   bullet, not a venture.
+2. **Nothing here outranks §0.** Every number still has to be traceable, and the limits written
+   into each story in `COVER-LETTER-BUILDER.md` apply identically on a CV — above all, the export
+   order was *given* to him, never won by him.
+
+---

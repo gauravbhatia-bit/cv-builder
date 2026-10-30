@@ -17,12 +17,20 @@ Every CV file is editable in the browser. Click any text and type. The toolbar a
 | Path | What it holds |
 |---|---|
 | `data/master.md` | Every job, bullet, project, metric and link. The source of truth. |
-| `RULES.md` | How a job description turns into a CV. |
+| `RULES.md` | How a job description turns into a CV. §10 says which of your experiences answers which requirement. |
+| `COVER-LETTER-BUILDER.md` | Your career stories, written up for cover letters — what happened, what it proves, when to use it. |
 | `templates/base.html` | The neutral base CV. |
 | `jd/` | Notes on each job description. |
 | `out/` | Finished CVs. |
 | `CLAUDE.md` | Procedure Claude follows. |
 
+## Cover letters
+
+`COVER-LETTER-BUILDER.md` holds nine stories from your career, each with what it proves, when to
+reach for it, and where the honest limit is. Ask for a cover letter and it gets used automatically —
+two stories per letter, picked against the job ad and the company.
+
 ## Open questions
 
-`data/master.md` §2 lists facts still needed before certain lines can go on a CV. Worth clearing.
+`data/master.md` §2 lists facts still needed before certain lines can go on a CV. None are open
+right now; the career walkthrough cleared the last of them.

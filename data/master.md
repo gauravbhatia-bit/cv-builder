@@ -123,7 +123,7 @@ logistics department, vendors, clients and internal stakeholders.
 - `[DA] [BIZ]` Monitored inventory and demand across 700+ vendors and 500+ SKUs, working from Tally and Excel
 - `[DA]` Built Power BI dashboards across 3 divisions, turning operational data into clear views for non-technical stakeholders
 - `[BIZ]` Rescued a stalled **₹2.75M export order** — 500 meditation chairs to a client in Lithuania — by moving the shipment from sea cargo to **air freight** to hold the delivery window, and renegotiating terms with the client
-- `[BIZ]` Owned the vendor, logistics and client relationships for that order end to end, from costing at ₹5,500/unit through to delivery
+- `[BIZ]` Ran that order **end to end as its sole owner** — handed the whole project, went to the manufacturer in person to source and book it, costed it at ₹5,500/unit, arranged freight and carried the client through to delivery
 - `[BIZ]` Worked directly with operations and supply-chain stakeholders to turn recurring questions into standing reports
 
 > **Why the title changed.** It used to read "Data Analyst, Operations & Supply Chain". Gaurav's own
@@ -138,6 +138,17 @@ logistics department, vendors, clients and internal stakeholders.
 > exactly what a pricing, supply-chain or commercial-analyst interview probes for. ₹2.75M is
 > 500 × ₹5,500. At roughly ₹95–100/EUR that is about €28–29K — quote the rupee figure as the fact
 > and the euro figure only as an approximation, because the rate moves.
+>
+> **The ownership is the point, and it has a precise limit.** Troika handed Gaurav the whole
+> project; he went to the manufacturer himself to source and book it. So the honest claim is
+> *"I was given this order end to end and ran every part of it"* — sourcing, costing, freight,
+> client. The claim it must never drift into is *"I won this deal"* or *"I brought in this
+> client"*. He did not originate it. Delegated end-to-end ownership of a ₹2.75M order is already
+> unusual for a first analyst job; inflating it into business development would be both untrue
+> and weaker, because the real version is specific and the inflated one is generic.
+>
+> The client was an Art of Living centre. **Do not name them** in a CV or cover letter unless
+> Gaurav asks — "a client in Lithuania" carries the whole point and names no one.
 
 ### Business Manager — Bhatia Traders, India (Nov 2015 – Jan 2024)
 - `[BIZ]` Ran a product business end to end for **8 years** — purchasing, pricing, stock and supplier relationships across 20+ suppliers — and used the data to make those calls
