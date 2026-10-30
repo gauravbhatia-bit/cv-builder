@@ -41,14 +41,17 @@ Work inside the clone's `out/` folder (it is gitignored). In short, per `CLAUDE.
 - **Cover letter:** start from `letters/base.md`, change only the marked parts, research the company first, use two stories, and **always include the football sentence, linked to a real story**. Under 300 words. Save as `out/Gaurav_Bhatia_Letter_<Company>.md`, then run `python scripts/build_letter.py out/Gaurav_Bhatia_Letter_<Company>.md "<Company>"` to get the designed letter page with the same photo header as the CV.
 - Names: `Gaurav_Bhatia_CV_<Company>.html` and `.pdf`, and `Gaurav_Bhatia_Letter_<Company>.md`, `.html` and `.pdf`.
 
-## 3. Cold emails: always attach the CV
+## 3. Cold emails: link a role CV, or attach a custom one
 
-Whenever you send a cold email to a startup, **attach the tailored CV as a PDF**, and put his
-portfolio link in the body. Build the CV first by the steps above, make sure the check passes, and
-render it to exactly two pages. Attach it through the email tool's attachments (base64 PDF named
-`Gaurav_Bhatia_CV_<Company>.pdf`, under 25 MB). A link is not a substitute. If the CV cannot be built
-or attached, **do not send**: save a draft and say why in the report. The full rule is `RULES.md`
-section 11, and the repo wins if it differs from this file.
+Every cold email to a startup carries his CV, and his portfolio link in the body. Two ways:
+
+- **Unattended routine, the default:** do not build and do not attach. Pick the closest of the eight
+  role CVs by the table in `RULES.md` section 12 and put the line `My CV: <link>` in the email, using
+  the link table in `RULES.md` section 13 (the PDFs live on his portfolio site).
+- **Custom CV on call:** only when Gaurav asks in chat for a custom CV for a named company or job. Build
+  it by the steps above, make sure the check passes, render it to exactly two pages and attach it as a
+  PDF named `Gaurav_Bhatia_CV_<Company>.pdf` (Gmail `attachments`, base64, under 25 MB). If it cannot be
+  built or attached, **do not send**: save a draft and say why. The full rule is `RULES.md` section 11.
 
 ## 4. Verify, then deliver
 

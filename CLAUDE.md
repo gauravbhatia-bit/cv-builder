@@ -53,9 +53,13 @@ For a cover letter, only `STYLE.md`, `letters/base.md` and the story you use are
 
 ## Cold emails to startups
 
-**Every cold email to a startup goes out with the tailored CV attached** (Gaurav's rule, 30 Oct 2026).
-Build the CV, check it, render it to PDF, attach it, and put his portfolio link in the body. If the CV
-cannot be attached, save a draft instead of sending. The full steps are `RULES.md` §11.
+**Every cold email to a startup goes out with his CV** (Gaurav's rule, 30 Oct 2026), in one of two ways
+(31 Oct 2026):
+
+- **The routine picks the closest of the eight role CVs** and links its published PDF in the email
+  (`RULES.md` §13). No build, no attachment.
+- **A custom CV on call:** when Gaurav asks for one, build it by the full procedure above, check it,
+  render it and attach it (`RULES.md` §11).
 
 ## Voice
 

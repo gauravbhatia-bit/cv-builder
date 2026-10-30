@@ -241,11 +241,22 @@ Two rules for this table:
 
 ## 11. Cold emails to startups: the CV always goes with it
 
-Gaurav's rule, 30 Oct 2026: **every cold email to a startup is sent with his CV attached.** No exceptions.
+Gaurav's rule, 30 Oct 2026: **every cold email to a startup goes out with his CV.** How it travels
+depends on who sends it (his call, 31 Oct 2026):
+
+- **The unattended routine** (the scheduled job-search tasks) does not build a CV and does not attach a
+  file: Gmail takes attachments only as base64 typed out by the model, which costs tens of thousands
+  of tokens per email and can corrupt the file. It **picks the closest of the eight role CVs** by the
+  table in section 12 and puts **one link line** in the email: see section 13. The PDFs are published
+  on his portfolio site.
+- **A custom CV on call** (Gaurav asks in chat for one, for a named company or job) is built by the
+  full procedure in `CLAUDE.md`, checked, rendered and **attached** as a PDF, as below.
+
+For an attached custom CV:
 
 1. **Build the CV first**, by the normal procedure (`CLAUDE.md`), tailored to the startup's field and the role he would fit. Two pages, with the photo. `scripts/check.py` must report 0 failures.
 2. **Render it to PDF** and name it `Gaurav_Bhatia_CV_<Company>.pdf`. Count the pages: exactly two.
-3. **Attach the PDF** to the email itself (Gmail `attachments`: base64 `content`, `filename`, `mimeType` `application/pdf`; the combined size must stay under 25 MB). A link to a CV is not a substitute.
+3. **Attach the PDF** to the email itself (Gmail `attachments`: base64 `content`, `filename`, `mimeType` `application/pdf`; the combined size must stay under 25 MB).
 4. **In the body**, one plain sentence that the CV is attached, and his portfolio link: https://gauravbhatia-bit.github.io/
 5. **No CV, no email.** If the CV cannot be built, fails the check or cannot be attached, do not send. Save the email as a draft and say why in the report. An email that goes out without the CV cannot be taken back.
 6. The email follows `STYLE.md` like everything else: no em dashes, no banned phrases, and **never a word about visa, residence or work-permit status**.
@@ -295,3 +306,35 @@ Escalate to a **full custom build** (`CLAUDE.md` procedure, from `templates/base
 change to `data/` or to that template, run `python scripts/build_roles.py`, then `python scripts/check.py --render`.
 Never hand-edit a file in `roles/`: the next build overwrites it. `check.py` fails if there are not
 eight, if any carries an untraceable number, an em dash or a wrong date, or if one is not two pages.
+
+---
+
+## 13. Sending a role CV by link (the routine's way)
+
+The eight role CVs are rendered with his contact details and published as PDFs in the `cv/` folder
+of his portfolio repo (`gauravbhatia-bit/gauravbhatia-bit.github.io`, served at
+https://gauravbhatia-bit.github.io/cv/). His phone and email are on those PDFs on purpose (Gaurav, 31 Oct
+2026: fine on a public page). The repo `cv-builder` still never holds them.
+
+| Role CV | Link |
+|---|---|
+| Junior Data Scientist | https://gauravbhatia-bit.github.io/cv/Gaurav_Bhatia_CV_Junior_Data_Scientist.pdf |
+| Junior ML Engineer | https://gauravbhatia-bit.github.io/cv/Gaurav_Bhatia_CV_Junior_ML_Engineer.pdf |
+| Applied Scientist | https://gauravbhatia-bit.github.io/cv/Gaurav_Bhatia_CV_Applied_Scientist.pdf |
+| AI / LLM / GenAI Engineer | https://gauravbhatia-bit.github.io/cv/Gaurav_Bhatia_CV_AI_LLM_GenAI_Engineer.pdf |
+| Data Analyst / BI Analyst | https://gauravbhatia-bit.github.io/cv/Gaurav_Bhatia_CV_Data_Analyst_BI_Analyst.pdf |
+| Analytics Engineer / Junior Data Engineer | https://gauravbhatia-bit.github.io/cv/Gaurav_Bhatia_CV_Analytics_Engineer_Data_Engineer.pdf |
+| Supply Chain & Demand Planning Analyst | https://gauravbhatia-bit.github.io/cv/Gaurav_Bhatia_CV_Supply_Chain_Operations_Analyst.pdf |
+| Business Analyst | https://gauravbhatia-bit.github.io/cv/Gaurav_Bhatia_CV_Business_Analyst.pdf |
+
+**Picking one.** Use the table in section 12 on the startup's open role if it has one, otherwise on
+the field and the problem the email names (a data platform startup: Analytics Engineer; an LLM
+product: AI / LLM / GenAI; a logistics or procurement startup: Supply Chain). If nothing fits, take
+Junior Data Scientist. Never ask, never build a CV for this.
+
+**In the email**, one plain line before the signature: `My CV: <link>`. The email still carries the
+portfolio link. Record which role was picked next to the company in the run log.
+
+**Keeping the PDFs current.** After any change to the role CVs (`python scripts/build_roles.py`), run
+`render.cmd roles` (full path), copy the eight `out\Gaurav_Bhatia_CV_<Role>.pdf` files into `cv/` of a clone
+of the portfolio repo, and commit and push there. The links do not change.
