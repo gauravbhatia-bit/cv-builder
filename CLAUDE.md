@@ -47,6 +47,12 @@ hyphen. En dashes in ranges (`Aug 2026 – Present`) are fine.
 `render.cmd` embeds it top-right as base64. With no such file the `[PHOTO]` placeholder is removed
 and the layout still works, just airier. `private/` is gitignored, so the photo never reaches
 GitHub. Portrait, about 4:5 (it renders at 22 × 28 mm), ideally 400 × 500 px or larger.
+The current `private/photo.jpg` is a head-and-shoulders crop (316 × 402 px region, resized to
+440 × 560) of the original `private/photo.png`. `render.cmd` takes `.jpg` before `.png`, so the
+original stays as the untouched source. To change the crop, redo it from `photo.png`.
+
+**Running `render.cmd` from PowerShell 5.1:** `&&` is not supported there. Use the full path,
+`C:\Users\gaura\cv-builder\render.cmd`, which works from any folder in PowerShell or cmd.
 
 **The one-pager is already sized for it.** A photo costs about 54px, so two items were cut to make
 room: the metric-free KnowGuard "benchmark LLMs" bullet (ParetoGate now proves the same thing with
