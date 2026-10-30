@@ -9,3 +9,5 @@ out/
 
 # A rendered CV carries real contact details wherever it ends up, not just in out/.
 *.pdf
+
+__pycache__/

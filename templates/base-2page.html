@@ -128,7 +128,7 @@ body{padding-top:44px}
     <dt>Methods</dt><dd>Regression (incl. log-log OLS elasticity), A/B testing, time-series (ARIMA, Prophet, LSTM), RFM segmentation, anomaly detection, model evaluation (MAE, RMSE, MAPE), SHAP</dd>
     <dt>Programming</dt><dd>Python (pandas, NumPy, statsmodels, scikit-learn, XGBoost, TensorFlow/Keras), SQL (CTEs, window functions), DuckDB, Snowflake SQL</dd>
     <dt>Charts &amp; reporting</dt><dd>Power BI / DAX, Plotly, Streamlit dashboards, automated Markdown/HTML KPI reports, Excel, Tally</dd>
-    <dt>AI tools</dt><dd>LLM benchmarking against baselines, RAG (LangChain, FAISS), multi-agent systems, sentence-transformers / MiniLM embeddings, semantic caching and model routing, local model serving (Ollama, LM Studio), FinBERT / Hugging Face, Gemini, prompt design</dd>
+    <dt>AI engineering</dt><dd>LLM evaluation and quality gates, guardrails, agentic workflows and multi-agent orchestration, agent harness engineering (validators, receipts, rollback), versioned prompts and releases, RAG (LangChain, FAISS), context engineering, semantic caching and model routing, LLM cost optimisation, human-in-the-loop design, structured outputs (JSON Schema), local model serving (Ollama, LM Studio), MiniLM embeddings, Hugging Face, Gemini</dd>
     <dt>Cloud &amp; engineering</dt><dd>AWS, Azure data platform (FutureLearn coursework), FastAPI, Docker, GitHub Actions, Git/GitHub, Agile/Jira</dd>
     <dt>Languages</dt><dd>English (C1), German (A2, improving), Hindi (native)</dd>
   </dl>
@@ -204,6 +204,20 @@ body{padding-top:44px}
     <ul>
       <li>Built a reproducible pipeline answering <strong>5 research questions</strong> on how the 2026 US–Iran conflict moved German day-ahead electricity prices, benchmarked against the 2022 energy shock</li>
       <li>Combined <strong>event study</strong>, <strong>Granger causality</strong> and ablation tests with <strong>Chronos</strong> and XGBoost forecast arms to identify the transmission channel</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Job-Search Automation: agent harness</span>
+      <span class="pstack">Scheduled agents, shared database, Python, GitHub</span>
+      <span class="plink">Private repo</span>
+    </div>
+    <ul>
+      <li>Built a versioned system of <strong>four scheduled agent tasks</strong> (sourcing, outreach, daily report, LinkedIn drafts) that hand work to each other through a <strong>shared database</strong></li>
+      <li>Sourced roles from ATS and Arbeitsagentur feeds, government portals and job boards across <strong>12 countries</strong>, plus funding news for startups</li>
+      <li>Governed it as an <strong>agent harness</strong>: <strong>37 standing rules</strong> with an ownership map, a <strong>validator that gates every run</strong> and issues receipts, and a regression test built on a real report</li>
+      <li>Shipped it with <strong>versioned prompts and releases</strong>, snapshots and one-command rollback, and kept the LinkedIn task to drafts only</li>
     </ul>
   </div>
 

@@ -78,11 +78,12 @@ Checked against his GitHub account on 30 Oct 2026 (`gh repo list`, 33 repos):
 | P21 Odd-Jobs Aggregator | **Not found** under `gauravbhatia-bit`, public or private |
 | P22 ParetoGate | **Not found** under `gauravbhatia-bit`, public or private |
 
-P21 and P22 may live only on his machine or on another host. **The CV currently says "Private repo"
-next to both.** If they are local only, that label is not accurate and should change to something
-true (or the repos should be pushed to private GitHub repos, which also gives the cloud backup he
-asked for at the start). **Open: waiting on Gaurav's answer.** Never link a repo that 404s, and never
-guess a slug.
+**Update, 30 Oct 2026:** Gaurav confirms P21 and P22 are on his machine and he will push them to
+GitHub soon ("no worries"). Until then the **"Private repo" label on the CV is a forward-looking
+claim**; it becomes accurate the day they are pushed. After he pushes, run
+`python scripts/sync_repos.py`: they will appear as NEW, and their real slugs and READMEs go in here
+(the P21 and P22 rows still say "private" with no slug). Never link a repo that 404s, and never guess
+a slug.
 
 > **Worth doing, and it is the cheapest win available.** Every other project here is verifiable in
 > one click, and these three, the most impressive work in the library, are the only ones a reader
@@ -285,9 +286,11 @@ Two bullets max per project. Lead with the number.
 **P16-P18 Toll / Maut suite**
 - Built SQL reporting (CTEs, window functions, RANK), Z-score and Isolation Forest anomaly detection, and a scheduled weekly HTML KPI report over German highway toll data
 
-**P20 Job-Search Automation** *(built, run daily)*
-- Built a versioned job-search system of four scheduled agent tasks that hand work to each other through a shared database: sourcing from ATS and Arbeitsagentur feeds, government portals and job boards across 12 countries, then outreach, a daily report and LinkedIn drafts
-- Governed it with 37 standing rules, a validator that gates every run and issues receipts, a regression test on a real report, and versioned releases with rollback
+**P20 Job-Search Automation** *(built, run daily)* — up to four bullets on a 2-page CV, two on a 1-page
+- Built a versioned job-search system of four scheduled agent tasks (sourcing, outreach, daily report, LinkedIn drafts) that hand work to each other through a shared database
+- Sourced roles from ATS and Arbeitsagentur feeds, government portals and job boards across 12 countries, plus funding news for startups
+- Governed it as an agent harness: 37 standing rules with an ownership map, a validator that gates every run and issues receipts, and a regression test built on a real report
+- Shipped it with versioned prompts and releases, snapshots and one-command rollback, and kept the LinkedIn task to drafts only
 
 **P21 Odd-Jobs Aggregator for Students in Germany** *(current)*
 - Built a multi-source aggregator that collects odd-job listings posted in the last 24 hours across Kleinanzeigen, Craigslist and further pluggable sources, for international students who cannot search them by hand

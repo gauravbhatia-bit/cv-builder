@@ -197,10 +197,42 @@ Pull from here; never list everything at once. 5-6 rows maximum on a CV.
 | **Methods** | Regression (incl. log-log OLS elasticity), A/B testing (paired designs, confidence intervals, pre-set effect thresholds), time-series (ARIMA, Prophet, LSTM, Chronos, seasonality decomposition), RFM segmentation, anomaly detection (Z-score, Isolation Forest), event study, Granger causality, model evaluation (MAE, RMSE, MAPE), SHAP explainability |
 | **Programming / stats** | Python (pandas, NumPy, statsmodels, scikit-learn, XGBoost, Optuna, TensorFlow/Keras), SQL (CTEs, window functions), DuckDB, Snowflake SQL, SQLite |
 | **Charts & reporting** | Power BI / DAX, Plotly, Matplotlib, Streamlit dashboards, Jinja2 HTML reports, automated Markdown/KPI reports, Excel, Tally (ERP reporting) |
-| **AI / GenAI** | LLM benchmarking against baselines, RAG (LangChain, FAISS), multi-agent systems, FinBERT / Hugging Face, Gemini, prompt design, intent classification, sentence-transformers / MiniLM embeddings, semantic caching, model routing, local model serving (Ollama, LM Studio), quality-gated evaluation harnesses |
+| **AI / GenAI** | LLM evaluation and quality gates, guardrails, agentic workflows and multi-agent orchestration, agent harness engineering (validators, receipts, rollback), versioned prompts and releases, RAG (LangChain, FAISS), context engineering, semantic caching and model routing (LLM gateway), LLM cost optimisation, human-in-the-loop design, structured outputs (JSON Schema), local model serving (Ollama, LM Studio), sentence-transformers / MiniLM embeddings, FinBERT / Hugging Face, Gemini, prompt design, intent classification. **Vocabulary rules are in 6a** |
 | **Cloud & data eng.** | Microsoft Azure data platform (FutureLearn coursework), AWS (A/B testing workloads, fundamentals), ETL processes, DWH / star-schema modelling, Snowflake, DuckDB, SQLite, FastAPI, Docker, Kubernetes, REST APIs |
 | **Ways of working** | Git/GitHub, GitHub Actions CI/CD, Docker, documented and reproducible pipelines, Agile (Scrum, Kanban), Jira, requirements management, stakeholder communication |
 | **Languages** | English (C1), German (A2, actively improving), Hindi (native) |
+
+---
+
+## 6a. Trending AI-engineering terms: what he can honestly claim
+
+Job ads for AI roles now use a shared vocabulary. A term goes on a CV only where it has evidence in
+his own projects (`RULES.md` section 6: mirror a keyword only if it genuinely matches). Checked
+against his projects on 30 Oct 2026. Sources agree on the core idea of "harness engineering": the
+model supplies the intelligence, the harness (tools, context, state, guardrails, evals, retries,
+approvals, rollback) supplies the reliability.
+
+| Term | Plain meaning | Evidence | Verdict |
+|---|---|---|---|
+| **Agent harness engineering** | Building everything around a model so an agent is reliable | `job-search-automation`: 37 standing rules with an ownership map, a validator gating every run and issuing receipts, a regression test on a real report, versioned releases with rollback, LinkedIn kept to drafts. ParetoGate: replay and live benchmark runners, quality gates, fallback | **Use**, once in Skills. Young and loosely defined, so back it with the concrete nouns |
+| **Agentic workflows / multi-agent orchestration** | Several agents handing work to each other | Four scheduled agent tasks hand off through a shared database (P20); KnowGuard multi-agent systems | **Use** |
+| **Guardrails** | Code-level limits on what a system may do | ParetoGate vetoes lossy compression for high-stakes work and denies semantic caching for fresh, sensitive or exact-wording requests; P20 validator gates | **Use** |
+| **LLM evaluation, quality gates, eval harness** | Measuring whether a model or change is actually better | ParetoGate counterfactual, retrieval and code-task benchmarks, frozen 25-task suite, quality floor, rollback cost; KnowGuard A/B test | **Use** |
+| **Regression testing for LLM systems** | A saved real case that must keep passing | P20 `tests/run_tests.sh` with a real report as fixture; ParetoGate test suite | **Use** |
+| **LLMOps / versioned prompts and releases** | Treating prompts and config like deployable code | P20 task prompts versioned, `release.sh`, `snapshot.py`, `rollback.sh` | **Use** |
+| **Context engineering** | Deciding what the model sees, and when | ParetoGate assembler packs memory, code and base context under one token budget and pins required sources; conversation memory (recent, summary, semantic old turns) | **Use** |
+| **LLM gateway, model routing, semantic caching** | Cheaper calls through reuse and routing | ParetoGate; Sales Intelligence Agent confidence routing | **Use** |
+| **LLM cost optimisation** | Reducing token spend without losing quality | ParetoGate: 86,416 to 11,351 input tokens, quality-gated | **Use** |
+| **Human-in-the-loop** | A person approves before action | P21 shortlist approval; P20 LinkedIn drafts only | **Use** |
+| **RAG, embeddings, vector search** | Retrieval before generation | P9 (LangChain, FAISS), KnowGuard, ParetoGate retrieval, MiniLM | **Use** |
+| **Local model serving** | Running models on his own machine | Ollama and LM Studio in ParetoGate | **Use** |
+| **Structured outputs (JSON Schema)** | Forcing machine-readable model output | ParetoGate sends the replacement contract to Ollama as JSON Schema | **Use** |
+| **Observability, tracing** | Seeing what a system did | Run logs, receipts and a daily report (P20); prompt-free usage records (ParetoGate) | **Careful.** Say "run logs and usage records". No tracing platform (Langfuse, OpenTelemetry) was used |
+| **LLM-as-a-judge** | A model scores another model's output | Not used. ParetoGate validates with deterministic checks and replay | **Do not claim** |
+| **MCP (Model Context Protocol)** | A standard for connecting tools to models | No evidence | **Do not claim** |
+| **Fine-tuning** | Training a model on his own data | KnowGuard *evaluated* a fine-tuned model in an A/B test; he is not recorded as having fine-tuned one | **Do not claim.** "Evaluated a fine-tuned model" is true |
+| **Shadow mode, canary rollout** | Testing a change on live traffic safely | ParetoGate README: "production and shadow request modes are not complete" | **Do not claim.** It is planned |
+| **Agent frameworks (LangGraph, CrewAI, AutoGen)** | Off-the-shelf orchestration libraries | LangChain only, in P9 | **Do not claim** |
 
 ---
 

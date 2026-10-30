@@ -33,8 +33,8 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
    - Trim/swap `<li>` bullets to the budget.
    - Swap the three `.entry` project blocks.
    - Set `<title>` — the "Save edited HTML" button uses it as the filename.
-6. **Verify** against the checklist in `RULES.md` §9.
-7. **Cover letter**, if one is wanted: start from `letters/base.md` (the saved reference), keep its structure and voice, and change only `[WHY]`, `[PROOF]` and `[LINK]`. Research the company first, pick two stories via `RULES.md` §10, respect each story's stated limit, and **always include the football sentence**, linked to the story it fits (`COVER-LETTER-BUILDER.md` S8). Save to `out/` (gitignored). `letters/sample-energy-analyst.md` shows a finished one.
+6. **Verify.** Run `python scripts/check.py --render`; it must report 0 failures. Then the checklist in `RULES.md` §9 for what a script cannot judge.
+7. **Cover letter**, if one is wanted: start from `letters/base.md` (the saved reference), keep its structure and voice, and change only `[WHY]`, `[PROOF]` and `[LINK]`. Research the company first, pick two stories via `RULES.md` §10, respect each story's stated limit, and **always include the football sentence**, linked to the story it fits (`COVER-LETTER-BUILDER.md` S8). Save to `out/Gaurav_Bhatia_Letter_<Company>.md` (gitignored; the `Letter` in the name is what makes `check.py` apply the letter rules to it). `letters/sample-energy-analyst.md` shows a finished one.
 8. **Report** to Gaurav: what was picked, what was cut, and anything that had to be left out for honesty.
 9. **Commit and push.** One commit per application: `cv: <Company> <Role>`.
 
@@ -61,7 +61,7 @@ original stays as the untouched source. To change the crop, redo it from `photo.
 room: the metric-free KnowGuard "benchmark LLMs" bullet (ParetoGate now proves the same thing with
 numbers) and the Certifications section. Both are still in `master.md` and go back on any tailored
 CV with the space. Do not add content back to `templates/base.html` without re-checking with a
-photo present: it runs with ~26px spare.
+photo present: it runs with ~31px spare.
 
 ## Contact details
 
@@ -81,6 +81,26 @@ new commit.
 ## One page
 
 The template holds one page at its defaults (`--fs: 9.5pt`, `--gap: 2px`) with 3 jobs, 3 projects and 6 skill rows — that is already tight, so anything added must displace something. Check with `render.cmd` and count pages before handing over. Below 9pt, cut content instead — see `RULES.md` §4.
+
+## Guardrails
+
+The rules in this repo are enforced by `scripts/check.py`, not by good intentions. It fails on:
+
+- an em dash or banned phrase in a CV or letter (`STYLE.md`)
+- a number on a CV that appears in neither `master.md` nor `projects.md` (every number must be traceable)
+- a changed job title, employer or date, or a retired claim ("Croud", "January 2027")
+- a cover letter over 300 words, with a leftover `[WHY]` marker, or **without the football sentence**
+- a contact detail in any tracked file, or a PDF, photo or `private/` file that is tracked
+- a duplicate or broken project ID, or a CV that renders to the wrong page count (`--render`)
+
+It runs automatically three ways: a **pre-commit hook** (so a bad commit is refused), a **GitHub
+check** on every push (works with the laptop off), and by hand. `tests/test_check.py` proves the
+check itself still catches each of those.
+
+On a fresh clone, enable the hook once: `git config core.hooksPath scripts/hooks`.
+
+**Never bypass it** with `--no-verify`, and never loosen a rule in `check.py` to make a failure go
+away. If a rule is wrong, tell Gaurav and change it deliberately, in its own commit.
 
 ## Keeping the data current
 

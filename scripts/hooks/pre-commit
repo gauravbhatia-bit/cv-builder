@@ -1,0 +1,7 @@
+#!/bin/sh
+# Blocks a commit that breaks a CV-repo rule. Enabled by: git config core.hooksPath scripts/hooks
+python scripts/check.py || {
+  echo
+  echo "Commit blocked: fix the failures above. (Ask Claude if one looks wrong.)"
+  exit 1
+}

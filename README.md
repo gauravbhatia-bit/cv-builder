@@ -41,6 +41,14 @@ when one of those changes.
 
 To make PDFs, run `C:\Users\gaura\cv-builder\render.cmd` from any folder.
 
+## Guardrails
+
+So the quality cannot slip, `scripts/check.py` enforces the rules automatically: no em dashes or
+buzzwords, every number on the CV traceable to your data files, job titles and dates unchanged,
+letters under 300 words with the football sentence, no contact details in the repo, and the right
+page count. It blocks a bad commit on your machine and runs on GitHub on every push. Run it yourself
+with `python scripts/check.py --render`. On a new machine, run `git config core.hooksPath scripts/hooks` once.
+
 ## Cover letters
 
 `COVER-LETTER-BUILDER.md` holds nine stories from your career, each with what it proves, when to
