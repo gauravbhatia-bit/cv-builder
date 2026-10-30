@@ -41,6 +41,12 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 8. **Report** to Gaurav: what was picked, what was cut, and anything that had to be left out for honesty.
 9. **Commit and push.** One commit per application: `cv: <Company> <Role>`.
 
+## Cold emails to startups
+
+**Every cold email to a startup goes out with the tailored CV attached** (Gaurav's rule, 30 Oct 2026).
+Build the CV, check it, render it to PDF, attach it, and put his portfolio link in the body. If the CV
+cannot be attached, save a draft instead of sending. The full steps are `RULES.md` §11.
+
 ## Voice
 
 `STYLE.md` governs every word that reaches an employer. Read it before writing a CV or a cover

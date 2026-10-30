@@ -40,14 +40,23 @@ Work inside the clone's `out/` folder (it is gitignored). In short, per `CLAUDE.
 - **Cover letter:** start from `letters/base.md`, change only the marked parts, research the company first, use two stories, and **always include the football sentence, linked to a real story**. Under 300 words. Save as `out/Gaurav_Bhatia_Letter_<Company>.md`, then run `python scripts/build_letter.py out/Gaurav_Bhatia_Letter_<Company>.md "<Company>"` to get the designed letter page with the same photo header as the CV.
 - Names: `Gaurav_Bhatia_CV_<Company>.html` and `.pdf`, and `Gaurav_Bhatia_Letter_<Company>.md`, `.html` and `.pdf`.
 
-## 3. Verify, then deliver
+## 3. Cold emails: always attach the CV
+
+Whenever you send a cold email to a startup, **attach the tailored CV as a PDF**, and put his
+portfolio link in the body. Build the CV first by the steps above, make sure the check passes, and
+render it to exactly two pages. Attach it through the email tool's attachments (base64 PDF named
+`Gaurav_Bhatia_CV_<Company>.pdf`, under 25 MB). A link is not a substitute. If the CV cannot be built
+or attached, **do not send**: save a draft and say why in the report. The full rule is `RULES.md`
+section 11, and the repo wins if it differs from this file.
+
+## 4. Verify, then deliver
 
 Run `python scripts/check.py` in the clone. It must report **0 failures** before anything is
 attached or sent. It enforces the rules mechanically: em dashes, banned phrases, every CV number
 traceable to the data files, unchanged titles and dates, letter length and the football sentence,
 no contact details in the repo. If it fails, fix the document. Never loosen the check.
 
-## 4. Photo from the repo; contact details never from the repo
+## 5. Photo from the repo; contact details never from the repo
 
 **Photo:** always `assets/photo.jpg` in the repo. It is public on purpose. Every CV template and the
 letter template already point at it (`src="../assets/photo.jpg"`), so a fresh clone has it. Never
@@ -58,12 +67,12 @@ time from private configuration (`private/contact.md` on Gaurav's laptop, or the
 `job-search-automation` repo). Never write a real email or phone into any file that could be
 committed to the public repo.
 
-## 5. Interactive versus unattended
+## 6. Interactive versus unattended
 
 - **Interactive:** before writing, ask Gaurav (briefly, multiple choice where possible) about format (PDF only unless he says otherwise), language of the ad, any eligibility blocker, and anything the ad asks that the repo does not answer.
 - **Unattended (a scheduled task):** you cannot ask. If an open question in `data/master.md` section 2 or a JD blocker affects a line, still draft, put the question in the report, and **never guess**. Do not commit or push to the repo from a task.
 
-## 6. Rendering
+## 7. Rendering
 
 The repo's templates are HTML; print to PDF with headless Chrome. On Windows `render.cmd` does it and
 embeds the photo. Elsewhere, render the file **from inside `out/`** (so `../assets/photo.jpg`
@@ -73,7 +82,7 @@ only from the repo's data and keep the repo's wording rules. **Two pages by defa
 one page only when asked; never three. The cover letter is always one page. Check the photo is
 visible on both before delivering.
 
-## 7. Keeping this skill current
+## 8. Keeping this skill current
 
 When his career or projects change, **edit the repo, not this skill**. Update this file only when the
 procedure itself changes.

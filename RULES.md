@@ -236,3 +236,17 @@ Two rules for this table:
    order was *given* to him, never won by him.
 
 ---
+
+---
+
+## 11. Cold emails to startups: the CV always goes with it
+
+Gaurav's rule, 30 Oct 2026: **every cold email to a startup is sent with his CV attached.** No exceptions.
+
+1. **Build the CV first**, by the normal procedure (`CLAUDE.md`), tailored to the startup's field and the role he would fit. Two pages, with the photo. `scripts/check.py` must report 0 failures.
+2. **Render it to PDF** and name it `Gaurav_Bhatia_CV_<Company>.pdf`. Count the pages: exactly two.
+3. **Attach the PDF** to the email itself (Gmail `attachments`: base64 `content`, `filename`, `mimeType` `application/pdf`; the combined size must stay under 25 MB). A link to a CV is not a substitute.
+4. **In the body**, one plain sentence that the CV is attached, and his portfolio link: https://gauravbhatia-bit.github.io/
+5. **No CV, no email.** If the CV cannot be built, fails the check or cannot be attached, do not send. Save the email as a draft and say why in the report. An email that goes out without the CV cannot be taken back.
+6. The email follows `STYLE.md` like everything else: no em dashes, no banned phrases, and **never a word about visa, residence or work-permit status**.
+7. Attach the CV only. Send a cover letter as well only if Gaurav asked for one.
