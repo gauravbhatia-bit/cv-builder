@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gaurav Bhatia — CV (2 page)</title>
+<title>Gaurav Bhatia CV (2 page)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -28,6 +28,8 @@ body{font-family:Lato,"Segoe UI",Arial,sans-serif;color:var(--ink)}
 
 /* ---------- header ---------- */
 .head{display:flex; justify-content:space-between; align-items:flex-start; gap:12px}
+/* Photo is optional. render.cmd fills [PHOTO] only if private/photo.jpg exists. */
+.photo{width:22mm; height:28mm; object-fit:cover; border:1px solid var(--rule); flex:0 0 auto}
 h1{font-size:2.45em; line-height:1; margin:0 0 2px; letter-spacing:-.5px}
 .links{font-size:.95em}
 .links a{color:var(--ink); text-decoration:underline; text-underline-offset:2px}
@@ -119,10 +121,11 @@ body{padding-top:44px}
       [EMAIL]<br>
       [PHONE]
     </div>
+    [PHOTO]
   </div>
 
   <h2>Data Scientist</h2>
-  <p>MSc Data Science candidate (GISMA, Dec 2026) who cleans, validates and analyses quantitative datasets and turns them into decisions. Grounded in <strong>statistics</strong> (regression, A/B testing, time-series, segmentation, price elasticity), with applied work in <strong>energy forecasting</strong> and <strong>LLM evaluation</strong>, in reproducible <strong>Python/SQL</strong> pipelines. Available full-time in Berlin from <strong>December 2026</strong>.</p>
+  <p>MSc Data Science candidate at GISMA, finishing December 2026. Builds models people can act on: price elasticity across <strong>15,000 SKUs</strong>, demand forecasting, German power-price modelling, and <strong>LLM evaluation</strong> where cost and quality are both measured. Strong in <strong>statistics</strong> and reproducible <strong>Python/SQL</strong> pipelines, after eight years running a business where the analysis had to pay for itself. Available full-time in Berlin from <strong>December 2026</strong>.</p>
 
   <h2>Skills</h2>
   <dl class="skills">
@@ -160,9 +163,9 @@ body{padding-top:44px}
     <div class="row"><span class="t">Business Manager</span><span class="r">Nov 2015 – Jan 2024</span></div>
     <div class="row"><span class="sub">Bhatia Traders</span><span class="r sub">India</span></div>
     <ul>
-      <li>Ran a product business end to end for <strong>8 years</strong> — purchasing, pricing, stock and supplier terms across <strong>20+ suppliers</strong></li>
+      <li>Ran a product business end to end for <strong>8 years</strong>, owning purchasing, pricing, stock and supplier terms across <strong>20+ suppliers</strong></li>
       <li>Analysis-led changes cut <strong>excess-inventory cost by 10%</strong> and identified a ~<strong>15% stockout-reduction</strong> potential</li>
-      <li>Ran three ventures alongside it — a <strong>home-tutoring marketplace</strong>, <strong>Shopify e-commerce stores</strong> and a restaurant</li>
+      <li>Ran three ventures alongside it: a <strong>home-tutoring marketplace</strong>, <strong>Shopify e-commerce stores</strong> and a restaurant</li>
     </ul>
   </div>
 
@@ -172,7 +175,7 @@ body{padding-top:44px}
     <div class="row"><span class="t">GISMA University of Applied Sciences</span><span class="r">Potsdam, Germany</span></div>
     <div class="row"><span class="sub">MSc Data Science, AI &amp; Digital Business</span><span class="r sub">Sep 2025 – Dec 2026 (expected)</span></div>
     <ul>
-      <li>Thesis: the US–Iran conflict's impact on German day-ahead electricity prices — event study, Granger causality, Chronos/XGBoost forecasting</li>
+      <li>Thesis: the US–Iran conflict's impact on German day-ahead electricity prices, using event study, Granger causality and Chronos/XGBoost forecasting</li>
     </ul>
   </div>
 
@@ -184,15 +187,27 @@ body{padding-top:44px}
 
   <div class="entry">
     <div class="prow">
-      <span class="pname">ParetoGate — cost-aware LLM gateway</span>
+      <span class="pname">ParetoGate: cost-aware LLM gateway</span>
       <span class="pstack">FastAPI, MiniLM, scikit-learn, SQLite, Ollama</span>
       <span class="plink">Private repo</span>
     </div>
     <ul>
       <li>Built a local-first <strong>LLM gateway</strong> that classifies each request with MiniLM embeddings, predicts applicable optimisations with ten one-vs-rest logistic models, and applies deterministic safeguards before any lossy transform</li>
-      <li>Cut retrieved context from <strong>86,416 to 11,351 input tokens</strong> on a frozen 25-task code-change suite while passing every reviewed change — <strong>80.8% modelled cost reduction</strong></li>
+      <li>Cut retrieved context from <strong>86,416 to 11,351 input tokens</strong> on a frozen 25-task code-change suite while passing every reviewed change, an <strong>80.8% modelled cost reduction</strong></li>
       <li>Gated every saving behind a <strong>task-quality floor</strong> with automatic baseline fallback, charging rejected candidates as zero savings; reported a negative end-to-end run rather than publishing the favourable 81% token figure alone</li>
       <li>Denied semantic cache reuse for fresh, sensitive, high-stakes and exact-wording requests, with a tenant-isolated, TTL-bounded store serving only quality-verified answers</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">MSc Thesis: Conflict Shocks in the German Power Market</span>
+      <span class="pstack">Python, Chronos, XGBoost, Granger causality</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/US-Iran-impact_on_German_Electricity_thesis">Source</a></span>
+    </div>
+    <ul>
+      <li>Built a reproducible pipeline answering <strong>5 research questions</strong> on how the 2026 US–Iran conflict moved German day-ahead electricity prices, benchmarked against the 2022 energy shock</li>
+      <li>Combined <strong>event study</strong>, <strong>Granger causality</strong> and ablation tests with <strong>Chronos</strong> and XGBoost forecast arms to identify the transmission channel</li>
     </ul>
   </div>
 
@@ -204,7 +219,7 @@ body{padding-top:44px}
     </div>
     <ul>
       <li>Built a <strong>multi-source aggregator</strong> collecting listings posted in the last <strong>24 hours</strong> across Kleinanzeigen, Craigslist and further pluggable sources, for students who cannot search them by hand</li>
-      <li>Generates the message and a tailored CV per listing, then applies once the user approves a shortlist — <strong>human-in-the-loop</strong> by design</li>
+      <li>Generates the message and a tailored CV per listing, then applies once the user approves a shortlist. <strong>Human-in-the-loop</strong> by design</li>
     </ul>
   </div>
 
@@ -251,7 +266,7 @@ body{padding-top:44px}
       <span class="plink"><a href="https://github.com/gauravbhatia-bit/office-energy-forecasting-dashboard">Source</a> · <a href="https://office-energy-forecasting-dashboard-byb9cixihrwm3c779d3hpv.streamlit.app/">Demo</a></span>
     </div>
     <ul>
-      <li>Tuned XGBoost with <strong>50 Optuna trials</strong> to predict office energy use — <strong>MAE 22.98 Wh</strong>, RMSE 50.96 Wh — surfaced with CO₂ savings in a live Streamlit app</li>
+      <li>Tuned XGBoost with <strong>50 Optuna trials</strong> to predict office energy use to <strong>MAE 22.98 Wh</strong> and RMSE 50.96 Wh, surfaced with CO₂ savings in a live Streamlit app</li>
       <li><strong>SHAP</strong> showed short-term momentum dominates consumption, driving out-of-hours waste alerts</li>
     </ul>
   </div>
@@ -281,9 +296,9 @@ body{padding-top:44px}
 
   <h2>Certifications</h2>
   <ul>
-    <li><strong>Introduction to Data Engineering with Microsoft Azure 1 &amp; 2</strong> — FutureLearn, Sep 2026</li>
-    <li><strong>Introduction to Cloud Infrastructure: Describe Cloud Concepts</strong> — Microsoft, Jul 2026</li>
-    <li><strong>Data Analytics Job Simulation</strong> — Deloitte, issued by Forage, Jul 2026</li>
+    <li><strong>Introduction to Data Engineering with Microsoft Azure 1 &amp; 2</strong>, FutureLearn, Sep 2026</li>
+    <li><strong>Introduction to Cloud Infrastructure: Describe Cloud Concepts</strong>, Microsoft, Jul 2026</li>
+    <li><strong>Data Analytics Job Simulation</strong>, Deloitte, issued by Forage, Jul 2026</li>
   </ul>
 
 </div>

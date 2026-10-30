@@ -1,14 +1,14 @@
 # CV Tailoring Rules
 
-How a job description turns into a CV. Read with `data/master.md` (career) and
-`data/projects.md` (projects).
+How a job description turns into a CV. Read with `data/master.md` (career),
+`data/projects.md` (projects) and **`STYLE.md` (voice, which overrides everything here on wording)**.
 
 ---
 
 ## 0. Hard rules — never break these
 
 1. **Nothing goes on a CV that is not in `data/master.md` or `data/projects.md`.** No invented metrics, tools, dates or titles.
-2. **One page by default** (`templates/base.html`). A **two-page variant exists** (`templates/base-2page.html`, 8 projects) — Gaurav asked for it on 30 Oct 2026. Use one page unless the JD asks for depth the one-pager cannot hold: senior/mid roles wanting 3–5 years, research or ML-engineering roles where the project detail *is* the evidence, or an application with no cover letter. **German applications default to one page.** Never three.
+2. **One page by default** (`templates/base.html`). A **two-page variant exists** (`templates/base-2page.html`, 9 projects, thesis permanent) — Gaurav asked for it on 30 Oct 2026. Use one page unless the JD asks for depth the one-pager cannot hold: senior/mid roles wanting 3–5 years, research or ML-engineering roles where the project detail *is* the evidence, or an application with no cover letter. **German applications default to one page.** Never three.
 3. **Never remove a job to save space.** Gaps look worse than a less relevant role. Shrink it to one bullet instead. The one exception is an entry with **nothing delivered** — Croud Control is registered-but-idle and is off the CV for that reason, not for space. See `master.md` section 4.
 4. **Every number on the CV must be traceable** to a README, a dashboard or a report. If a number cannot be shown in an interview, it does not go on. **This bans unprovable numbers, not projects without one** — in-progress work goes on the CV described by its *scope* (sources, geography, window, techniques) in the present tense. Add the number when it exists. See `projects.md` → In-flight.
 5. **Do not claim German above A2** and do not hide it either. It is on the CV as A2, improving.
@@ -89,7 +89,7 @@ Pick from `data/projects.md`. Rank by `tag match + domain match + has a number`.
 - **Never show 3 projects of the same type.** Two in the JD's area, one that shows range.
 - **Prefer a current project where it fits.** P20–P22 are live work, described in the present tense, and they are products rather than analyses. For AI, LLM, platform or startup roles they outrank most of P1–P19 even without final numbers — "currently building" is a strength, not a hedge.
 - **Domain beats tag.** Applying to an energy company? P4/P5/P6/P7 go first even for a DA role — use P11 (DuckDB SQL + Power BI) as the analyst proof.
-- **The thesis counts as a project** for energy and research roles, and also stays in Education.
+- **The thesis is permanent.** It appears in Selected Projects on every CV that shows more than three projects, and always stays in Education. It is Gaurav's flagship and his clearest domain claim (his call, 30 Oct 2026).
 - **Link live demos** when the JD mentions stakeholders, products or deployment.
 - Applying to a competitor of a company a project is modelled on (P12 is Riverty-style)? Keep the project, drop the company name from the title.
 
@@ -173,6 +173,7 @@ Before handing over a CV:
 - [ ] All 3 jobs still present (Croud Control is not one of them — hard rule 3)
 - [ ] 3 projects, 2 bullets each, each with a working repo link — **except P20–P22**, whose repos are private and which show "Private repo" instead. At least one project on every CV must still have both a link and a metric.
 - [ ] No claim outside `master.md` / `projects.md`
+- [ ] **Zero em dashes.** Search for the character. `STYLE.md` has the full voice checklist
 - [ ] No unresolved `G#` question affecting a line on this CV
 - [ ] Filename `Gaurav_Bhatia_CV_<Company>.pdf`
 - [ ] Saved to `out/`, JD notes saved to `jd/`

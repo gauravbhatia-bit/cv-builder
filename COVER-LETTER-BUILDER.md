@@ -13,6 +13,7 @@ instead of a list. Everything here came from the career walkthrough on 30 Oct 20
 | `data/projects.md` | Every **project** | Same rule, for project facts and metrics. |
 | `RULES.md` | How a JD becomes a **CV** | §10 maps JD requirements to the right experience. Read it before picking stories here. |
 | **this file** | The **stories** behind the facts | Narrative only. It never invents a fact and never holds one master.md does not. |
+| `STYLE.md` | **How it is written** | Voice, banned phrases, no em dashes, word limit. Overrides the drafts below where they disagree. |
 
 If a number here ever disagrees with the data files, **they win** and this file is the bug.
 

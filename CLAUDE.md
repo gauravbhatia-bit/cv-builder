@@ -9,9 +9,10 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 | `data/master.md` | Identity, experience, education, skills, certifications. **The career half of the source of truth.** |
 | `data/projects.md` | Every project: tags, stack, metrics, repos, bullet bank. **The only source of project content.** |
 | `RULES.md` | How a JD becomes a CV. Bullet budgets, project picking, honesty guardrails. §10 maps JD requirements to the right experience. |
-| `COVER-LETTER-BUILDER.md` | The stories behind the facts, for cover letters. Narrative only — never a source of a number. |
+| `COVER-LETTER-BUILDER.md` | The stories behind the facts, for cover letters. Narrative only, never a source of a number. |
+| `STYLE.md` | How everything is written. Gaurav's own voice rules. Overrides any default phrasing. |
 | `templates/base.html` | The neutral base CV, **one page**, 3 projects. The default. |
-| `templates/base-2page.html` | **Two-page** variant, 8 projects in priority order, fuller experience bullets. For roles where project depth is the evidence. |
+| `templates/base-2page.html` | **Two-page** variant, 9 projects in priority order, thesis permanent, fuller experience bullets. For roles where project depth is the evidence. |
 | `jd/` | One markdown note per job description, before building. |
 | `out/` | Finished CVs. **Gitignored** — these carry real contact details. |
 | `private/contact.md` | Real email and phone. **Gitignored.** |
@@ -33,6 +34,22 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 7. **Cover letter**, if one is wanted: `COVER-LETTER-BUILDER.md`. Research the company first, pick two stories via `RULES.md` §10, respect each story's stated limit.
 8. **Report** to Gaurav: what was picked, what was cut, and anything that had to be left out for honesty.
 8. **Commit and push.** One commit per application: `cv: <Company> <Role>`.
+
+## Voice
+
+`STYLE.md` governs every word that reaches an employer. Read it before writing a CV or a cover
+letter. The rule that breaks most drafts: **no em dashes.** Reword the sentence; do not swap in a
+hyphen. En dashes in ranges (`Aug 2026 – Present`) are fine.
+
+## Photo
+
+Optional and **off by default**. Drop a `photo.jpg`, `.jpeg` or `.png` into `private/` and
+`render.cmd` embeds it top-right as base64; with no such file the `[PHOTO]` placeholder is removed
+and the layout is unchanged. `private/` is gitignored, so the photo never reaches GitHub.
+
+A photo costs about **54px**, roughly two bullets, on the one-page CV, which normally runs with
+only ~18px spare. The two-page version absorbs it without trouble. If Gaurav wants a photo on the
+one-pager, cut per `RULES.md` §4 rather than shrinking below 9pt.
 
 ## Contact details
 
