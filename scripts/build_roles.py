@@ -83,7 +83,7 @@ PROJECTS = {
         ["Tracked impressions to clicks to leads to customers with <strong>CAC and CVR per channel</strong> across 5 channels and 52 weeks, in SQL plus a Python dashboard"], n),
     "sales_an": lambda n=None: new_project(
         "Bhatia Traders Sales Analysis", "Python, pandas, Matplotlib", src("bhatia-traders-sales-analysis"),
-        ["Analysed the sales of the business he ran, using moving averages and a margin ranking by product, and sized a ~<strong>15% stockout-reduction</strong> potential",
+        ["Analysed Bhatia Traders sales with moving averages and a margin ranking by product, and sized a ~<strong>15% stockout-reduction</strong> potential",
          "The demand patterns it surfaced became the basis of the Demand Forecasting Engine"], n),
     "inv_alert": lambda n=None: new_project(
         "Inventory Alert System", "MySQL (CASE, JOINs, UPDATE)", src("bhatia_traders_inventory_alert_system"),
