@@ -169,7 +169,7 @@ The job-search automation had stored 526 jobs. Counts only, no postings, in this
 - **German is the biggest blocker by far:** 340 of 526 (65%) flag it, though only 10% of ads are written in German. The single biggest lever on his options is his German level, ahead of any CV change.
 - **Volume by role type** (title keywords, a job can count twice): AI/LLM engineer 172, data scientist/ML 126, data analyst/BI 111, working student/intern/trainee 101, analytics/data engineer 44, commercial analyst 19, product/project 12.
 - **Highest hit rate: working student, intern and trainee roles (40% good).** Check each ad: many require current enrolment, and his enrolment ends in December 2026.
-- **Coverage gap:** his most distinctive tracks barely appear. Supply chain 4 jobs, energy 4, commercial 19, because the automation's searches are aimed at data and AI titles. Searching those explicitly is the cheapest way to widen his options.
+- **Coverage gap:** his most distinctive tracks barely appear. Supply chain 4 jobs, energy 4, commercial 19, because the automation's searches are aimed at data and AI titles. Searching those explicitly is the cheapest way to widen his options. **Done in `job-search-automation` v1.3.0 (30 Oct 2026): released, live once deployed.** It added a title filter and scoring for these families, 6 Arbeitsagentur terms, and XING, Indeed, StepStone and Arbeitnow searches. The new StepStone URLs and Arbeitsagentur terms were not tested against the live sites.
 - Scores cap in the 60s and 70s because of the German deduction, so a "tailoring" verdict is a normal good match, not a weak one.
 
 ---
