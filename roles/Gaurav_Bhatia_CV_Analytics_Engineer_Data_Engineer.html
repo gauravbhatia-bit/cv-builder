@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gaurav Bhatia CV Analytics Engineer Data Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fs: 9.5pt;          /* body size  — the toolbar changes this */
+  --gap: 2px;          /* space between entries — the toolbar changes this */
+  --accent: #2b4c8c;
+  --ink: #111;
+  --rule: #9aa3b0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#525659}
+body{font-family:Lato,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+
+/* ---------- the sheet ---------- */
+.page{
+  width:210mm; min-height:297mm; margin:18px auto; padding:12mm 14mm;
+  background:#fff; box-shadow:0 2px 14px rgba(0,0,0,.45);
+  font-size:var(--fs); line-height:1.22;
+}
+
+/* ---------- header ---------- */
+.head{display:flex; align-items:center; gap:14px}
+/* Photo is public, in assets/photo.jpg (Gaurav's call, 30 Oct 2026). render.cmd embeds it so the PDF carries it. */
+.photo{width:22mm; height:28mm; object-fit:cover; border:1px solid var(--rule); flex:0 0 auto}
+h1{font-size:2.45em; line-height:1; margin:0 0 2px; letter-spacing:-.5px}
+.links{font-size:.95em}
+.links a{color:var(--ink); text-decoration:underline; text-underline-offset:2px}
+.contact{font-size:.95em; line-height:1.45; margin:1px 0 0}
+.contact a{color:var(--ink); text-decoration:none}
+
+/* ---------- sections ---------- */
+h2{
+  font-variant:small-caps; font-weight:700; letter-spacing:.4px;
+  color:var(--accent); font-size:1.12em; margin:calc(var(--gap) + 5px) 0 1px;
+  border-bottom:1px solid var(--rule); padding-bottom:2px;
+}
+h2:first-of-type{margin-top:calc(var(--gap) + 2px)}
+p{margin:3px 0}
+
+/* ---------- skills grid ---------- */
+.skills{display:grid; grid-template-columns:max-content 1fr; column-gap:10px; row-gap:1px; margin:3px 0 0}
+.skills dt{font-weight:700}
+.skills dd{margin:0}
+.skills dt::after{content:""}
+
+/* ---------- experience / project entries ---------- */
+.entry{margin-top:var(--gap)}
+.row{display:flex; justify-content:space-between; gap:12px; align-items:baseline}
+.row .r{white-space:nowrap}
+.t{font-weight:700}
+.sub{font-style:italic}
+ul{margin:0; padding-left:14px}
+li{margin:0}
+
+/* project header: name | stack | link */
+.prow{display:grid; grid-template-columns:1fr auto 1fr; align-items:baseline; gap:10px}
+.prow .pname{font-weight:700; text-decoration:underline; text-underline-offset:2px}
+.prow .pstack{font-style:italic; text-align:center}
+.prow .plink{text-align:right}
+.prow .plink a{color:var(--ink); text-decoration:underline; text-underline-offset:2px}
+
+/* ---------- toolbar (screen only) ---------- */
+#bar{
+  position:fixed; top:0; left:0; right:0; z-index:9; display:flex; flex-wrap:wrap;
+  gap:14px; align-items:center; padding:8px 14px; background:#1f2328; color:#e6e6e6;
+  font:13px/1.2 "Segoe UI",system-ui,sans-serif; box-shadow:0 1px 8px rgba(0,0,0,.4)
+}
+#bar label{display:flex; align-items:center; gap:6px}
+#bar input[type=range]{width:96px}
+#bar button{
+  background:#3b82f6; color:#fff; border:0; border-radius:4px;
+  padding:5px 11px; font:600 13px "Segoe UI",system-ui,sans-serif; cursor:pointer
+}
+#bar button.ghost{background:#3a4149}
+#bar .hint{opacity:.65; margin-left:auto}
+body{padding-top:44px}
+
+/* ---------- print ---------- */
+@page{size:A4; margin:12mm 14mm}
+@media print{
+  html,body{background:#fff; padding:0}
+  #bar{display:none}
+  .page{width:auto; min-height:0; margin:0; padding:0; box-shadow:none}
+  a{color:var(--ink) !important}
+  h2{break-after:avoid}
+  .entry{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div id="bar">
+  <label>Text <input type="range" id="fs" min="8.5" max="11.5" step="0.25" value="9.5"><span id="fsv">9.5pt</span></label>
+  <label>Spacing <input type="range" id="gp" min="2" max="12" step="1" value="2"><span id="gpv">2px</span></label>
+  <button onclick="print()">Print / Save as PDF</button>
+  <button class="ghost" onclick="save()">Save edited HTML</button>
+  <span class="hint">Click any text to edit it. Aim for exactly two pages.</span>
+</div>
+
+<div class="page" contenteditable="true" spellcheck="false">
+
+  <div class="head">
+    <img class="photo" src="../assets/photo.jpg" alt="Gaurav Bhatia">
+    <div class="id">
+      <h1>Gaurav Bhatia</h1>
+      <div class="contact">Berlin, Germany | [EMAIL] | [PHONE]</div>
+      <div class="links">
+        <a href="https://gauravbhatia-bit.github.io/">Portfolio</a> |
+        <a href="https://github.com/gauravbhatia-bit">GitHub</a> |
+        <a href="https://www.linkedin.com/in/gauravbhatia-bit/">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>Analytics Engineer / Junior Data Engineer</h2>
+  <p>MSc Data Science candidate at GISMA, finishing December 2026, who builds the data layer that analysis depends on. Writes <strong>SQL</strong> (CTEs, window functions) in DuckDB and Snowflake, models <strong>star schemas</strong>, and automates validation: <strong>45 checks</strong> across 7 tables that traced two silent data losses. Schedules and ships pipelines with Python, Docker and GitHub Actions. Available full-time in Berlin from <strong>December 2026</strong>.</p>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>SQL &amp; modelling</dt><dd>SQL (CTEs, window functions, views), DuckDB, Snowflake SQL, MySQL, SQLite, DWH / star-schema modelling, ETL processes, Python (pandas, NumPy)</dd>
+    <dt>Pipelines &amp; delivery</dt><dd>ETL processes, data-quality validation (a 45-check suite), scheduled pipelines (APScheduler), REST APIs, FastAPI, Docker, GitHub Actions CI/CD, Git/GitHub, documented and reproducible pipelines</dd>
+    <dt>Cloud &amp; platforms</dt><dd>Azure data platform (FutureLearn coursework: data engineering with Microsoft Azure), AWS, Snowflake, Docker, Kubernetes, Agile/Jira</dd>
+    <dt>Charts &amp; reporting</dt><dd>Power BI / DAX, Plotly, Streamlit dashboards, automated Markdown/HTML KPI reports, Excel, Tally</dd>
+    <dt>Languages</dt><dd>English (C1), German (A2, improving), Hindi (native)</dd>
+  </dl>
+
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="row"><span class="t">Data Science Intern</span><span class="r">Aug 2026 – Present</span></div>
+    <div class="row"><span class="sub">KnowGuard AI</span><span class="r sub">Berlin, Germany</span></div>
+    <ul>
+      <li>Build <strong>RAG pipelines</strong> and <strong>multi-agent systems</strong>, and define evaluation metrics and hold-out sets so model comparisons are reproducible rather than anecdotal</li>
+      <li>Ran a <strong>paired A/B test on AWS</strong> comparing a fine-tuned model against the review arm: <strong>+0.0318 AUPRC</strong> (95% CI 0.022–0.0418), below the pre-set 0.05 practical-effect threshold</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span class="t">Operations &amp; Supply Chain Analyst</span><span class="r">Mar 2024 – Jul 2025</span></div>
+    <div class="row"><span class="sub">Troika International Pvt. Ltd.</span><span class="r sub">Panchkula, India</span></div>
+    <ul>
+      <li>Built <strong>Power BI dashboards across 3 divisions</strong>, turning operational data into clear views for non-technical stakeholders</li>
+      <li>Worked directly with operations and supply-chain stakeholders to turn recurring questions into <strong>standing reports</strong></li>
+      <li>Monitored inventory and demand across <strong>700+ vendors</strong> and <strong>500+ SKUs</strong> in Tally and Excel</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span class="t">Business Manager</span><span class="r">Nov 2015 – Jan 2024</span></div>
+    <div class="row"><span class="sub">Bhatia Traders</span><span class="r sub">India</span></div>
+    <ul>
+      <li>Ran a product business end to end for <strong>8 years</strong>, owning purchasing, pricing, stock and supplier terms across <strong>20+ suppliers</strong></li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+
+  <div class="entry">
+    <div class="row"><span class="t">GISMA University of Applied Sciences</span><span class="r">Potsdam, Germany</span></div>
+    <div class="row"><span class="sub">MSc Data Science, AI &amp; Digital Business</span><span class="r sub">Sep 2025 – Dec 2026 (expected)</span></div>
+    <ul>
+      <li>Thesis: the US–Iran conflict's impact on German day-ahead electricity prices, using event study, Granger causality and Chronos/XGBoost forecasting</li>
+      <li>Relevant modules: Methods of Prediction (M507), Big Data Analytics (M508)</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span class="t">University College of Engineering, Patiala</span><span class="r sub">B.Tech, Civil Engineering, 2011 – 2015</span></div>
+  </div>
+
+  <h2>Selected Projects</h2>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">BI Data-Quality Pipeline</span>
+      <span class="pstack">Python, pandas, NumPy</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/bi-data-quality-pipeline">Source</a></span>
+    </div>
+    <ul>
+      <li>Automated <strong>45 validation checks</strong> (missing values, duplicates, referential integrity, outliers, row counts) across a 7-table star schema; <strong>41/45 passed (91.1%)</strong></li>
+      <li>Traced two silent data losses (614 payment rows, 551 review rows) to root cause and documented fixes in an auto-generated report</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Toll Traffic Reporting and Anomaly Suite</span>
+      <span class="pstack">DuckDB, SQL, Isolation Forest, APScheduler, Jinja2</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/toll-sql-reporting-pipeline">Source</a></span>
+    </div>
+    <ul>
+      <li>Built <strong>SQL reporting</strong> (CTEs, window functions, RANK), <strong>Z-score and Isolation Forest</strong> anomaly detection, and a scheduled weekly HTML KPI report over German highway toll data</li>
+      <li>Covers 6 months of hourly data across 5 autobahn segments with 4 standing reports; the Monday 08:00 report is <strong>fully automated</strong></li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Solar Demand Analytics</span>
+      <span class="pstack">DuckDB SQL, Open-Meteo, SMARD, Power BI</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/solar-demand-analytics">Source</a></span>
+    </div>
+    <ul>
+      <li>Modelled German solar generation and weather in <strong>DuckDB SQL</strong> (window functions, views) and exported to <strong>Power BI</strong>: summer output 4x winter, cloud cover above 75% cuts generation ~40%</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Payments BI Dashboard</span>
+      <span class="pstack">Power BI, DAX, Python, star schema</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/riverty-style-payments-bi-dashboard">Source</a></span>
+    </div>
+    <ul>
+      <li>Built a 3-page <strong>Power BI</strong> dashboard over <strong>100K payment transactions</strong> ($15.99M revenue) covering BNPL share, delivery performance and revenue mix with <strong>DAX</strong> measures</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Job-Search Automation: agent harness</span>
+      <span class="pstack">Scheduled agents, shared database, Python, GitHub</span>
+      <span class="plink">Private repo</span>
+    </div>
+    <ul>
+      <li>Built a versioned system of <strong>four scheduled agent tasks</strong> (sourcing, outreach, daily report, LinkedIn drafts) that hand work to each other through a <strong>shared database</strong></li>
+      <li>Sourced roles from ATS and Arbeitsagentur feeds, government portals and job boards across <strong>12 countries</strong>, plus funding news for startups</li>
+      <li>Governed it as an <strong>agent harness</strong>: <strong>37 standing rules</strong> with an ownership map, a <strong>validator that gates every run</strong> and issues receipts, and a regression test built on a real report</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">RAG Retail Agent</span>
+      <span class="pstack">LangChain, FAISS, FastAPI, Docker, Kubernetes</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/rag-retail-agent">Source</a></span>
+    </div>
+    <ul>
+      <li>Built a <strong>LangChain + FAISS</strong> retrieval pipeline over product data behind a <strong>FastAPI</strong> service, with <strong>GitHub Actions to Docker Hub to Kubernetes</strong> CI/CD</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Odd-Jobs Aggregator for Students</span>
+      <span class="pstack">Multi-source ingestion, dedup, LLM drafting</span>
+      <span class="plink">Private repo</span>
+    </div>
+    <ul>
+      <li>Built a <strong>multi-source aggregator</strong> collecting listings posted in the last <strong>24 hours</strong> across Kleinanzeigen, Craigslist and further pluggable sources, for students who cannot search them by hand</li>
+      <li>Generates the message and a tailored CV per listing, then applies once the user approves a shortlist. <strong>Human-in-the-loop</strong> by design</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">MSc Thesis: Conflict Shocks in the German Power Market</span>
+      <span class="pstack">Python, Chronos, XGBoost, Granger causality</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/US-Iran-impact_on_German_Electricity_thesis">Source</a></span>
+    </div>
+    <ul>
+      <li>Built a reproducible pipeline answering <strong>5 research questions</strong> on how the 2026 US–Iran conflict moved German day-ahead electricity prices, benchmarked against the 2022 energy shock</li>
+      <li>Combined <strong>event study</strong>, <strong>Granger causality</strong> and ablation tests with <strong>Chronos</strong> and XGBoost forecast arms to identify the transmission channel</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Inventory Alert System</span>
+      <span class="pstack">MySQL (CASE, JOINs, UPDATE)</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/bhatia_traders_inventory_alert_system">Source</a></span>
+    </div>
+    <ul>
+      <li>Built MySQL queries that raise automated <strong>low-stock alerts at a 20% threshold</strong> with reorder recommendations for a sauces and condiments business</li>
+    </ul>
+  </div>
+
+  <h2>Certifications</h2>
+  <ul>
+    <li><strong>Introduction to Data Engineering with Microsoft Azure 1 &amp; 2</strong>, FutureLearn, Sep 2026</li>
+    <li><strong>Introduction to Cloud Infrastructure: Describe Cloud Concepts</strong>, Microsoft, Jul 2026</li>
+    <li><strong>Data Analytics Job Simulation</strong>, Deloitte, issued by Forage, Jul 2026</li>
+  </ul>
+
+</div>
+
+<script>
+const root = document.documentElement.style;
+const fs = document.getElementById('fs'), gp = document.getElementById('gp');
+const fsv = document.getElementById('fsv'), gpv = document.getElementById('gpv');
+function apply(){
+  root.setProperty('--fs', fs.value + 'pt');
+  root.setProperty('--gap', gp.value + 'px');
+  fsv.textContent = (+fs.value).toFixed(2).replace(/0$/,'') + 'pt';
+  gpv.textContent = gp.value + 'px';
+}
+fs.oninput = gp.oninput = apply;
+apply();
+
+// Save the edited page back to disk, sliders included, so git keeps the real source.
+function save(){
+  const clone = document.documentElement.cloneNode(true);
+  clone.querySelector('style').textContent =
+    clone.querySelector('style').textContent
+      .replace(/--fs: [^;]+;/, '--fs: ' + fs.value + 'pt;')
+      .replace(/--gap: [^;]+;/, '--gap: ' + gp.value + 'px;');
+  clone.querySelector('#fs').setAttribute('value', fs.value);
+  clone.querySelector('#gp').setAttribute('value', gp.value);
+  const blob = new Blob(['<!doctype html>\n' + clone.outerHTML], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = document.title.replace(/[^\w.-]+/g,'_') + '.html';
+  a.click();
+}
+</script>
+</body>
+</html>

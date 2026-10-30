@@ -250,3 +250,48 @@ Gaurav's rule, 30 Oct 2026: **every cold email to a startup is sent with his CV 
 5. **No CV, no email.** If the CV cannot be built, fails the check or cannot be attached, do not send. Save the email as a draft and say why in the report. An email that goes out without the CV cannot be taken back.
 6. The email follows `STYLE.md` like everything else: no em dashes, no banned phrases, and **never a word about visa, residence or work-permit status**.
 7. Attach the CV only. Send a cover letter as well only if Gaurav asked for one.
+
+---
+
+## 12. Ready-made role CVs (the cheap path)
+
+Building a CV from scratch means reading the data files and the rules, which costs thousands of
+tokens per application. So eight finished, checked, two-page CVs live in `roles/`, one per job
+family (Gaurav's call, 31 Oct 2026). **Start from one of them every time the job fits a family.**
+
+| JD is about | File in `roles/` |
+|---|---|
+| Junior data scientist, data scientist, ML scientist, forecasting, statistics | `Gaurav_Bhatia_CV_Junior_Data_Scientist.html` |
+| ML engineer, machine learning engineer, deploying models, MLOps (junior) | `Gaurav_Bhatia_CV_Junior_ML_Engineer.html` |
+| Applied scientist, experimentation, A/B testing, causal inference, quantitative research | `Gaurav_Bhatia_CV_Applied_Scientist.html` |
+| AI engineer, LLM engineer, GenAI, agents, RAG, prompt or AI solutions engineer | `Gaurav_Bhatia_CV_AI_LLM_GenAI_Engineer.html` |
+| Data analyst, BI analyst, BI developer, reporting, Power BI | `Gaurav_Bhatia_CV_Data_Analyst_BI_Analyst.html` |
+| Analytics engineer, junior data engineer, ETL, pipelines, data warehouse | `Gaurav_Bhatia_CV_Analytics_Engineer_Data_Engineer.html` |
+| Supply chain, operations, demand planning, logistics, procurement, inventory, import/export | `Gaurav_Bhatia_CV_Supply_Chain_Operations_Analyst.html` |
+| Business analyst, commercial or pricing analyst, business intelligence | `Gaurav_Bhatia_CV_Business_Analyst.html` |
+
+Choose by the **job title first**, then by what the ad actually asks for. If two fit, take the one
+whose first skills row matches the ad's first requirement.
+
+**The quick build** (what to do for most applications, and all that is needed):
+
+1. `cp roles/<file>.html out/Gaurav_Bhatia_CV_<Company>.html`
+2. Change the headline `<h2>` to the ad's own job title, where that is honest. Change `<title>` to match.
+3. Optional and small: if the ad spells a skill differently ("PowerBI", "experimentation"), mirror its spelling in the Skills row, only for a skill already in `master.md` section 6.
+4. `python scripts/check.py`, render, count two pages.
+
+Do not re-pick projects, rewrite the Profile or read `master.md` / `projects.md` for this. The role
+CV already holds the right projects in the right order, and that is what the eight files are for.
+Escalate to a **full custom build** (`CLAUDE.md` procedure, from `templates/base-2page.html`) only when:
+
+- the ad is in a family with no role CV (for example an **energy or power-market analyst**: start from the Junior Data Scientist file and move the thesis and energy projects first);
+- the ad asks for a tool the role CV does not show and he has it (check `master.md` section 6);
+- Gaurav asks for a deeper tailoring.
+
+**Gaps to name to Gaurav, never to write on the CV:** dbt (no project yet; matters for analytics-engineer ads), production MLOps, SAP, Databricks.
+
+**Keeping them current.** The role CVs are generated: their content lives in `scripts/build_roles.py`
+(`ROLES`), which reads the look and the shared project text from `templates/base-2page.html`. After a
+change to `data/` or to that template, run `python scripts/build_roles.py`, then `python scripts/check.py --render`.
+Never hand-edit a file in `roles/`: the next build overwrites it. `check.py` fails if there are not
+eight, if any carries an untraceable number, an em dash or a wrong date, or if one is not two pages.

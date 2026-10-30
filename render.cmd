@@ -1,5 +1,6 @@
 @echo off
 REM Render a CV HTML to PDF.  Usage:  render out\Gaurav_Bhatia_CV_Enpal.html
+REM  render roles   renders the eight ready-made role CVs in roles\
 REM No argument renders every HTML in out\ plus the base template.
 REM [EMAIL] and [PHONE] placeholders are filled from private\contact.md, which is never committed.
 REM The photo comes from assets\photo.jpg (public) and is embedded so the PDF carries it.
@@ -9,9 +10,14 @@ if not exist "%CHROME%" set CHROME=%ProgramFiles(x86)%\Google\Chrome\Application
 if not exist "%CHROME%" echo Chrome not found - open the HTML and press Ctrl+P instead. & exit /b 1
 if not exist "%~dp0private\contact.md" echo WARNING: private\contact.md missing - the PDF will show [EMAIL] and [PHONE].
 
+if /i "%~1"=="roles" goto roles
 if not "%~1"=="" ( call :one "%~f1" & exit /b )
 call :one "%~dp0templates\base.html"
 for %%f in ("%~dp0out\*.html") do call :one "%%~ff"
+exit /b
+
+:roles
+for %%f in ("%~dp0roles\*.html") do call :one "%%~ff"
 exit /b
 
 :one

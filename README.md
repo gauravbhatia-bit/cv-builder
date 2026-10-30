@@ -4,6 +4,8 @@ A content library plus a print-ready HTML template, so every job application get
 
 ## Make a CV for a job
 
+If the job is a data scientist, ML engineer, applied scientist, AI/LLM, data/BI analyst, analytics/data engineer, supply chain or business analyst role, Claude starts from the matching file in `roles/` and only changes the headline: cheap and fast. The paragraph below is the fuller custom build, used for anything else.
+
 Paste the job description into a Claude session opened on this folder. Claude reads `CLAUDE.md`, follows `RULES.md`, picks content from `data/master.md` and `data/projects.md`, and writes `out/Gaurav_Bhatia_CV_<Company>.html`.
 
 Then open that file in Chrome → **Print / Save as PDF** → destination "Save as PDF", margins **Default**, **uncheck** "Headers and footers".
@@ -24,6 +26,7 @@ Every CV file is editable in the browser. Click any text and type. The toolbar a
 | `letters/` | `base.md` is your saved base cover letter. `sample-energy-analyst.md` shows a finished custom one. |
 | `scripts/sync_repos.py` | Checks GitHub against your project list. Reports only, never edits. |
 | `render.cmd` | Turns the HTML CVs and letters into PDFs, embedding your photo and filling in contact details. |
+| `roles/` | Eight ready-made two-page CVs, one per job family. Copy the matching one for a job: no rebuilding. Rebuilt by `scripts/build_roles.py`. |
 | `templates/base-2page.html` | The two-page CV, with your thesis and full project set. **The default.** |
 | `templates/base.html` | The one-page CV, for ads that ask for one page. |
 | `templates/letter.html` | The cover-letter page, with the same photo header as the CV. |

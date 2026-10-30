@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gaurav Bhatia CV Applied Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fs: 9.5pt;          /* body size  — the toolbar changes this */
+  --gap: 2px;          /* space between entries — the toolbar changes this */
+  --accent: #2b4c8c;
+  --ink: #111;
+  --rule: #9aa3b0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#525659}
+body{font-family:Lato,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+
+/* ---------- the sheet ---------- */
+.page{
+  width:210mm; min-height:297mm; margin:18px auto; padding:12mm 14mm;
+  background:#fff; box-shadow:0 2px 14px rgba(0,0,0,.45);
+  font-size:var(--fs); line-height:1.22;
+}
+
+/* ---------- header ---------- */
+.head{display:flex; align-items:center; gap:14px}
+/* Photo is public, in assets/photo.jpg (Gaurav's call, 30 Oct 2026). render.cmd embeds it so the PDF carries it. */
+.photo{width:22mm; height:28mm; object-fit:cover; border:1px solid var(--rule); flex:0 0 auto}
+h1{font-size:2.45em; line-height:1; margin:0 0 2px; letter-spacing:-.5px}
+.links{font-size:.95em}
+.links a{color:var(--ink); text-decoration:underline; text-underline-offset:2px}
+.contact{font-size:.95em; line-height:1.45; margin:1px 0 0}
+.contact a{color:var(--ink); text-decoration:none}
+
+/* ---------- sections ---------- */
+h2{
+  font-variant:small-caps; font-weight:700; letter-spacing:.4px;
+  color:var(--accent); font-size:1.12em; margin:calc(var(--gap) + 5px) 0 1px;
+  border-bottom:1px solid var(--rule); padding-bottom:2px;
+}
+h2:first-of-type{margin-top:calc(var(--gap) + 2px)}
+p{margin:3px 0}
+
+/* ---------- skills grid ---------- */
+.skills{display:grid; grid-template-columns:max-content 1fr; column-gap:10px; row-gap:1px; margin:3px 0 0}
+.skills dt{font-weight:700}
+.skills dd{margin:0}
+.skills dt::after{content:""}
+
+/* ---------- experience / project entries ---------- */
+.entry{margin-top:var(--gap)}
+.row{display:flex; justify-content:space-between; gap:12px; align-items:baseline}
+.row .r{white-space:nowrap}
+.t{font-weight:700}
+.sub{font-style:italic}
+ul{margin:0; padding-left:14px}
+li{margin:0}
+
+/* project header: name | stack | link */
+.prow{display:grid; grid-template-columns:1fr auto 1fr; align-items:baseline; gap:10px}
+.prow .pname{font-weight:700; text-decoration:underline; text-underline-offset:2px}
+.prow .pstack{font-style:italic; text-align:center}
+.prow .plink{text-align:right}
+.prow .plink a{color:var(--ink); text-decoration:underline; text-underline-offset:2px}
+
+/* ---------- toolbar (screen only) ---------- */
+#bar{
+  position:fixed; top:0; left:0; right:0; z-index:9; display:flex; flex-wrap:wrap;
+  gap:14px; align-items:center; padding:8px 14px; background:#1f2328; color:#e6e6e6;
+  font:13px/1.2 "Segoe UI",system-ui,sans-serif; box-shadow:0 1px 8px rgba(0,0,0,.4)
+}
+#bar label{display:flex; align-items:center; gap:6px}
+#bar input[type=range]{width:96px}
+#bar button{
+  background:#3b82f6; color:#fff; border:0; border-radius:4px;
+  padding:5px 11px; font:600 13px "Segoe UI",system-ui,sans-serif; cursor:pointer
+}
+#bar button.ghost{background:#3a4149}
+#bar .hint{opacity:.65; margin-left:auto}
+body{padding-top:44px}
+
+/* ---------- print ---------- */
+@page{size:A4; margin:12mm 14mm}
+@media print{
+  html,body{background:#fff; padding:0}
+  #bar{display:none}
+  .page{width:auto; min-height:0; margin:0; padding:0; box-shadow:none}
+  a{color:var(--ink) !important}
+  h2{break-after:avoid}
+  .entry{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div id="bar">
+  <label>Text <input type="range" id="fs" min="8.5" max="11.5" step="0.25" value="9.5"><span id="fsv">9.5pt</span></label>
+  <label>Spacing <input type="range" id="gp" min="2" max="12" step="1" value="2"><span id="gpv">2px</span></label>
+  <button onclick="print()">Print / Save as PDF</button>
+  <button class="ghost" onclick="save()">Save edited HTML</button>
+  <span class="hint">Click any text to edit it. Aim for exactly two pages.</span>
+</div>
+
+<div class="page" contenteditable="true" spellcheck="false">
+
+  <div class="head">
+    <img class="photo" src="../assets/photo.jpg" alt="Gaurav Bhatia">
+    <div class="id">
+      <h1>Gaurav Bhatia</h1>
+      <div class="contact">Berlin, Germany | [EMAIL] | [PHONE]</div>
+      <div class="links">
+        <a href="https://gauravbhatia-bit.github.io/">Portfolio</a> |
+        <a href="https://github.com/gauravbhatia-bit">GitHub</a> |
+        <a href="https://www.linkedin.com/in/gauravbhatia-bit/">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>Applied Scientist</h2>
+  <p>MSc Data Science candidate at GISMA, finishing December 2026. Applies <strong>experimental and statistical methods</strong> to real decisions: a paired A/B test with a pre-set effect threshold, <strong>event study and Granger causality</strong> on German power prices, and price elasticity on <strong>15,000 SKUs</strong>. Documents results that do not favour the idea, including a negative end-to-end run of his own LLM gateway. Available full-time in Berlin from <strong>December 2026</strong>.</p>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Methods</dt><dd>Regression (incl. log-log OLS elasticity), A/B testing, time-series (ARIMA, Prophet, LSTM, Chronos), RFM segmentation, anomaly detection, event study, Granger causality, model evaluation (MAE, RMSE, MAPE), SHAP</dd>
+    <dt>Programming</dt><dd>Python (pandas, NumPy, statsmodels, scikit-learn, XGBoost, Optuna, TensorFlow/Keras), SQL (CTEs, window functions), DuckDB, Snowflake SQL, SQLite</dd>
+    <dt>LLM evaluation</dt><dd>LLM evaluation and quality gates, benchmark and hold-out design, regression testing for LLM systems, guardrails, RAG (LangChain, FAISS), context engineering, model routing, LLM cost optimisation, FinBERT / Hugging Face</dd>
+    <dt>Cloud &amp; engineering</dt><dd>AWS, Azure data platform (FutureLearn coursework), FastAPI, Docker, GitHub Actions, Git/GitHub, Agile/Jira</dd>
+    <dt>Charts &amp; reporting</dt><dd>Power BI / DAX, Plotly, Streamlit dashboards, automated Markdown/HTML KPI reports, Excel, Tally</dd>
+    <dt>Languages</dt><dd>English (C1), German (A2, improving), Hindi (native)</dd>
+  </dl>
+
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="row"><span class="t">Data Science Intern</span><span class="r">Aug 2026 – Present</span></div>
+    <div class="row"><span class="sub">KnowGuard AI</span><span class="r sub">Berlin, Germany</span></div>
+    <ul>
+      <li>Ran a <strong>paired A/B test on AWS</strong> comparing a fine-tuned model against the review arm: <strong>+0.0318 AUPRC</strong> (95% CI 0.022–0.0418), below the pre-set 0.05 practical-effect threshold</li>
+      <li>Defined evaluation metrics and hold-out sets, and set the <strong>practical-effect threshold before testing</strong>, so a statistically positive result was still called correctly as not worth shipping</li>
+      <li><strong>Benchmark LLMs against baselines</strong> and design <strong>cost-effective evaluation workflows</strong> for model selection</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span class="t">Operations &amp; Supply Chain Analyst</span><span class="r">Mar 2024 – Jul 2025</span></div>
+    <div class="row"><span class="sub">Troika International Pvt. Ltd.</span><span class="r sub">Panchkula, India</span></div>
+    <ul>
+      <li>Monitored inventory and demand across <strong>700+ vendors</strong> and <strong>500+ SKUs</strong> in Tally and Excel</li>
+      <li>Built <strong>Power BI dashboards across 3 divisions</strong>, turning operational data into clear views for non-technical stakeholders</li>
+      <li>Rescued a stalled <strong>₹2.75M export order</strong> (500 units to Lithuania) by moving the shipment to <strong>air freight</strong> to hold the delivery window and renegotiating terms with the client</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span class="t">Business Manager</span><span class="r">Nov 2015 – Jan 2024</span></div>
+    <div class="row"><span class="sub">Bhatia Traders</span><span class="r sub">India</span></div>
+    <ul>
+      <li>Ran a product business end to end for <strong>8 years</strong>, owning purchasing, pricing, stock and supplier terms across <strong>20+ suppliers</strong></li>
+      <li>Analysis-led changes cut <strong>excess-inventory cost by 10%</strong> and identified a ~<strong>15% stockout-reduction</strong> potential</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+
+  <div class="entry">
+    <div class="row"><span class="t">GISMA University of Applied Sciences</span><span class="r">Potsdam, Germany</span></div>
+    <div class="row"><span class="sub">MSc Data Science, AI &amp; Digital Business</span><span class="r sub">Sep 2025 – Dec 2026 (expected)</span></div>
+    <ul>
+      <li>Thesis: the US–Iran conflict's impact on German day-ahead electricity prices, using event study, Granger causality and Chronos/XGBoost forecasting</li>
+      <li>Relevant modules: Methods of Prediction (M507), Big Data Analytics (M508)</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span class="t">University College of Engineering, Patiala</span><span class="r sub">B.Tech, Civil Engineering, 2011 – 2015</span></div>
+  </div>
+
+  <h2>Selected Projects</h2>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">MSc Thesis: Conflict Shocks in the German Power Market</span>
+      <span class="pstack">Python, Chronos, XGBoost, Granger causality</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/US-Iran-impact_on_German_Electricity_thesis">Source</a></span>
+    </div>
+    <ul>
+      <li>Built a reproducible pipeline answering <strong>5 research questions</strong> on how the 2026 US–Iran conflict moved German day-ahead electricity prices, benchmarked against the 2022 energy shock</li>
+      <li>Combined <strong>event study</strong>, <strong>Granger causality</strong> and ablation tests with <strong>Chronos</strong> and XGBoost forecast arms to identify the transmission channel</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">ParetoGate: cost-aware LLM gateway</span>
+      <span class="pstack">FastAPI, MiniLM, scikit-learn, SQLite, Ollama</span>
+      <span class="plink">Private repo</span>
+    </div>
+    <ul>
+      <li>Built a local-first <strong>LLM gateway</strong> that classifies each request with MiniLM embeddings, predicts applicable optimisations with ten one-vs-rest logistic models, and applies deterministic safeguards before any lossy transform</li>
+      <li>Cut retrieved context from <strong>86,416 to 11,351 input tokens</strong> on a frozen 25-task code-change suite while passing every reviewed change, an <strong>80.8% modelled cost reduction</strong></li>
+      <li>Gated every saving behind a <strong>task-quality floor</strong> with automatic baseline fallback, charging rejected candidates as zero savings; reported a negative end-to-end run rather than publishing the favourable 81% token figure alone</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Dynamic Pricing &amp; Segmentation</span>
+      <span class="pstack">Python, statsmodels, XGBoost, Plotly</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/ecommerce-dynamic-pricing-engine">Source</a></span>
+    </div>
+    <ul>
+      <li>Estimated <strong>price elasticity per category</strong> with log-log OLS on 15,000 SKUs in 8 categories (e.g. Fashion −2.1, Food &amp; Beverages −0.5)</li>
+      <li>Segmented customers with <strong>RFM scoring</strong>; 6 business rules + XGBoost repriced <strong>55.7% of the catalogue</strong> (8,352 SKUs), and an XGBoost price recommender reached <strong>2.14% MAPE</strong></li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Energy News and Price Volatility (NLP)</span>
+      <span class="pstack">FinBERT, VADER, TF-IDF, XGBoost, SHAP</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/energy-news-volatility-nlp">Source</a></span>
+    </div>
+    <ul>
+      <li>Predicted high-volatility days on EPEX Spot from <strong>4,444 energy headlines</strong> using FinBERT and VADER sentiment, TF-IDF trend signals and Google Trends attention</li>
+      <li>Compared <strong>four models</strong> (dummy, FinBERT-only, default and tuned XGBoost) with SHAP attributions and Granger-causality-informed lags</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Demand Forecasting Engine</span>
+      <span class="pstack">Python, ARIMA, Prophet, XGBoost, Streamlit</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/demand-forecasting-engine">Source</a></span>
+    </div>
+    <ul>
+      <li>Compared ARIMA, Prophet and XGBoost on 5 years of weekly sales for 12 SKUs on a 12-week hold-out; <strong>Prophet best at 6.07% MAPE</strong> vs. 15.49% for ARIMA</li>
+      <li>Shipped as a Streamlit app where a planner picks SKU, model and horizon and sees MAE/RMSE/MAPE live</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Sales Intelligence Agent</span>
+      <span class="pstack">TF-IDF + logistic regression, Gemini, FastAPI, Streamlit</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/sales-intelligence-agent">Source</a> · <a href="https://sales-intelligence-agent-5brv6ii7xelgzq7omewadn.streamlit.app/">Demo</a></span>
+    </div>
+    <ul>
+      <li>Routed plain-English business questions through a local <strong>intent classifier</strong>, calling Gemini only below a confidence threshold to control cost</li>
+      <li>Served it as a <strong>FastAPI microservice</strong> with a Streamlit front end and versioned training and hold-out sets, so accuracy stays measurable</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Office Energy Forecasting Dashboard</span>
+      <span class="pstack">XGBoost, Optuna, SHAP, Streamlit</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/office-energy-forecasting-dashboard">Source</a> · <a href="https://office-energy-forecasting-dashboard-byb9cixihrwm3c779d3hpv.streamlit.app/">Demo</a></span>
+    </div>
+    <ul>
+      <li>Tuned XGBoost with <strong>50 Optuna trials</strong> to predict office energy use to <strong>MAE 22.98 Wh</strong> and RMSE 50.96 Wh, surfaced with CO₂ savings in a live Streamlit app</li>
+      <li><strong>SHAP</strong> showed short-term momentum dominates consumption, driving out-of-hours waste alerts</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Solar Power Forecasting (LSTM)</span>
+      <span class="pstack">TensorFlow/Keras, OPSD, Open-Meteo</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/solar-power-forecasting">Source</a></span>
+    </div>
+    <ul>
+      <li>Forecast hourly German solar generation with an <strong>LSTM</strong> on <strong>26,280 hourly rows</strong>, using a chronological 70/15/15 split to prevent leakage</li>
+      <li>Evaluated on held-out data with RMSE, MAE and MAPE</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">Job-Search Automation: agent harness</span>
+      <span class="pstack">Scheduled agents, shared database, Python, GitHub</span>
+      <span class="plink">Private repo</span>
+    </div>
+    <ul>
+      <li>Built a versioned system of <strong>four scheduled agent tasks</strong> (sourcing, outreach, daily report, LinkedIn drafts) that hand work to each other through a <strong>shared database</strong></li>
+      <li>Sourced roles from ATS and Arbeitsagentur feeds, government portals and job boards across <strong>12 countries</strong>, plus funding news for startups</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="prow">
+      <span class="pname">BI Data-Quality Pipeline</span>
+      <span class="pstack">Python, pandas, NumPy</span>
+      <span class="plink"><a href="https://github.com/gauravbhatia-bit/bi-data-quality-pipeline">Source</a></span>
+    </div>
+    <ul>
+      <li>Automated <strong>45 validation checks</strong> (missing values, duplicates, referential integrity, outliers, row counts) across a 7-table star schema; <strong>41/45 passed (91.1%)</strong></li>
+      <li>Traced two silent data losses (614 payment rows, 551 review rows) to root cause and documented fixes in an auto-generated report</li>
+    </ul>
+  </div>
+
+  <h2>Certifications</h2>
+  <ul>
+    <li><strong>Introduction to Data Engineering with Microsoft Azure 1 &amp; 2</strong>, FutureLearn, Sep 2026</li>
+    <li><strong>Introduction to Cloud Infrastructure: Describe Cloud Concepts</strong>, Microsoft, Jul 2026</li>
+    <li><strong>Data Analytics Job Simulation</strong>, Deloitte, issued by Forage, Jul 2026</li>
+  </ul>
+
+</div>
+
+<script>
+const root = document.documentElement.style;
+const fs = document.getElementById('fs'), gp = document.getElementById('gp');
+const fsv = document.getElementById('fsv'), gpv = document.getElementById('gpv');
+function apply(){
+  root.setProperty('--fs', fs.value + 'pt');
+  root.setProperty('--gap', gp.value + 'px');
+  fsv.textContent = (+fs.value).toFixed(2).replace(/0$/,'') + 'pt';
+  gpv.textContent = gp.value + 'px';
+}
+fs.oninput = gp.oninput = apply;
+apply();
+
+// Save the edited page back to disk, sliders included, so git keeps the real source.
+function save(){
+  const clone = document.documentElement.cloneNode(true);
+  clone.querySelector('style').textContent =
+    clone.querySelector('style').textContent
+      .replace(/--fs: [^;]+;/, '--fs: ' + fs.value + 'pt;')
+      .replace(/--gap: [^;]+;/, '--gap: ' + gp.value + 'px;');
+  clone.querySelector('#fs').setAttribute('value', fs.value);
+  clone.querySelector('#gp').setAttribute('value', gp.value);
+  const blob = new Blob(['<!doctype html>\n' + clone.outerHTML], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = document.title.replace(/[^\w.-]+/g,'_') + '.html';
+  a.click();
+}
+</script>
+</body>
+</html>

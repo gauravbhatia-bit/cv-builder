@@ -19,7 +19,7 @@ REQUIRED_FILES = [
     "data/master.md", "data/projects.md", "data/.last-sync", "letters/base.md",
     "templates/base.html", "templates/base-2page.html", "scripts/sync_repos.py",
     "skill/cv-builder/SKILL.md", "assets/photo.jpg", "templates/letter.html",
-    "scripts/build_letter.py",
+    "scripts/build_letter.py", "scripts/build_roles.py",
 ]
 GITIGNORE_MUST_HAVE = ["private/", "out/", "*.pdf"]
 
@@ -43,6 +43,9 @@ REQUIRED_IN_CV = [
     "[EMAIL]", "[PHONE]", "../assets/photo.jpg",
 ]
 PAGES = {"templates/base.html": 1, "templates/base-2page.html": 2}
+# The eight ready-made role CVs (RULES.md section 12), built by scripts/build_roles.py, all two pages.
+PAGES.update({f"roles/{p.name}": 2 for p in sorted((ROOT / "roles").glob("*.html"))})
+ROLE_CV_COUNT = 8
 # The photo is public on purpose (Gaurav, 30 Oct 2026). It is the only image allowed in the repo.
 PUBLIC_PHOTO = "assets/photo.jpg"
 LETTER_WORD_LIMIT = 300
@@ -149,6 +152,10 @@ def run_checks(render=False):
         fails += [f"{f}: contains a private contact detail" for s in secrets if s and s in text]
         fails += [f"{f}: looks like a phone number {m.strip()!r}" for m in PHONE.findall(text)]
         fails += [f"{f}: looks like an email address {m!r}" for m in EMAIL.findall(text) if m not in EMAIL_OK]
+
+    n_roles = len(list((ROOT / "roles").glob("*.html")))
+    if n_roles != ROLE_CV_COUNT:
+        fails.append(f"roles/ holds {n_roles} CVs, expected {ROLE_CV_COUNT}: run scripts/build_roles.py")
 
     # CV templates.
     sources = read("data/master.md") + read("data/projects.md")
