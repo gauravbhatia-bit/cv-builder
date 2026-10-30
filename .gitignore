@@ -1,0 +1,8 @@
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+
+# Personal details must not reach the public repo.
+private/
+out/
