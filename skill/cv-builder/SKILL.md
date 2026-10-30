@@ -1,5 +1,5 @@
 ---
-name: cv-cover-letter-builder
+name: cv-builder
 description: Use whenever Gaurav asks for a CV, resume, cover letter or application documents, or a job-search task needs them for a job or a funded-startup email. Builds tailored, honest documents from his versioned content library at github.com/gauravbhatia-bit/cv-builder, so facts never drift. Works interactively and in unattended scheduled runs.
 ---
 

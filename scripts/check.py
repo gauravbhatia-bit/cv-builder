@@ -18,7 +18,7 @@ REQUIRED_FILES = [
     "CLAUDE.md", "README.md", "RULES.md", "STYLE.md", "COVER-LETTER-BUILDER.md", "render.cmd",
     "data/master.md", "data/projects.md", "data/.last-sync", "letters/base.md",
     "templates/base.html", "templates/base-2page.html", "scripts/sync_repos.py",
-    "skill/cv-cover-letter-builder/SKILL.md",
+    "skill/cv-builder/SKILL.md",
 ]
 GITIGNORE_MUST_HAVE = ["private/", "out/", "*.pdf"]
 
@@ -163,7 +163,7 @@ def run_checks(render=False):
     for f, is_base in letters:
         fails += [f"{f}: {p}" for p in letter_problems(read(f), is_base)]
 
-    skill = "skill/cv-cover-letter-builder/SKILL.md"
+    skill = "skill/cv-builder/SKILL.md"
     if (ROOT / skill).exists():
         fails += [f"{skill}: {p}" for p in skill_problems(read(skill))]
 

@@ -43,16 +43,16 @@ To make PDFs, run `C:\Users\gaura\cv-builder\render.cmd` from any folder.
 
 ## Using this from your job-search automation
 
-`skill/cv-cover-letter-builder/SKILL.md` packages this whole project as a Claude skill. It holds no
+`skill/cv-builder/SKILL.md` packages this whole project as a Claude skill, named `cv-builder`. It holds no
 facts on purpose: it tells the agent to fetch this repo fresh, follow `CLAUDE.md`, and run the
 guardrail check before delivering. So when your career or projects change, you edit the repo and
 every automation that uses the skill is current. To attach it:
 
-1. Upload `out/cv-cover-letter-builder.zip` in Claude (Customize, Skills). It has the same name as the
-   skill already in your automation, so it replaces that one.
-2. Copy the same `SKILL.md` over `skills/cv-cover-letter-builder/SKILL.md` in `job-search-automation`,
-   through that repo's own release process, so the repo matches what is live.
-3. In any task prompt that builds documents, say: "Use the cv-cover-letter-builder skill for every CV and cover letter."
+1. Upload `out/cv-builder.zip` in Claude (Customize, Skills). It has a different name from the old
+   `cv-cover-letter-builder`, so both can be attached at once. **Detach the old one**: it carries stale facts.
+2. Optionally mirror `SKILL.md` into `skills/cv-builder/` in `job-search-automation`, through that
+   repo's own release process, and remove its old `skills/cv-cover-letter-builder/` folder.
+3. In any task prompt that builds documents, say: "Use the cv-builder skill for every CV and cover letter."
 
 Rebuild the zip after changing the skill: it is one file in a folder, zipped.
 
