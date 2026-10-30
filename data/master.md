@@ -180,7 +180,8 @@ logistics department, vendors, clients and internal stakeholders.
 
 ## 5. Project library
 
-19 usable repos. A CV shows **3, at most 4**. Pick by tag match to the JD.
+19 usable repos, plus 3 in flight (P20–P22, see §5a — **not CV-ready until each has a number**).
+A CV shows **3, at most 4**. Pick by tag match to the JD.
 
 | # | Project | Tags | Stack | Headline metric | Repo |
 |---|---|---|---|---|---|
@@ -203,6 +204,9 @@ logistics department, vendors, clients and internal stakeholders.
 | P17 | Toll Traffic Anomaly Detector | DA DS | Z-score + Isolation Forest, Plotly | 6 months hourly data, 5 autobahn segments | `toll-traffic-anomaly-detector` |
 | P18 | Maut Weekly Report Automation | DA | APScheduler, Jinja2, Plotly, DuckDB | Fully automated Monday 08:00 HTML KPI report | `maut-report-automation` |
 | P19 | Bhatia Traders Sales Analysis | BIZ | pandas, Matplotlib, moving averages | 15% stockout-reduction potential; margin ranking by product | `bhatia-traders-sales-analysis` |
+| P20 | Job Search & Outreach Automation | AI DS BIZ | Scheduled pipeline, LinkedIn job ingestion, CV/letter generation, email sequencing, CRM-style tracking | **none yet — see §5a** | *repo TBC* |
+| P21 | Odd-Jobs Aggregator for Students in Germany | AI DA BIZ | Multi-source listing ingestion (Kleinanzeigen, Craigslist, extensible), dedup, draft generation, human-in-the-loop approval, auto-apply | **none yet — see §5a** | *repo TBC* |
+| P22 | Self-Learning Token-Reduction Layer | AI DS | LLM gateway, exact + semantic caching, model routing, online learning from observed outcomes | **none yet — see §5a** | *repo TBC* |
 
 Repo URL = `https://github.com/gauravbhatia-bit/<repo>`
 
@@ -212,6 +216,103 @@ Live demos (link these when the JD mentions deployment, product sense or stakeho
 - Dutch Risk Radar — https://dutch-risk-radar-lu7gdrmdsmobmccabmbypw.streamlit.app/
 
 **Do not list:** `testing1`, `testing.`, `pappu`, `machine-learning-practice`, `Machine-learning-intro`, `Churn-Analysis` (empty README), `berlin-football-analystics` (fun, not professional), `iran-energy-impact-analyzer` (superseded by P4), `ds-intern-challenge-submission` (someone else's brief).
+
+## 5a. In-flight projects — P20, P21, P22
+
+Added 30 Oct 2026. These are the three Gaurav is building now. They are **the strongest
+product work in the portfolio** — full systems with schedulers, state and users, not notebooks —
+and they are **not CV-ready yet**. Every other project here earns its place with a traceable
+number. These have none. Hard rule 4 in `RULES.md` applies to them exactly as it does to everything
+else: no number, no CV line.
+
+### What each needs before it goes on a CV
+
+| # | Needs | Why that number and not another |
+|---|---|---|
+| P20 | Applications sent, hours saved per week, and **reply or interview rate vs. his manual baseline** | Volume alone proves a cron job works. A reply rate proves the *targeting and the generated documents* work, which is the actual engineering. |
+| P21 | Listings ingested per day, sources covered, **and number of real users** | Users is the one metric no other project in this library has. One real user outside himself changes what this project means. |
+| P22 | **% token reduction at equal task quality**, against a measured baseline, with the quality guard named | Token savings without a quality guard is just a worse model. The pairing is the whole claim. |
+
+### P20 — Job Search & Outreach Automation
+
+Scheduled pipeline: pulls roles posted in the last 24h on LinkedIn across his city, Germany and
+neighbouring European countries; identifies recently funded startups; generates a tailored CV and
+cover letter per target; sends cold outreach with timed follow-ups; tracks who connects back on
+LinkedIn. Runs unattended.
+
+> **Flag this one before it goes near a German employer.** Two separate risks, and they are not
+> theoretical.
+>
+> 1. **Platform terms.** LinkedIn's User Agreement prohibits automated scraping and automated
+>    connection or messaging, and LinkedIn enforces it with account restrictions and bans. The
+>    LinkedIn profile at risk is the one printed on his CV.
+> 2. **German law on automated outreach.** Unsolicited commercial email to individuals is tightly
+>    restricted under UWG §7, and processing scraped personal contact data engages GDPR Art. 6 and
+>    the Art. 14 notice duty. A genuine job application is on far safer ground than marketing, but
+>    *bulk automated sending to scraped personal addresses with automated follow-ups* is where the
+>    distinction stops protecting him. This is a flag, not legal advice.
+>
+> **Practical mitigations**, all of which also make the CV line stronger rather than weaker: send to
+> role-based addresses (`jobs@`, `careers@`) rather than scraped personal ones; keep volume
+> human-scale; state plainly in every message that it is a job application; cap follow-ups at one
+> or two; use LinkedIn's official Jobs API or exported data rather than scraping where possible;
+> honour robots.txt and rate limits.
+>
+> **How to describe it on a CV.** Lead with the *system* — scheduling, deduplication, document
+> generation, state tracking, human-in-the-loop — not with "scrapes LinkedIn and sends automated
+> cold emails". The first is an engineer who ships. The second reads to a German hiring manager as
+> a compliance problem walking through the door. Same project, and only one of the two descriptions
+> is doing him a favour.
+
+### P21 — Odd-Jobs Aggregator for Students in Germany
+
+Aggregates odd-job listings posted in the last 24h across Kleinanzeigen, Craigslist and further
+sources he can add, for Indian students arriving in Germany who cannot realistically search them by
+hand. Drafts the outreach message and tailors a CV per listing. He ticks the ones he wants; the
+system applies on his behalf.
+
+> **This is the best project in the library and it is not close.** Everything else — including the
+> energy work — is Gaurav solving a problem for Gaurav. This one has a named user segment, a
+> genuinely painful problem, and a product decision in it (human-in-the-loop approval rather than
+> full automation) that shows judgement rather than just capability. **Get real users and measure
+> them.** Five students using it weekly is worth more on a CV than every metric in P4–P19 combined,
+> because it is the only evidence that he builds things other people want.
+>
+> Same platform-terms caution as P20, lower stakes: respect robots.txt, rate-limit, store no
+> personal data about the people posting listings, and prefer official feeds where they exist.
+> Framing it as an aggregator with human approval is both accurate and defensible.
+
+### P22 — Self-Learning Token-Reduction Layer
+
+A gateway between application and LLM that cuts token spend through exact caching, semantic
+caching and model routing. The stated differentiator is that it **learns over time**, improving its
+own savings from observed traffic rather than from fixed rules.
+
+> **The architecture is well-trodden; the learning claim is the whole project.** Semantic caching
+> and routing exist in GPTCache, semantic-router, LiteLLM and Portkey — an interviewer who works in
+> this area will know that within one sentence, and will go straight to the differentiator. Three
+> questions will come, and they should be answerable before this goes on a CV:
+> **learning from what signal, optimising what objective, and measured against what baseline.**
+>
+> The trap is that a router can always cut tokens by sending everything to the cheapest model. The
+> claim only means something paired with a quality guard. Gaurav already knows how to do this
+> properly and has done it once: the KnowGuard A/B test, where he set a practical-effect threshold
+> *before* running and reported against it. **Same discipline here** — fix a quality metric and a
+> floor, measure baseline spend, then report the reduction at or above that floor, with an interval.
+> "Cut token spend 43% with no measurable drop in task accuracy (n=…, 95% CI …)" is a CV line and
+> arguably his best technical one. "Built a self-learning token optimisation layer" is not — it is
+> unfalsifiable, and an interviewer will treat it as such.
+
+### Overlap with this repo
+
+P20 generates tailored CVs and cover letters, which is what `cv-builder` does. Decide which is the
+engine: either P20 calls this repo's `master.md`, `RULES.md` and `COVER-LETTER-BUILDER.md` as its
+content layer, or the two drift into different claims about the same career. **The first is better**
+— it keeps one source of truth, and "my automation generates applications from a versioned,
+rule-governed content library" is a considerably more impressive sentence than "my automation writes
+cover letters".
+
+---
 
 ### Project bullet bank
 
@@ -309,3 +410,4 @@ Short, true, reusable in cover letters and interviews.
 - **Commercial judgement under a deadline** — saved a ₹2.75M export order by changing freight mode and renegotiating, rather than by reporting that it was late.
 - **Eleven unbroken years** — Nov 2015 to today, across the business, Troika and the MSc. No gaps to explain.
 - **Data-quality instinct** — found and root-caused two silent data losses nobody had noticed.
+- **Builds systems, not scripts** — three automation products in flight (P20–P22) with schedulers, persisted state, human-in-the-loop approval and generated documents. Usable in a letter now; not on the CV until measured.
