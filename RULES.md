@@ -8,7 +8,7 @@ How a job description turns into a CV. Read with `data/master.md` (career) and
 ## 0. Hard rules — never break these
 
 1. **Nothing goes on a CV that is not in `data/master.md` or `data/projects.md`.** No invented metrics, tools, dates or titles.
-2. **One page.** Gaurav has ~4.5 years of experience. Two pages is a mistake at this stage.
+2. **One page by default** (`templates/base.html`). A **two-page variant exists** (`templates/base-2page.html`, 8 projects) — Gaurav asked for it on 30 Oct 2026. Use one page unless the JD asks for depth the one-pager cannot hold: senior/mid roles wanting 3–5 years, research or ML-engineering roles where the project detail *is* the evidence, or an application with no cover letter. **German applications default to one page.** Never three.
 3. **Never remove a job to save space.** Gaps look worse than a less relevant role. Shrink it to one bullet instead. The one exception is an entry with **nothing delivered** — Croud Control is registered-but-idle and is off the CV for that reason, not for space. See `master.md` section 4.
 4. **Every number on the CV must be traceable** to a README, a dashboard or a report. If a number cannot be shown in an interview, it does not go on. **This bans unprovable numbers, not projects without one** — in-progress work goes on the CV described by its *scope* (sources, geography, window, techniques) in the present tense. Add the number when it exists. See `projects.md` → In-flight.
 5. **Do not claim German above A2** and do not hide it either. It is on the CV as A2, improving.

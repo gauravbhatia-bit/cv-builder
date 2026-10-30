@@ -196,7 +196,7 @@ Pull from here; never list everything at once. 5-6 rows maximum on a CV.
 | **Methods** | Regression (incl. log-log OLS elasticity), A/B testing (paired designs, confidence intervals, pre-set effect thresholds), time-series (ARIMA, Prophet, LSTM, Chronos, seasonality decomposition), RFM segmentation, anomaly detection (Z-score, Isolation Forest), event study, Granger causality, model evaluation (MAE, RMSE, MAPE), SHAP explainability |
 | **Programming / stats** | Python (pandas, NumPy, statsmodels, scikit-learn, XGBoost, Optuna, TensorFlow/Keras), SQL (CTEs, window functions), DuckDB, Snowflake SQL, SQLite |
 | **Charts & reporting** | Power BI / DAX, Plotly, Matplotlib, Streamlit dashboards, Jinja2 HTML reports, automated Markdown/KPI reports, Excel, Tally (ERP reporting) |
-| **AI / GenAI** | LLM benchmarking against baselines, RAG (LangChain, FAISS), multi-agent systems, FinBERT / Hugging Face, Gemini, prompt design, intent classification |
+| **AI / GenAI** | LLM benchmarking against baselines, RAG (LangChain, FAISS), multi-agent systems, FinBERT / Hugging Face, Gemini, prompt design, intent classification, sentence-transformers / MiniLM embeddings, semantic caching, model routing, local model serving (Ollama, LM Studio), quality-gated evaluation harnesses |
 | **Cloud & data eng.** | Microsoft Azure data platform (FutureLearn coursework), AWS (A/B testing workloads, fundamentals), ETL processes, DWH / star-schema modelling, Snowflake, DuckDB, SQLite, FastAPI, Docker, Kubernetes, REST APIs |
 | **Ways of working** | Git/GitHub, GitHub Actions CI/CD, Docker, documented and reproducible pipelines, Agile (Scrum, Kanban), Jira, requirements management, stakeholder communication |
 | **Languages** | English (C1), German (A2, actively improving), Hindi (native) |
@@ -219,6 +219,7 @@ Short, true, reusable in cover letters and interviews.
 - **Ships, does not just analyse** — 4 live deployed apps (Streamlit + FastAPI), one with full Docker/Kubernetes CI/CD.
 - **German energy domain is real, not claimed** — thesis plus 6 independent energy repos using OPSD, SMARD, Open-Meteo and EPEX Spot data.
 - **Measures instead of asserting** — every model project reports a hold-out metric against a named baseline.
+- **Reports results that do not favour him, twice** — the KnowGuard A/B test called correctly as not worth shipping despite being statistically positive, and ParetoGate's negative end-to-end run documented as such despite an 81% headline component number. This is the rarest thing on his CV and it is now evidenced, not claimed.
 - **Has run a business** — 8 years owning purchasing, pricing and stock, plus three side ventures, so analysis is framed as a commercial decision rather than an exercise.
 - **Commercial judgement under a deadline** — saved a ₹2.75M export order by changing freight mode and renegotiating, rather than by reporting that it was late.
 - **Eleven unbroken years** — Nov 2015 to today, across the business, Troika and the MSc. No gaps to explain.

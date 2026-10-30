@@ -20,7 +20,8 @@ Every CV file is editable in the browser. Click any text and type. The toolbar a
 | `data/projects.md` | Every project, with what it proves and which roles it suits. |
 | `RULES.md` | How a job description turns into a CV. §10 says which of your experiences answers which requirement. |
 | `COVER-LETTER-BUILDER.md` | Your career stories, written up for cover letters — what happened, what it proves, when to use it. |
-| `templates/base.html` | The neutral base CV. |
+| `templates/base.html` | The one-page base CV. The default. |
+| `templates/base-2page.html` | The two-page version, 8 projects. For roles where the project detail is the point. |
 | `jd/` | Notes on each job description. |
 | `out/` | Finished CVs. |
 | `CLAUDE.md` | Procedure Claude follows. |

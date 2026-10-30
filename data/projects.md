@@ -38,7 +38,7 @@ A CV shows **3, at most 4**. Pick by tag match to the JD.
 | P19 | Bhatia Traders Sales Analysis | BIZ | pandas, Matplotlib, moving averages | 15% stockout-reduction potential; margin ranking by product | `bhatia-traders-sales-analysis` |
 | P20 | Job Search & Outreach Automation | AI DS BIZ | Scheduled pipeline, job ingestion, CV/letter generation, email sequencing, CRM-style tracking | 24h ingestion window across 3 geographies; in progress | **private** |
 | P21 | Odd-Jobs Aggregator for Students in Germany | AI DA BIZ | Multi-source listing ingestion (Kleinanzeigen, Craigslist, extensible), dedup, draft generation, human-in-the-loop approval, auto-apply | 2 sources live, pluggable; 24h window; built | **private** |
-| P22 | Self-Learning Token-Reduction Layer | AI DS | LLM gateway, exact + semantic caching, model routing, online learning from observed outcomes | 4 reduction mechanisms; results pending | **private** |
+| P22 | **ParetoGate** — cost-aware LLM gateway | AI DS | FastAPI, MiniLM, scikit-learn, SQLite semantic cache, Ollama/LM Studio, code graph | 86,416 → 11,351 input tokens on a frozen 25-task suite, all reviewed changes passing (80.8% modelled cost cut) | **private** |
 
 Repo URL = `https://github.com/gauravbhatia-bit/<repo>`
 
@@ -139,31 +139,63 @@ system applies on his behalf.
 > personal data about the people posting listings, and prefer official feeds where they exist.
 > Framing it as an aggregator with human approval is both accurate and defensible.
 
-### P22 — Self-Learning Token-Reduction Layer
+### P22 — ParetoGate
 
-A gateway between application and LLM that cuts token spend through exact caching, semantic
-caching and model routing. The stated differentiator is that it **learns over time**, improving its
-own savings from observed traffic rather than from fixed rules.
+**The real name is ParetoGate.** Use it. "Self-learning token-reduction layer" is a description;
+ParetoGate is a product, and a named product reads as something that exists.
 
-**Status 30 Oct 2026:** final round of testing. Results expected within days — ask Gaurav for the
-measured reduction and the quality guard before the next CV goes out, and put the number in here.
+A local-first, cost-aware LLM gateway. It embeds an incoming request with MiniLM (384-dim),
+predicts which optimisations apply via ten one-vs-rest logistic classifiers, applies deterministic
+safeguards that can veto a risky choice, then selects a `local` / `standard` / `premium` route and
+measures candidate plans against explicit quality **and** cost constraints. Ships as a FastAPI
+service with a SQLite + MiniLM semantic cache, versioned conversation memory, and an incremental
+Python code graph.
 
-> **The architecture is well-trodden; the learning claim is the whole project.** Semantic caching
-> and routing exist in GPTCache, semantic-router, LiteLLM and Portkey — an interviewer who works in
-> this area will know that within one sentence, and will go straight to the differentiator. Three
-> questions will come, and he should have answers ready:
-> **learning from what signal, optimising what objective, and measured against what baseline.**
+**Measured, from the README (30 Oct 2026).** All of these are quotable; the labels matter.
+
+| Figure | What it actually measures | How to quote it |
+|---|---|---|
+| **86,416 → 11,351 input tokens** (86.9% fewer) on a frozen **25-task** code-change suite, all reviewed changes passing | Real token counts from the native retriever, replay harness | Safest and strongest. A measured token count, not a model. |
+| **80.8% modelled cost reduction** (native), **84.1%** (Graphify) | Cost *model* applied to those tokens | Always say "modelled". Never "saved 80% of our bill". |
+| **13.75% aggregate modelled savings**, 4-case live Ollama run, 3 plans accepted + 1 fallback, 16 tests passing | End-to-end execution with a real local model | Small n. Quote with the n. |
+| **Realised cost 25.7% worse** on a 5-task live run, despite 81.3% fewer input tokens | Candidates were cheaper but none matched the reviewed solution; conservative accounting charged the retry | **The most valuable line in the whole file.** See below. |
+
+> **The negative result is the story, and it is the second time he has done this.** The README
+> reports a run where the headline component number was excellent — 81.3% fewer input tokens — and
+> the end-to-end outcome was *worse*, because failed candidates were charged the baseline retry. He
+> wrote "This is a negative end-to-end result, not a savings claim" into his own documentation
+> rather than quoting the 81.3% and moving on.
 >
-> The trap is that a router can always cut tokens by sending everything to the cheapest model. The
-> claim only means something paired with a quality guard. Gaurav already knows how to do this
-> properly and has done it once: the KnowGuard A/B test, where he set a practical-effect threshold
-> *before* running and reported against it. **Same discipline here** — fix a quality metric and a
-> floor, measure baseline spend, then report the reduction at or above that floor, with an interval.
-> "Cut token spend 43% with no measurable drop in task accuracy (n=…, 95% CI …)" would be his best
-> technical line on any CV. Until the tests land, describe the **mechanisms** — exact caching,
-> semantic caching, routing, online adaptation — which is factual and specific, and keep the word
-> "self-learning" next to what it actually learns from, so it reads as engineering rather than
-> marketing.
+> That is exactly what he did at KnowGuard with the pre-set 0.05 threshold. Twice is not luck; it
+> is how he works, and it is rare enough to be a differentiator in its own right. **Put it on the
+> CV.** Most candidates cannot name a result they chose not to claim.
+
+> **The honesty is structural, not cosmetic.** Rejected candidates are charged as zero savings;
+> rollback cost is included in realised figures; the measurement endpoint labels itself `estimate`
+> and names its tokenizer; pricing is supplied by the caller so no stale vendor rate is baked in;
+> the trainer **refuses to train on undersized evidence** rather than publishing a misleading
+> metric. An engineer reading that README will trust the numbers precisely because of how heavily
+> they are qualified. Do not strip the qualifiers to make a punchier bullet — the qualifiers are
+> the achievement.
+
+**Safety design worth a bullet on its own:** semantic reuse is denied for fresh, sensitive,
+high-stakes and exact-wording requests; cache is tenant-isolated, data-versioned, TTL-bounded and
+similarity-gated, and serves only quality-verified answers. Lossy compression is vetoed for
+high-stakes work. This is the answer to "how do you stop a cost optimiser from quietly degrading
+output".
+
+**Known limits — do not overstate.** It is a localhost prototype, not an authenticated multi-user
+service; tenant IDs are isolation keys, not authorisation. Production and shadow request modes are
+not complete. General document RAG is future work. The 72-row sample dataset is explicitly
+illustrative. The replay suite validates the harness, not model intelligence. If asked "is it in
+production?", the answer is no, and the README says so first.
+
+> **The architecture is well-trodden; the learning and the gate are the differentiators.** Semantic
+> caching and routing exist in GPTCache, semantic-router, LiteLLM and Portkey, and an interviewer in
+> this area will know that immediately. What those do not generally have is a *quality-constrained*
+> selector with a bounded repair path (a candidate may cost up to 25% more if the baseline itself
+> fails the quality floor), calibrated per-plan outcome prediction, and realised-cost accounting
+> that includes rollback. Lead with the gate, not the caching.
 
 ### Overlap with this repo
 
@@ -242,9 +274,13 @@ Two bullets max per project. Lead with the number.
 - Built a multi-source aggregator that collects odd-job listings posted in the last 24 hours across Kleinanzeigen, Craigslist and further pluggable sources, for international students who cannot search them by hand
 - Generates the application message and a tailored CV per listing, and applies automatically once the user approves a shortlist — a deliberate human-in-the-loop step rather than full automation
 
-**P22 Self-Learning Token-Reduction Layer** *(current — results pending)*
-- Building an LLM gateway that cuts token spend through exact caching, semantic caching and model routing, with an online learning loop that adapts its routing from observed traffic instead of fixed rules
-- Designing the evaluation so savings are reported against a measured baseline **and** a task-quality floor, since a router can always cut tokens by downgrading the model
+**P22 ParetoGate — cost-aware LLM gateway** *(current)*
+- Built a local-first LLM gateway that classifies each request with MiniLM embeddings, predicts applicable optimisations with ten one-vs-rest logistic models, and applies deterministic safeguards before any lossy transform
+- Cut retrieved context from **86,416 to 11,351 input tokens** on a frozen 25-task code-change suite while passing every reviewed change — an 80.8% modelled cost reduction
+- Gated every saving behind a **task-quality floor** with automatic baseline fallback, charging rejected candidates as zero savings so reported figures include rollback cost
+- Reported a **negative end-to-end result** — realised cost 25.7% worse on a live 5-task run — rather than publishing the favourable 81% input-token figure alone
+- Denied semantic cache reuse for fresh, sensitive, high-stakes and exact-wording requests, with a tenant-isolated, TTL-bounded, similarity-gated SQLite + MiniLM store serving only quality-verified answers
+- Served it as a **FastAPI** service with versioned conversation memory and an incremental Python code graph, benchmarked against local models via Ollama and LM Studio
 
 > **Tense matters on these three.** P20 and P22 are in progress — "Building", "Designing".
 > P21 is built — "Built". Do not write a past-tense completion claim for work still running, and

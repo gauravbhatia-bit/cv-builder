@@ -10,7 +10,8 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 | `data/projects.md` | Every project: tags, stack, metrics, repos, bullet bank. **The only source of project content.** |
 | `RULES.md` | How a JD becomes a CV. Bullet budgets, project picking, honesty guardrails. §10 maps JD requirements to the right experience. |
 | `COVER-LETTER-BUILDER.md` | The stories behind the facts, for cover letters. Narrative only — never a source of a number. |
-| `templates/base.html` | The neutral base CV. Rezume style, editable in a browser, prints to A4. |
+| `templates/base.html` | The neutral base CV, **one page**, 3 projects. The default. |
+| `templates/base-2page.html` | **Two-page** variant, 8 projects in priority order, fuller experience bullets. For roles where project depth is the evidence. |
 | `jd/` | One markdown note per job description, before building. |
 | `out/` | Finished CVs. **Gitignored** — these carry real contact details. |
 | `private/contact.md` | Real email and phone. **Gitignored.** |
@@ -62,7 +63,7 @@ When Gaurav mentions a new job, project, repo or metric, write it down **in the 
 
 - Invent a metric, tool, date or title.
 - Drop a job to save space.
-- Go to two pages.
+- Go to three pages. Two is allowed via `templates/base-2page.html`; see `RULES.md` hard rule 2 for when.
 - Put anything in this repo that should not be public — it is a public repo.
 - Source anything from the Apr 2026 hospitality CVs — their *dates* are wrong, though their pre-2020 roles are real side ventures. See `master.md` §2.
 - Shorten "Deloitte Data Analytics Job Simulation" to "Deloitte Data Analytics".
