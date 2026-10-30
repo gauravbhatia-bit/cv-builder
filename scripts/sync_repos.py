@@ -35,7 +35,7 @@ since = STAMP.read_text().strip() if STAMP.exists() else None
 
 new = [r for r in repos if r["name"] not in known]
 # >= so a push later on the day of the last review is not missed
-changed = [r for r in repos if r["name"] in known and r["name"] != ROOT.name and since and r["pushedAt"][:10] >= since]
+changed = [r for r in repos if r["name"] in known and r["name"] not in (ROOT.name, USER) and since and r["pushedAt"][:10] >= since]
 
 
 def show(title, rows):
