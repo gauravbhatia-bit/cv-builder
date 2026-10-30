@@ -6,7 +6,8 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 
 | Path | What it is |
 |---|---|
-| `data/master.md` | Every fact, bullet, project and metric. **The only allowed source of CV content.** |
+| `data/master.md` | Identity, experience, education, skills, certifications. **The career half of the source of truth.** |
+| `data/projects.md` | Every project: tags, stack, metrics, repos, bullet bank. **The only source of project content.** |
 | `RULES.md` | How a JD becomes a CV. Bullet budgets, project picking, honesty guardrails. §10 maps JD requirements to the right experience. |
 | `COVER-LETTER-BUILDER.md` | The stories behind the facts, for cover letters. Narrative only — never a source of a number. |
 | `templates/base.html` | The neutral base CV. Rezume style, editable in a browser, prints to A4. |
@@ -53,7 +54,9 @@ The template holds one page at its defaults (`--fs: 9.5pt`, `--gap: 2px`) with 3
 
 ## Keeping the data current
 
-When Gaurav mentions a new job, project, repo or metric, add it to `data/master.md` **in the same turn**, then commit. This repo is public on GitHub so the content library is reachable from any machine — fetch `data/master.md` and `RULES.md` raw from `github.com/gauravbhatia-bit/cv-builder` when the local copy is not available.
+When Gaurav mentions a new job, project, repo or metric, write it down **in the same turn**, then commit — a project goes in `data/projects.md`, anything else in `data/master.md`. Never both. This repo is public on GitHub so the content library is reachable from any machine — fetch `data/master.md`, `data/projects.md` and `RULES.md` raw from `github.com/gauravbhatia-bit/cv-builder` when the local copy is not available.
+
+**P22's test results are due within days of 30 Oct 2026.** Ask for the measured token reduction and the quality guard before the next CV goes out, and record them in `projects.md`.
 
 ## Do not
 

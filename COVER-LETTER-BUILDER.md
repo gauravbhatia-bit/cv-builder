@@ -9,11 +9,12 @@ instead of a list. Everything here came from the career walkthrough on 30 Oct 20
 
 | File | Holds | Rule |
 |---|---|---|
-| `data/master.md` | Every **fact, date, number and metric** | The only source of a number. If a figure appears in a letter, it came from there. |
+| `data/master.md` | Every **fact, date, number and metric** of his career | The only source of a number. If a figure appears in a letter, it came from there. |
+| `data/projects.md` | Every **project** | Same rule, for project facts and metrics. |
 | `RULES.md` | How a JD becomes a **CV** | §10 maps JD requirements to the right experience. Read it before picking stories here. |
 | **this file** | The **stories** behind the facts | Narrative only. It never invents a fact and never holds one master.md does not. |
 
-If a number here ever disagrees with `master.md`, **master.md wins** and this file is the bug.
+If a number here ever disagrees with the data files, **they win** and this file is the bug.
 
 ---
 

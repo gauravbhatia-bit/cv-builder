@@ -4,7 +4,7 @@ A content library plus a print-ready HTML template, so every job application get
 
 ## Make a CV for a job
 
-Paste the job description into a Claude session opened on this folder. Claude reads `CLAUDE.md`, follows `RULES.md`, picks content from `data/master.md`, and writes `out/Gaurav_Bhatia_CV_<Company>.html`.
+Paste the job description into a Claude session opened on this folder. Claude reads `CLAUDE.md`, follows `RULES.md`, picks content from `data/master.md` and `data/projects.md`, and writes `out/Gaurav_Bhatia_CV_<Company>.html`.
 
 Then open that file in Chrome → **Print / Save as PDF** → destination "Save as PDF", margins **Default**, **uncheck** "Headers and footers".
 
@@ -16,7 +16,8 @@ Every CV file is editable in the browser. Click any text and type. The toolbar a
 
 | Path | What it holds |
 |---|---|
-| `data/master.md` | Every job, bullet, project, metric and link. The source of truth. |
+| `data/master.md` | Your career: jobs, bullets, education, skills. The source of truth. |
+| `data/projects.md` | Every project, with what it proves and which roles it suits. |
 | `RULES.md` | How a job description turns into a CV. §10 says which of your experiences answers which requirement. |
 | `COVER-LETTER-BUILDER.md` | Your career stories, written up for cover letters — what happened, what it proves, when to use it. |
 | `templates/base.html` | The neutral base CV. |

@@ -1,15 +1,16 @@
 # CV Tailoring Rules
 
-How a job description turns into a CV. Read with `data/master.md`.
+How a job description turns into a CV. Read with `data/master.md` (career) and
+`data/projects.md` (projects).
 
 ---
 
 ## 0. Hard rules — never break these
 
-1. **Nothing goes on a CV that is not in `data/master.md`.** No invented metrics, tools, dates or titles.
+1. **Nothing goes on a CV that is not in `data/master.md` or `data/projects.md`.** No invented metrics, tools, dates or titles.
 2. **One page.** Gaurav has ~4.5 years of experience. Two pages is a mistake at this stage.
 3. **Never remove a job to save space.** Gaps look worse than a less relevant role. Shrink it to one bullet instead. The one exception is an entry with **nothing delivered** — Croud Control is registered-but-idle and is off the CV for that reason, not for space. See `master.md` section 4.
-4. **Every number on the CV must be traceable** to a README, a dashboard or a report. If a number cannot be shown in an interview, it does not go on.
+4. **Every number on the CV must be traceable** to a README, a dashboard or a report. If a number cannot be shown in an interview, it does not go on. **This bans unprovable numbers, not projects without one** — in-progress work goes on the CV described by its *scope* (sources, geography, window, techniques) in the present tense. Add the number when it exists. See `projects.md` → In-flight.
 5. **Do not claim German above A2** and do not hide it either. It is on the CV as A2, improving.
 6. If an open question in `master.md` section 2 blocks a line, **ask — do not guess**.
 
@@ -21,7 +22,7 @@ Write the answers into `jd/<company>-<role>.md` before building anything.
 
 | Step | What to extract |
 |---|---|
-| 1 | **Role family** — DA / DS / AI / EN / BIZ (see tags in master.md). Often two. |
+| 1 | **Role family** — DA / DS / AI / EN / BIZ (tags are defined in both data files). Often two. |
 | 2 | **Top 5 hard requirements** — the tools and methods named in "Your profile" / "Requirements". |
 | 3 | **Exact keyword spellings** — "Power BI" vs "PowerBI", "A/B testing" vs "experimentation". Copy their spelling into the CV. ATS matches strings. |
 | 4 | **Domain** — energy, fintech, e-commerce, logistics, SaaS, consulting. This decides which projects get picked. |
@@ -83,9 +84,10 @@ Before cutting content, try `--fs: 9.5pt` / `--gap: 2px` (the template defaults 
 
 ## 5. Project picking
 
-Rank every project by `tag match + domain match + has a number`. Take the top 3, then apply:
+Pick from `data/projects.md`. Rank by `tag match + domain match + has a number`. Take the top 3, then apply:
 
 - **Never show 3 projects of the same type.** Two in the JD's area, one that shows range.
+- **Prefer a current project where it fits.** P20–P22 are live work, described in the present tense, and they are products rather than analyses. For AI, LLM, platform or startup roles they outrank most of P1–P19 even without final numbers — "currently building" is a strength, not a hedge.
 - **Domain beats tag.** Applying to an energy company? P4/P5/P6/P7 go first even for a DA role — use P11 (DuckDB SQL + Power BI) as the analyst proof.
 - **The thesis counts as a project** for energy and research roles, and also stays in Education.
 - **Link live demos** when the JD mentions stakeholders, products or deployment.
@@ -97,7 +99,9 @@ Rank every project by `tag match + domain match + has a number`. Take the top 3,
 |---|---|
 | Data Analyst / BI | P2 (data quality), P12 (Power BI 100K rows), P1 (pricing) |
 | Data Scientist / ML | P3 (model comparison), P1 (elasticity + XGBoost), P5 or P7 (deep learning / tuning) |
-| AI / GenAI / LLM | P8 (agent + cost routing), P9 (RAG + CI/CD), P6 (FinBERT NLP) |
+| AI / GenAI / LLM | **P22 (token-reduction layer)**, P8 (agent + cost routing), P9 (RAG + CI/CD) — P6 if the JD is NLP-heavy |
+| AI platform / LLMOps / infra cost | **P22**, P9 (Docker/K8s CI/CD), P8 (confidence routing) |
+| Startup / early team / generalist | **P21 (odd-jobs aggregator)**, **P20 (job-search automation)**, P8 — products with users and judgement, not notebooks |
 | Energy / CleanTech | P4 (thesis), P5 (solar LSTM), P7 (office energy) — swap P11 in for analyst-leaning roles |
 | Business / Commercial | P1 (pricing + margin), P3 (demand), P15 or P12 (funnel / payments) |
 
@@ -168,7 +172,7 @@ Before handing over a CV:
 - [ ] JD's top requirement appears in Skills row 1
 - [ ] All 3 jobs still present (Croud Control is not one of them — hard rule 3)
 - [ ] 3 projects, 2 bullets each, each with a number and a working repo link
-- [ ] No claim outside `master.md`
+- [ ] No claim outside `master.md` / `projects.md`
 - [ ] No unresolved `G#` question affecting a line on this CV
 - [ ] Filename `Gaurav_Bhatia_CV_<Company>.pdf`
 - [ ] Saved to `out/`, JD notes saved to `jd/`
@@ -180,7 +184,7 @@ Before handing over a CV:
 
 When a JD asks for something, this is what to reach for. **CV** = may go on the CV as a bullet;
 **Letter** = cover letter and interview only, never a CV line. Stories marked Letter are in
-`COVER-LETTER-BUILDER.md`; facts and numbers still come only from `master.md`.
+`COVER-LETTER-BUILDER.md`; facts and numbers still come only from `master.md` and `projects.md`.
 
 | JD asks for | Reach for | Where |
 |---|---|---|
