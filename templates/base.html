@@ -143,7 +143,6 @@ body{padding-top:44px}
     <div class="row"><span class="t">Data Science Intern</span><span class="r">Aug 2026 – Present</span></div>
     <div class="row"><span class="sub">KnowGuard AI</span><span class="r sub">Berlin, Germany</span></div>
     <ul>
-      <li><strong>Benchmark LLMs against baselines</strong> and design <strong>cost-effective evaluation workflows</strong> for model selection</li>
       <li>Ran a <strong>paired A/B test on AWS</strong> comparing a fine-tuned model against the review arm: <strong>+0.0318 AUPRC</strong> (95% CI 0.022–0.0418), below the pre-set 0.05 practical-effect threshold</li>
     </ul>
   </div>
@@ -197,13 +196,13 @@ body{padding-top:44px}
 
   <div class="entry">
     <div class="prow">
-      <span class="pname">Self-Learning Token-Reduction Layer</span>
-      <span class="pstack">LLM gateway, semantic caching, model routing</span>
+      <span class="pname">ParetoGate: cost-aware LLM gateway</span>
+      <span class="pstack">FastAPI, MiniLM, scikit-learn, SQLite, Ollama</span>
       <span class="plink">Private repo</span>
     </div>
     <ul>
-      <li>Building an <strong>LLM gateway</strong> that cuts token spend through exact and <strong>semantic caching</strong>, <strong>model routing</strong>, and an online learning loop that adapts from observed traffic rather than fixed rules</li>
-      <li>Evaluating savings against a measured baseline <strong>and</strong> a task-quality floor, since a router can always cut tokens by downgrading the model</li>
+      <li>Built a local-first <strong>LLM gateway</strong> that classifies each request with MiniLM embeddings, routes it, and applies deterministic safeguards before any lossy transform</li>
+      <li>Cut retrieved context from <strong>86,416 to 11,351 input tokens</strong> on a frozen 25-task suite while passing every reviewed change, an <strong>80.8% modelled cost reduction</strong>, with every saving gated behind a task-quality floor</li>
     </ul>
   </div>
 
@@ -219,10 +218,6 @@ body{padding-top:44px}
     </ul>
   </div>
 
-  <h2>Certifications</h2>
-  <ul>
-    <li><strong>Introduction to Data Engineering with Microsoft Azure 1 &amp; 2</strong>, FutureLearn, Sep 2026</li>
-  </ul>
 
 </div>
 

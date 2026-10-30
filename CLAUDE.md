@@ -43,13 +43,16 @@ hyphen. En dashes in ranges (`Aug 2026 – Present`) are fine.
 
 ## Photo
 
-Optional and **off by default**. Drop a `photo.jpg`, `.jpeg` or `.png` into `private/` and
-`render.cmd` embeds it top-right as base64; with no such file the `[PHOTO]` placeholder is removed
-and the layout is unchanged. `private/` is gitignored, so the photo never reaches GitHub.
+**Gaurav wants a photo** (30 Oct 2026). Drop `photo.jpg`, `.jpeg` or `.png` into `private/` and
+`render.cmd` embeds it top-right as base64. With no such file the `[PHOTO]` placeholder is removed
+and the layout still works, just airier. `private/` is gitignored, so the photo never reaches
+GitHub. Portrait, about 4:5 (it renders at 22 × 28 mm), ideally 400 × 500 px or larger.
 
-A photo costs about **54px**, roughly two bullets, on the one-page CV, which normally runs with
-only ~18px spare. The two-page version absorbs it without trouble. If Gaurav wants a photo on the
-one-pager, cut per `RULES.md` §4 rather than shrinking below 9pt.
+**The one-pager is already sized for it.** A photo costs about 54px, so two items were cut to make
+room: the metric-free KnowGuard "benchmark LLMs" bullet (ParetoGate now proves the same thing with
+numbers) and the Certifications section. Both are still in `master.md` and go back on any tailored
+CV with the space. Do not add content back to `templates/base.html` without re-checking with a
+photo present: it runs with ~26px spare.
 
 ## Contact details
 
