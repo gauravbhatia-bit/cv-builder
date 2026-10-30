@@ -34,10 +34,7 @@ Tags: `[DA]` Data Analyst / BI · `[DS]` Data Scientist / ML · `[AI]` AI / GenA
 
 Do **not** guess these. Ask before they go on a CV.
 
-| # | Open question | Why it matters |
-|---|---|---|
-| G13 | The old skill in `job-search-automation` says his residence document "allows full-time work until 30 March 2027" and lists "start date after 30 March 2027" as a blocker. Gaurav says the post-study job-seeker permit starts December 2026. Which dates are right, and is there a gap between the two? | Decides what the CV, letters and outreach may say about eligibility |
-| G14 | The same skill mentions "junior engineer roles in civil-engineering companies" that he "chose to leave off the CV". The career walkthrough never mentioned them. Real, and when? | Could affect the 2015 timeline. **Not added until he confirms** |
+None open about his career or documents.
 
 **Also found, not a question:** the task prompts in `job-search-automation` hard-code their own copy of
 his profile, including "full-time from January 2027" in the outreach email template. That disagrees
@@ -47,6 +44,8 @@ with December 2026 here. Fixing it is a decision for him, because that repo driv
 
 | # | Answer | Source |
 |---|---|---|
+| G13 | **Visa, residence and work-permit status are never mentioned in any document.** Not volunteered, not asserted either way. The old skill said his document allows work until 30 March 2027, which conflicts with a December 2026 permit start; that conflict is left unresolved because the rule makes it irrelevant to documents. If a form asks directly, Gaurav answers it | Gaurav, 30 Oct 2026 |
+| G14 | **The "junior engineer roles in civil-engineering companies" in the old skill are not real.** Never add them. They are a second reason to retire that skill | Gaurav, 30 Oct 2026 |
 | G1 | MSc runs **Sep 2025 – Dec 2026 (expected)**, GISMA **Potsdam** | Gaurav, confirmed 30 Oct 2026 |
 | G2 | **There is no 2015–2020 gap.** Bhatia Traders ran **Nov 2015 – Jan 2024**. The pre-2020 roles on the hospitality CVs were *concurrent side ventures*, not separate employment — see section 4 | Gaurav, career walkthrough 30 Oct 2026 |
 | G3 | **Croud Control (Croudie Network)** — registered on the marketplace, **no projects delivered yet. Off the CV.** See section 4 | Gaurav, 30 Oct 2026 |
@@ -56,7 +55,7 @@ with December 2026 here. Fixing it is a decision for him, because that repo driv
 | G8 | Deloitte Data Analytics **Job Simulation** (Deloitte/Forage, 07/2026) and Introduction to Cloud Infrastructure: Describe Cloud Concepts (Microsoft, 07/2026) | DKB CV, Sep 2026 |
 | G9 | LinkedIn is **linkedin.com/in/gauravbhatia-bit** | Most recent CV and repo READMEs |
 | G4 | **No end date on the CV.** The internship shows as "Aug 2026 – Present" | Gaurav, 30 Oct 2026 |
-| G5 | **Job seeker / post-study permit from December 2026.** Allows full-time work | Gaurav, 30 Oct 2026 |
+| G5 | **Job seeker / post-study permit from December 2026.** Allows full-time work. **Internal knowledge only, for judging which roles he can apply for. Never goes in a document (G13)** | Gaurav, 30 Oct 2026 |
 | G7 | KnowGuard metric supplied — see the Experience section | Gaurav, 30 Oct 2026 |
 | G10 | B.Tech is **Civil Engineering** | Gaurav, 30 Oct 2026 |
 | — | Bhatia Traders is **Nov 2015 – Jan 2024**. An earlier answer of "Jun 2020" was the point he went full-time on it; the business itself started in 2015 and the longer span is the one to use | Gaurav, 30 Oct 2026 (supersedes the earlier answer) |

@@ -29,6 +29,9 @@ BANNED = [
     r"\bsynerg", r"spearheaded", r"detail-oriented", r"think outside the box",
     r"hit the ground running", r"wealth of experience",
 ]
+# Visa and residence status must never appear in a document (Gaurav's rule, RULES.md hard rule 7).
+VISA = [r"\bvisa\b", r"\bpermit\b", r"residen(ce|cy)", r"work authori[sz]ation", r"blue card",
+        r"post-study", r"job.?seeker", r"right to work"]
 # Things CLAUDE.md says never to write (old claims that were wrong or retired).
 FORBIDDEN_IN_CV = ["Croud", "January 2027", "Self-Learning Token", "Data Analyst, Operations"]
 # Titles, employers and dates must stay exactly as given (STYLE.md, CV rules).
@@ -55,7 +58,9 @@ def visible_text(page):
 
 
 def banned_in(text):
-    return [b for b in BANNED if re.search(b, text, re.I)]
+    return [b for b in BANNED if re.search(b, text, re.I)] + [
+        f"{v} (never mention visa or residence status)" for v in VISA if re.search(v, text, re.I)
+    ]
 
 
 def untraceable_numbers(text, sources):

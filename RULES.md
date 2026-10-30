@@ -13,6 +13,7 @@ How a job description turns into a CV. Read with `data/master.md` (career),
 4. **Every number on the CV must be traceable** to a README, a dashboard or a report. If a number cannot be shown in an interview, it does not go on. **This bans unprovable numbers, not projects without one** — in-progress work goes on the CV described by its *scope* (sources, geography, window, techniques) in the present tense. Add the number when it exists. See `projects.md` → In-flight.
 5. **Do not claim German above A2** and do not hide it either. It is on the CV as A2, improving.
 6. If an open question in `master.md` section 2 blocks a line, **ask — do not guess**.
+7. **Never mention visa, residence or work-permit status** in a CV, cover letter or outreach email (Gaurav's rule, 30 Oct 2026). Availability is a date ("available from December 2026"), never a permit. This is about not volunteering it in writing: if a form or recruiter asks directly, Gaurav answers that himself and accurately. Never assert anything about his status either way. `check.py` enforces it.
 
 ---
 
@@ -28,7 +29,7 @@ Write the answers into `jd/<company>-<role>.md` before building anything.
 | 4 | **Domain** — energy, fintech, e-commerce, logistics, SaaS, consulting. This decides which projects get picked. |
 | 5 | **Seniority** — junior / working student / mid. If mid+ and asking for 3-5 years, lead with Troika and Bhatia Traders, not the internship. |
 | 6 | **Language** — if the JD is in German, the CV stays in English but mirror German technical terms where natural, and address the German level in the cover letter. |
-| 7 | **Blockers** — needs C1 German? needs an existing permit? 5 years required? Note it. A blocker may mean "do not apply". |
+| 7 | **Blockers** — needs C1 German? needs EU citizenship or an existing work authorisation? 5 years required? Note it **in the JD note for Gaurav only**, never in a document. A blocker may mean "do not apply". |
 
 ---
 
@@ -208,7 +209,7 @@ When a JD asks for something, this is what to reach for. **CV** = may go on the 
 | Customer-facing, service, hospitality | Restaurant management; tutoring; Troika clients | **Letter** (S3, S7) |
 | Teaching, enablement, mentoring, documentation | Maths tutoring; Guru Disha tutor marketplace | **Letter** (S3) |
 | Resilience, discipline, team culture | Third-tier football with Lonestar FC, 2019–2020 | **Letter, always**, one sentence linked to a story (S8). Never a CV line |
-| Relocation, visa, availability | Deliberate exit Jul 2025, permit from Dec 2026 | **CV** one line, **Letter** close (S6) |
+| Relocation, availability | Deliberate exit Jul 2025, available from Dec 2026. **No visa or permit wording, ever** | **CV** one line, **Letter** close (S6) |
 
 Two rules for this table:
 

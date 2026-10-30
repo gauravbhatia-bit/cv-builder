@@ -20,7 +20,7 @@ What I care about most is what happens after the model. At KnowGuard AI, a paire
 
 I also know what it takes to work through other people. At Troika International I was handed a 500-unit export order to Lithuania that was close to collapsing on delivery time. I moved it to air freight and renegotiated with the client, and it only worked because logistics, the vendor and the client all pulled the same way. That felt familiar from my football years in the third tier with Lonestar FC in Jammu and Kashmir: the result belongs to the whole side.
 
-I am in Berlin, and my post-study permit allows full-time work from December 2026. I would be glad to walk your team through the thesis.
+I am based in Berlin and available full-time from December 2026. I would be glad to walk your team through the thesis.
 
 Kind regards,
 Gaurav Bhatia

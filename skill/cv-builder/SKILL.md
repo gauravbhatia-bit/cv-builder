@@ -33,7 +33,8 @@ from stale facts is worse than no CV.
 
 Work inside the clone's `out/` folder (it is gitignored). In short, per `CLAUDE.md`:
 
-- Read the JD; write the note; check blockers (C1 German, 5+ years, permit, on-site outside Berlin) and name them before building.
+- Read the JD; write the note; check blockers (C1 German, 5+ years, work-authorisation requirements, on-site outside Berlin) and name them to Gaurav before building.
+- **Never mention his visa, residence or work-permit status in any CV, letter or email**, and never assert anything about it either way. Availability is a date. If a form or recruiter asks directly, flag it for Gaurav to answer.
 - Pick content per `RULES.md` sections 4, 5 and 10. Edit a copy of the template: headline, profile, skills order, bullets, three projects.
 - **Cover letter:** start from `letters/base.md`, change only the marked parts, research the company first, use two stories, and **always include the football sentence, linked to a real story**. Under 300 words. Save as `out/Gaurav_Bhatia_Letter_<Company>.md`.
 - Names: `Gaurav_Bhatia_CV_<Company>.html` and `.pdf`, plus the letter.

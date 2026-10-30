@@ -18,6 +18,7 @@ notes in `jd/`). Those are internal and can be written however is clearest.
 - Plain, direct language.
 - Cut repetition, filler, buzzwords and overly formal phrasing.
 - Preserve his authentic voice. Never exaggerate.
+- **Never mention visa, residence or work-permit status.** Availability is a date, nothing more.
 - Use **British/European spelling** (analysed, modelled, optimisation, programme) and
   **European date format**. Keep tone suited to employers in Germany and Europe.
 

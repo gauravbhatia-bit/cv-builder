@@ -39,6 +39,12 @@ assert any("date or year" in p for p in check.skill_problems(OK + "available fro
 assert any("retired claim" in p for p in check.skill_problems(OK + "Croud Control"))
 assert any("point at" in p for p in check.skill_problems("---\nname: x\ndescription: y\n---\nbody"))
 
+# visa and residence status must never reach a document
+assert any("visa" in p for p in check.banned_in("my post-study permit allows work"))
+assert any("visa" in p for p in check.banned_in("I hold a residence permit"))
+assert check.banned_in("available full-time from December 2026") == []
+assert any("visa" in p for p in check.letter_problems(GOOD + " I hold a work authorisation"))
+
 # invisible characters from a broken escape sequence
 assert check.has_control_chars("a" + chr(8) + "b") and not check.has_control_chars("a\tb\nc\r\n")
 

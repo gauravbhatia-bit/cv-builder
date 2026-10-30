@@ -44,7 +44,7 @@ Four paragraphs, under one page, ~300 words.
 | **1 — The hook** | Why this company, specifically. The honest sentence from step 1. Never "I am writing to apply for…". |
 | **2 — The proof** | Story one, told with the number in it. This is the paragraph that gets him the interview. |
 | **3 — The person** | Story two. What it says about how he works. Tie it to something the JD actually asked for. **The football sentence lives here**, hung on this story. |
-| **4 — The close** | Available from December 2026, in Berlin, with the permit. One line, no pleading. |
+| **4 — The close** | Based in Berlin, available from December 2026. One line, no pleading. **Never mention visa, permit or residence status** (Gaurav's rule, 30 Oct 2026). |
 
 ### 4. Guardrails
 
@@ -199,18 +199,20 @@ story; the self-teaching came first and is the more interesting half.
 ### S6 · Choosing to leave, and the move to Germany
 
 **The facts** — He ended the Troika role in July 2025 deliberately, took a short break, moved to
-Germany, and started the MSc at GISMA in September 2025. The post-study permit begins December 2026.
+Germany, and started the MSc at GISMA in September 2025. He is available from December 2026.
 
 **What it proves** — Deliberate, not displaced. The two-month gap in 2025 is a planned relocation,
 not an unexplained one.
 
-**Reach for it when** the letter needs to address the relocation, visa status or availability.
-Mostly this belongs in the closing paragraph rather than as a story in its own right.
+**Reach for it when** the letter needs to address the relocation or availability. Mostly this
+belongs in the closing paragraph rather than as a story in its own right.
 
-**The limit** — Keep it to one line. Nobody wants a paragraph about logistics.
+**The limit** — Keep it to one line. Nobody wants a paragraph about logistics. **Never mention visa,
+permit or residence status, in any document.** Gaurav's rule, 30 Oct 2026. If an application form or
+a recruiter asks directly, he answers it himself, accurately; the rule is only about not volunteering
+it in writing.
 
-> *Starting point.* I am in Berlin, my post-study permit allows full-time work from December 2026,
-> and I am available from then.
+> *Starting point.* I am based in Berlin and available full-time from December 2026.
 
 ---
 

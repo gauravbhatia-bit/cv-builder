@@ -24,7 +24,7 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 
 0. **Sync projects.** `python scripts/sync_repos.py`. If it lists NEW or CHANGED repos, read each README, update `data/projects.md`, then run it again with `--done`. Skip only if it was run in the last day or two. It changes nothing by itself: a README change must never silently rewrite a CV claim.
 1. **Read the JD.** Write `jd/<company>-<role>.md` using the extraction table in `RULES.md` §1.
-2. **Check blockers.** C1 German, 5+ years, existing permit, on-site outside Berlin. Say so before building.
+2. **Check blockers.** C1 German, 5+ years, EU citizenship or existing work authorisation, on-site outside Berlin. Say so to Gaurav before building, in the JD note, never in a document.
 3. **Check open questions.** `master.md` §2. If a `G#` affects a line on this CV, ask Gaurav first — do not guess.
 4. **Pick content** per `RULES.md` §4 and §5. Write the picks into the JD note so the choice is reviewable.
 5. **Build.** `cp templates/base.html out/Gaurav_Bhatia_CV_<Company>.html`, then edit:
@@ -128,3 +128,4 @@ When Gaurav mentions a new job, project, repo or metric, write it down **in the 
 - Re-add **Croud Control** as a job. He is registered on the marketplace with nothing delivered. `master.md` §4 says why.
 - Put **SQL** in a Troika bullet, or **Power BI** in a Bhatia Traders bullet. Neither is true. `master.md` §4 says why.
 - Write "January 2027" as the availability. It is **December 2026**.
+- Mention his visa, residence or work-permit status in any document. Never volunteer it, never assert it.
