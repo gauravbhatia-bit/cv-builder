@@ -40,6 +40,11 @@ the real details have to be typed in — the placeholders must never reach an em
 Both `private/` and `out/` are gitignored. Never commit a file containing the phone number or
 email, and never paste either into `data/master.md`, `RULES.md` or a `jd/` note.
 
+**Settled, do not raise again:** commits `b4ea0d3`, `7d49d07` and `576fa84` predate the masking and
+still carry the phone number. They are off the branch but remain fetchable from GitHub by direct SHA.
+Gaurav weighed this on 30 Oct 2026 and chose to leave them. The rule above still applies to every
+new commit.
+
 ## One page
 
 The template holds one page at its defaults (`--fs: 9.5pt`, `--gap: 2px`) with 4 jobs, 3 projects and 6 skill rows — that is already tight, so anything added must displace something. Check with `render.cmd` and count pages before handing over. Below 9pt, cut content instead — see `RULES.md` §4.
