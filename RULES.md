@@ -171,7 +171,7 @@ Before handing over a CV:
 - [ ] Profile names the top 3 JD requirements and ends with the availability line
 - [ ] JD's top requirement appears in Skills row 1
 - [ ] All 3 jobs still present (Croud Control is not one of them — hard rule 3)
-- [ ] 3 projects, 2 bullets each, each with a working repo link — **except P20–P22**, which have no public repo yet and carry scope instead of a number. At least one project on every CV must still have both.
+- [ ] 3 projects, 2 bullets each, each with a working repo link — **except P20–P22**, whose repos are private and which show "Private repo" instead. At least one project on every CV must still have both a link and a metric.
 - [ ] No claim outside `master.md` / `projects.md`
 - [ ] No unresolved `G#` question affecting a line on this CV
 - [ ] Filename `Gaurav_Bhatia_CV_<Company>.pdf`

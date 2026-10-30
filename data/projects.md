@@ -36,9 +36,9 @@ A CV shows **3, at most 4**. Pick by tag match to the JD.
 | P17 | Toll Traffic Anomaly Detector | DA DS | Z-score + Isolation Forest, Plotly | 6 months hourly data, 5 autobahn segments | `toll-traffic-anomaly-detector` |
 | P18 | Maut Weekly Report Automation | DA | APScheduler, Jinja2, Plotly, DuckDB | Fully automated Monday 08:00 HTML KPI report | `maut-report-automation` |
 | P19 | Bhatia Traders Sales Analysis | BIZ | pandas, Matplotlib, moving averages | 15% stockout-reduction potential; margin ranking by product | `bhatia-traders-sales-analysis` |
-| P20 | Job Search & Outreach Automation | AI DS BIZ | Scheduled pipeline, job ingestion, CV/letter generation, email sequencing, CRM-style tracking | 24h ingestion window across 3 geographies; in progress | *repo TBC* |
-| P21 | Odd-Jobs Aggregator for Students in Germany | AI DA BIZ | Multi-source listing ingestion (Kleinanzeigen, Craigslist, extensible), dedup, draft generation, human-in-the-loop approval, auto-apply | 2 sources live, pluggable; 24h window; built | *repo TBC* |
-| P22 | Self-Learning Token-Reduction Layer | AI DS | LLM gateway, exact + semantic caching, model routing, online learning from observed outcomes | 4 reduction mechanisms; results pending | *repo TBC* |
+| P20 | Job Search & Outreach Automation | AI DS BIZ | Scheduled pipeline, job ingestion, CV/letter generation, email sequencing, CRM-style tracking | 24h ingestion window across 3 geographies; in progress | **private** |
+| P21 | Odd-Jobs Aggregator for Students in Germany | AI DA BIZ | Multi-source listing ingestion (Kleinanzeigen, Craigslist, extensible), dedup, draft generation, human-in-the-loop approval, auto-apply | 2 sources live, pluggable; 24h window; built | **private** |
+| P22 | Self-Learning Token-Reduction Layer | AI DS | LLM gateway, exact + semantic caching, model routing, online learning from observed outcomes | 4 reduction mechanisms; results pending | **private** |
 
 Repo URL = `https://github.com/gauravbhatia-bit/<repo>`
 
@@ -60,6 +60,22 @@ claiming a number he cannot show; it does not forbid a project that has no numbe
 **scope** — sources covered, geography, time window, techniques — which is factual, and leave
 **results** out until they exist. For a role that cares about AI engineering these beat most of
 P1–P19, because they are products rather than analyses.
+
+### Repo status
+
+**All three repos are private as of 30 Oct 2026** (Gaurav, confirmed). Do not go looking for them,
+do not guess a slug, and never link a repo that 404s — a dead link costs more than no link.
+
+On a CV they carry **"Private repo"** in the link column rather than a blank. A blank reads as an
+oversight; "Private repo" says the code exists and is simply not open. It also sets up the obvious
+interview question with an easy answer: it is live work.
+
+> **Worth doing, and it is the cheapest win available.** Every other project here is verifiable in
+> one click, and these three — the most impressive work in the library — are the only ones a reader
+> has to take on trust. Making even one public changes that. P21 is the best candidate: it is
+> built rather than in progress, and a sanitised version without credentials or scraping keys
+> would be enough. Failing that, a README with screenshots in a public repo carries most of the
+> benefit for an hour of effort. Raise this once; it is Gaurav's call, not a blocker.
 
 ### Numbers to add the moment they land
 
