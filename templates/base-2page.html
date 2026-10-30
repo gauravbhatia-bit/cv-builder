@@ -27,13 +27,13 @@ body{font-family:Lato,"Segoe UI",Arial,sans-serif;color:var(--ink)}
 }
 
 /* ---------- header ---------- */
-.head{display:flex; justify-content:space-between; align-items:flex-start; gap:12px}
-/* Photo is optional. render.cmd fills [PHOTO] only if private/photo.jpg exists. */
+.head{display:flex; align-items:center; gap:14px}
+/* Photo is optional. render.cmd fills [PHOTO] from private/photo.*; with none, the name block just sits at the left. */
 .photo{width:22mm; height:28mm; object-fit:cover; border:1px solid var(--rule); flex:0 0 auto}
 h1{font-size:2.45em; line-height:1; margin:0 0 2px; letter-spacing:-.5px}
 .links{font-size:.95em}
 .links a{color:var(--ink); text-decoration:underline; text-underline-offset:2px}
-.contact{text-align:right; font-size:.95em; line-height:1.45; white-space:nowrap}
+.contact{font-size:.95em; line-height:1.45; margin:1px 0 0}
 .contact a{color:var(--ink); text-decoration:none}
 
 /* ---------- sections ---------- */
@@ -108,20 +108,16 @@ body{padding-top:44px}
 <div class="page" contenteditable="true" spellcheck="false">
 
   <div class="head">
-    <div>
+    [PHOTO]
+    <div class="id">
       <h1>Gaurav Bhatia</h1>
+      <div class="contact">Berlin, Germany | [EMAIL] | [PHONE]</div>
       <div class="links">
         <a href="https://gauravbhatia-bit.github.io/">Portfolio</a> |
         <a href="https://github.com/gauravbhatia-bit">GitHub</a> |
         <a href="https://www.linkedin.com/in/gauravbhatia-bit/">LinkedIn</a>
       </div>
     </div>
-    <div class="contact">
-      Berlin, Germany<br>
-      [EMAIL]<br>
-      [PHONE]
-    </div>
-    [PHOTO]
   </div>
 
   <h2>Data Scientist</h2>

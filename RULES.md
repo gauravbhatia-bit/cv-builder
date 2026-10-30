@@ -207,7 +207,7 @@ When a JD asks for something, this is what to reach for. **CV** = may go on the 
 | "Career changer", non-traditional background | Self-taught SQL → own business's data → MSc | **Letter** (S5) |
 | Customer-facing, service, hospitality | Restaurant management; tutoring; Troika clients | **Letter** (S3, S7) |
 | Teaching, enablement, mentoring, documentation | Maths tutoring; Guru Disha tutor marketplace | **Letter** (S3) |
-| Resilience, discipline, team culture | Third-tier professional football, 2019–2020 | **Letter**, and sparingly (S8) |
+| Resilience, discipline, team culture | Third-tier football with Lonestar FC, 2019–2020 | **Letter, always**, one sentence linked to a story (S8). Never a CV line |
 | Relocation, visa, availability | Deliberate exit Jul 2025, permit from Dec 2026 | **CV** one line, **Letter** close (S6) |
 
 Two rules for this table:

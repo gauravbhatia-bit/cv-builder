@@ -8,6 +8,12 @@ Tags: `[DA]` Data Analyst / BI · `[DS]` Data Scientist / ML · `[AI]` AI / GenA
 
 Pick 3 per CV using `RULES.md` §5.
 
+**Changing this file is safe.** IDs (`P1`, `P2` ...) are permanent: add a project as the next number,
+edit one in place, mark one retired, but **never renumber**, because `RULES.md` §5 and the cover
+letter notes point at them. The two CV templates carry a *copy* of the projects they show, so when
+you edit one of those, ask for the template to be refreshed too. Everything else reads from here.
+`python scripts/sync_repos.py` tells you when GitHub has moved on from this file.
+
 ---
 
 ## The library
@@ -36,9 +42,10 @@ A CV shows **3, at most 4**. Pick by tag match to the JD.
 | P17 | Toll Traffic Anomaly Detector | DA DS | Z-score + Isolation Forest, Plotly | 6 months hourly data, 5 autobahn segments | `toll-traffic-anomaly-detector` |
 | P18 | Maut Weekly Report Automation | DA | APScheduler, Jinja2, Plotly, DuckDB | Fully automated Monday 08:00 HTML KPI report | `maut-report-automation` |
 | P19 | Bhatia Traders Sales Analysis | BIZ | pandas, Matplotlib, moving averages | 15% stockout-reduction potential; margin ranking by product | `bhatia-traders-sales-analysis` |
-| P20 | Job Search & Outreach Automation | AI DS BIZ | Scheduled pipeline, job ingestion, CV/letter generation, email sequencing, CRM-style tracking | 24h ingestion window across 3 geographies; in progress | **private** |
+| P20 | Job-Search Automation (4 chained scheduled agent tasks) | AI DS BIZ | Scheduled agents, shared database, ATS and Arbeitsagentur feeds, validator, versioned releases | 4 tasks, 37 standing rules, job boards across 12 countries, 25 stored job batches | `job-search-automation` (**private**) |
 | P21 | Odd-Jobs Aggregator for Students in Germany | AI DA BIZ | Multi-source listing ingestion (Kleinanzeigen, Craigslist, extensible), dedup, draft generation, human-in-the-loop approval, auto-apply | 2 sources live, pluggable; 24h window; built | **private** |
 | P22 | **ParetoGate** — cost-aware LLM gateway | AI DS | FastAPI, MiniLM, scikit-learn, SQLite semantic cache, Ollama/LM Studio, code graph | 86,416 → 11,351 input tokens on a frozen 25-task suite, all reviewed changes passing (80.8% modelled cost cut) | **private** |
+| P23 | Bhatia Traders SQL Inventory Alerts | DA BIZ | MySQL (CASE, JOINs, UPDATE) | Automated 20% low-stock alerts with reorder recommendations | `bhatia_traders_inventory_alert_system` |
 
 Repo URL = `https://github.com/gauravbhatia-bit/<repo>`
 
@@ -47,7 +54,7 @@ Live demos (link these when the JD mentions deployment, product sense or stakeho
 - Office Energy Dashboard — https://office-energy-forecasting-dashboard-byb9cixihrwm3c779d3hpv.streamlit.app/
 - Dutch Risk Radar — https://dutch-risk-radar-lu7gdrmdsmobmccabmbypw.streamlit.app/
 
-**Do not list:** `testing1`, `testing.`, `pappu`, `machine-learning-practice`, `Machine-learning-intro`, `Churn-Analysis` (empty README), `berlin-football-analystics` (fun, not professional), `iran-energy-impact-analyzer` (superseded by P4), `ds-intern-challenge-submission` (someone else's brief).
+**Do not list:** `testing1`, `testing.`, `pappu`, `machine-learning-practice`, `Machine-learning-intro`, `Churn-Analysis` (empty README), `berlin-football-analystics` (fun, not professional), `iran-energy-impact-analyzer` (superseded by P4), `ds-intern-challenge-submission` (someone else's brief), `gauravbhatia-bit.github.io` and `gauravbhatia-bit.bio` (the portfolio site and profile, not projects).
 
 ## In-flight projects — P20, P21, P22
 
@@ -63,19 +70,26 @@ P1–P19, because they are products rather than analyses.
 
 ### Repo status
 
-**All three repos are private as of 30 Oct 2026** (Gaurav, confirmed). Do not go looking for them,
-do not guess a slug, and never link a repo that 404s — a dead link costs more than no link.
+Checked against his GitHub account on 30 Oct 2026 (`gh repo list`, 33 repos):
 
-On a CV they carry **"Private repo"** in the link column rather than a blank. A blank reads as an
-oversight; "Private repo" says the code exists and is simply not open. It also sets up the obvious
-interview question with an easy answer: it is live work.
+| Project | On GitHub? |
+|---|---|
+| P20 Job-Search Automation | **Yes, private** as `job-search-automation` |
+| P21 Odd-Jobs Aggregator | **Not found** under `gauravbhatia-bit`, public or private |
+| P22 ParetoGate | **Not found** under `gauravbhatia-bit`, public or private |
+
+P21 and P22 may live only on his machine or on another host. **The CV currently says "Private repo"
+next to both.** If they are local only, that label is not accurate and should change to something
+true (or the repos should be pushed to private GitHub repos, which also gives the cloud backup he
+asked for at the start). **Open: waiting on Gaurav's answer.** Never link a repo that 404s, and never
+guess a slug.
 
 > **Worth doing, and it is the cheapest win available.** Every other project here is verifiable in
-> one click, and these three — the most impressive work in the library — are the only ones a reader
+> one click, and these three, the most impressive work in the library, are the only ones a reader
 > has to take on trust. Making even one public changes that. P21 is the best candidate: it is
 > built rather than in progress, and a sanitised version without credentials or scraping keys
 > would be enough. Failing that, a README with screenshots in a public repo carries most of the
-> benefit for an hour of effort. Raise this once; it is Gaurav's call, not a blocker.
+> benefit for an hour of effort. It is Gaurav's call, not a blocker.
 
 ### Numbers to add the moment they land
 
@@ -87,36 +101,41 @@ Not gates. These just turn a good line into a strong one, and P22's are days awa
 | P21 | Users, and listings ingested per day | Users is the one metric nothing else in this library has. One user outside himself changes what the project means. |
 | P22 | **% token reduction at equal task quality**, with the quality guard named | A router can always cut tokens by downgrading the model. The pairing is the whole claim. |
 
-### P20 — Job Search & Outreach Automation
+### P20 — Job-Search Automation
 
-Scheduled pipeline: pulls roles posted in the last 24h on LinkedIn across his city, Germany and
-neighbouring European countries; identifies recently funded startups; generates a tailored CV and
-cover letter per target; sends cold outreach with timed follow-ups; tracks who connects back on
-LinkedIn. Runs unattended.
+**Repo `job-search-automation`, private** (it holds his personal details). Facts below are from its
+README, read on 30 Oct 2026; re-read it when it changes (`scripts/sync_repos.py` will flag that).
 
-> **Flag this one before it goes near a German employer.** Two separate risks, and they are not
-> theoretical.
+His daily Berlin job search as versioned code. **Four scheduled agent tasks hand work to each other
+through a shared database:**
+
+| Task | Does |
+|---|---|
+| Find jobs (weekdays, morning) | ATS and Arbeitsagentur feeds, government portals, job boards in Germany, the Netherlands and ten further countries, plus funding news |
+| Outreach (weekdays) | Inbox, LinkedIn accepts, funded-startup and agency emails, tracker, calendar, a daily digest |
+| Report (weekdays) | One daily report, a checker receipt, a run log, a push notification, a GitHub archive step |
+| LinkedIn (on demand) | 14 searches, **drafts only** |
+
+**Quotable, all from the README:** 4 tasks · **37 standing rules** with an ownership map · a
+**validator that gates each run and issues receipts** · a regression test built on a real report ·
+**versioned releases with rollback and snapshots** · 25 stored job batches · LaTeX CV and
+cover-letter templates · install config kept separate from the code.
+
+> **This is a real engineering project, and the README proves it.** Gates, receipts, ownership of
+> rules, rollback: that is how production systems are run, and almost no portfolio project has it.
+> It was undersold in the first description ("a scheduled pipeline"). For AI-engineering, platform
+> or automation roles, lead with the governance (rules, validator, rollback), not the job search.
 >
-> 1. **Platform terms.** LinkedIn's User Agreement prohibits automated scraping and automated
->    connection or messaging, and LinkedIn enforces it with account restrictions and bans. The
->    LinkedIn profile at risk is the one printed on his CV.
-> 2. **German law on automated outreach.** Unsolicited commercial email to individuals is tightly
->    restricted under UWG §7, and processing scraped personal contact data engages GDPR Art. 6 and
->    the Art. 14 notice duty. A genuine job application is on far safer ground than marketing, but
->    *bulk automated sending to scraped personal addresses with automated follow-ups* is where the
->    distinction stops protecting him. This is a flag, not legal advice.
+> **Compliance: mostly settled by the README.** The LinkedIn task produces **drafts only**, so
+> nothing is sent or connected automatically, and sourcing is from ATS, Arbeitsagentur and
+> government feeds, which is the safe pattern. That removes the scraping and platform-terms worry
+> raised earlier. What remains is the outreach task emailing agencies and funded startups: keep to
+> role-based addresses, human-scale volume, say plainly it is a job application, and cap
+> follow-ups (UWG §7 and GDPR). A flag, not legal advice.
 >
-> **Practical mitigations**, all of which also make the CV line stronger rather than weaker: send to
-> role-based addresses (`jobs@`, `careers@`) rather than scraped personal ones; keep volume
-> human-scale; state plainly in every message that it is a job application; cap follow-ups at one
-> or two; use LinkedIn's official Jobs API or exported data rather than scraping where possible;
-> honour robots.txt and rate limits.
->
-> **How to describe it on a CV.** Lead with the *system* — scheduling, deduplication, document
-> generation, state tracking, human-in-the-loop — not with "scrapes LinkedIn and sends automated
-> cold emails". The first is an engineer who ships. The second reads to a German hiring manager as
-> a compliance problem walking through the door. Same project, and only one of the two descriptions
-> is doing him a favour.
+> **How to describe it.** Lead with the system (scheduled agents, shared state, validation, rollback),
+> not "sends automated cold emails". A reader who hears the first sees an engineer; one who hears
+> the second sees a compliance risk.
 
 ### P21 — Odd-Jobs Aggregator for Students in Germany
 
@@ -266,9 +285,9 @@ Two bullets max per project. Lead with the number.
 **P16-P18 Toll / Maut suite**
 - Built SQL reporting (CTEs, window functions, RANK), Z-score and Isolation Forest anomaly detection, and a scheduled weekly HTML KPI report over German highway toll data
 
-**P20 Job Search & Outreach Automation** *(current — present tense)*
-- Building an end-to-end job-search pipeline that ingests roles posted in the last 24 hours across his city, Germany and neighbouring European markets, scores them against a rule-governed content library, and generates a tailored CV and cover letter per target
-- Automated the outreach and follow-up sequence with contact-state tracking, so each target is approached once and followed up on schedule rather than manually
+**P20 Job-Search Automation** *(built, run daily)*
+- Built a versioned job-search system of four scheduled agent tasks that hand work to each other through a shared database: sourcing from ATS and Arbeitsagentur feeds, government portals and job boards across 12 countries, then outreach, a daily report and LinkedIn drafts
+- Governed it with 37 standing rules, a validator that gates every run and issues receipts, a regression test on a real report, and versioned releases with rollback
 
 **P21 Odd-Jobs Aggregator for Students in Germany** *(current)*
 - Built a multi-source aggregator that collects odd-job listings posted in the last 24 hours across Kleinanzeigen, Craigslist and further pluggable sources, for international students who cannot search them by hand
@@ -281,6 +300,9 @@ Two bullets max per project. Lead with the number.
 - Reported a **negative end-to-end result** — realised cost 25.7% worse on a live 5-task run — rather than publishing the favourable 81% input-token figure alone
 - Denied semantic cache reuse for fresh, sensitive, high-stakes and exact-wording requests, with a tenant-isolated, TTL-bounded, similarity-gated SQLite + MiniLM store serving only quality-verified answers
 - Served it as a **FastAPI** service with versioned conversation memory and an incremental Python code graph, benchmarked against local models via Ollama and LM Studio
+
+**P23 Bhatia Traders SQL Inventory Alerts**
+- Built MySQL queries (CASE, JOINs, UPDATE) that raise automated low-stock alerts at a 20% threshold with reorder recommendations for a sauces and condiments business
 
 > **Tense matters on these three.** P20 and P22 are in progress — "Building", "Designing".
 > P21 is built — "Built". Do not write a past-tense completion claim for work still running, and

@@ -167,12 +167,13 @@ logistics department, vendors, clients and internal stakeholders.
 
 ### Not on the CV, but keep for interviews
 
-- **Professional football, 2019–2020.** Took a break inside the Bhatia Traders years to play in the
-  **third tier of the Indian football league** with Lonestar FC, Jammu & Kashmir. Not CV content for
-  a data role and there is no space for it, but it is a genuinely strong answer to "tell me
-  something about yourself", it reads well in Germany where semi-professional sport is respected, and
-  it explains any dip in the 2019–2020 business period if one ever comes up. It also pairs with the
-  `berlin-football-analystics` repo if a conversation ever turns that way.
+- **Football, 2019–2020.** Took a break inside the Bhatia Traders years to play in the
+  **third tier of the Indian football league** with Lonestar FC, Jammu & Kashmir. **Always goes in
+  cover letters** (Gaurav's rule, 30 Oct 2026): one sentence, linked to a relevant story, see
+  `COVER-LETTER-BUILDER.md` S8. Not a CV line. Also a strong answer to "tell me something about
+  yourself", it reads well in Germany where semi-professional sport is respected, and it explains
+  any dip in the 2019–2020 business period if one ever comes up. It pairs with the
+  `berlin-football-analystics` repo if a conversation turns that way.
 - **Mathematics tutoring**, part-time, across the Bhatia Traders years. Feeds the Guru Disha venture
   story. Only worth raising for teaching, enablement or customer-facing roles.
 
@@ -208,6 +209,11 @@ Pull from here; never list everything at once. 5-6 rows maximum on a CV.
 - Introduction to Cloud Infrastructure: Describe Cloud Concepts — Microsoft, Jul 2026
 - Deloitte **Data Analytics Job Simulation** — Certificate of Completion, issued by Forage, 1 Jul 2026 (tasks: data analysis, forensic technology)
 
+> **Verification note, 30 Oct 2026.** Gaurav supplied both certificate PDFs (`Desktop\cv stuff`). Their
+> text is drawn as shapes, not stored as text, and could not be read by any tool available, so the
+> Microsoft title and date come from his DKB CV and are **not checked against the file**. The Deloitte
+> details were read earlier in the project.
+>
 > It is a genuine certificate of completion, but of a simulation, not of employment. Keep "Job Simulation" in the name. Listing it as "Deloitte Data Analytics" alone would read as Deloitte work experience.
 
 ---

@@ -43,7 +43,7 @@ Four paragraphs, under one page, ~300 words.
 |---|---|
 | **1 — The hook** | Why this company, specifically. The honest sentence from step 1. Never "I am writing to apply for…". |
 | **2 — The proof** | Story one, told with the number in it. This is the paragraph that gets him the interview. |
-| **3 — The person** | Story two. What it says about how he works. Tie it to something the JD actually asked for. |
+| **3 — The person** | Story two. What it says about how he works. Tie it to something the JD actually asked for. **The football sentence lives here**, hung on this story. |
 | **4 — The close** | Available from December 2026, in Berlin, with the permit. One line, no pleading. |
 
 ### 4. Guardrails
@@ -114,8 +114,8 @@ analysis has a budget attached. Also whenever a JD says "business acumen" or "st
 not been asked for revenue figures. Lead with the decisions he owned, not the size.
 
 > *Starting point.* For eight years I ran a trading business — what to buy, what to charge, how much
-> to hold and on what terms. The analysis I did there was never academic; a bad stocking call showed
-> up in cash the same month. That is the lens I bring to pricing work now: a model is only useful if
+> to hold and on what terms. I was the one who lived with every purchasing and pricing
+> decision. That is the lens I bring to pricing work now: a model is only useful if
 > someone can act on it on Monday.
 
 ---
@@ -179,7 +179,8 @@ thing he did with it was analyse his own company's sales data
 further repos.
 
 **What it proves** — The career change was not a pivot away from something failing. He had a
-functioning business and left it because the analysis had become the part he wanted to do.
+functioning business and started learning data on his own, out of interest. Never give him a
+motive he did not state ("tired of guessing", "the moment I decided"): he said *out of interest*.
 
 **Reach for it when** the JD is junior, mentions "career changer", "non-traditional background",
 curiosity or self-direction, or when the letter needs to explain why a Civil Engineering B.Tech and
@@ -188,10 +189,10 @@ eight years in trade lead to a data role. It answers "why the change?" before an
 **The limit** — Self-taught, then formally trained. Do not present the MSc as the start of the
 story; the self-teaching came first and is the more interesting half.
 
-> *Starting point.* I came to data the long way round. I taught myself SQL while running a trading
-> business, mostly because I was tired of guessing, and the first thing I pointed it at was my own
-> sales data. Finding a 15% stockout problem I had been living with for years was the moment I
-> decided to do this properly, which is what brought me to a Master's in Germany.
+> *Starting point.* I came to data the long way round. I taught myself SQL out of interest while
+> running a trading business, and the first thing I pointed it at was my own sales data. It showed
+> I could have cut stockouts by around 15%. That was enough to make me study it properly, which is
+> what brought me to a Master's in Germany.
 
 ---
 
@@ -236,25 +237,39 @@ proven in the projects; claiming it at Troika is the one thing that would make t
 
 ---
 
-### S8 · Professional football
+### S8 · Football (always include, one sentence, always linked)
 
-**The facts** — 2019–2020, a break inside the Bhatia Traders years to play in the **third tier of the
-Indian football league** with Lonestar FC, Jammu & Kashmir.
+**Gaurav's rule, 30 Oct 2026: football goes in every cover letter.** It gives the letter a human
+touch, and a sportsperson reads as someone who works well in a team. The skill is in *how*.
 
-**What it proves** — Sustained discipline toward something difficult, and the willingness to commit
-fully to a thing with a real chance of not working out.
+**The facts, and nothing beyond them** — 2019 to 2020, a break inside the Bhatia Traders years to
+play in the **third tier of the Indian football league** with **Lonestar FC, Jammu and Kashmir**.
+No captaincy, no titles, no "professional career". Third tier, one club, a season-ish. Say exactly
+that.
 
-**Reach for it when** — rarely in a letter. This is interview material, and a very good answer to
-"tell me about yourself". It reads well in Germany, where semi-professional sport is respected.
-Use it in a letter only if the company culture makes it genuinely relevant — a sports brand, an
-explicitly team-culture employer, or where the JD asks for something personal.
+**How to use it: one sentence, never its own paragraph, always tied to something in the letter.**
+A football line that stands alone reads like decoration. Hung on a real example it becomes
+evidence. Pick the link that matches the JD:
 
-**The limit** — Third tier, one club, one season-ish. Say exactly that. Do not let it become
-"played professional football in India" without the tier.
+| The JD stresses | Link football to | Example wording |
+|---|---|---|
+| Teamwork, cross-functional work, stakeholders | The Lithuania export order (S1), which needed logistics, the vendor and the client to pull together | "That felt familiar from my football years in the third tier with Lonestar FC in Jammu and Kashmir: the result belongs to the whole side." |
+| Rigour, process, preparation | The A/B test with the threshold set in advance (S4) | "Football taught me to prepare for the match I will actually play, and the threshold was my version of that." |
+| Pressure, deadlines, resilience | The export order under a delivery deadline (S1) | "I had played under pressure before, in the third tier of Indian football, so a delivery deadline did not rattle me." |
+| Relocating, adapting, starting over | The move to Germany (S6) | "I had already left home once to play with Lonestar FC in Jammu and Kashmir, so starting again in Berlin was less daunting." |
+| Startup, ownership, self-driven | The side ventures (S3) | "I took a year out to play third-tier football because I wanted to find out if I could. The ventures came from the same instinct." |
+
+**The limits.**
+- **The interpretive part is his voice, not a fact.** "Taught me" and "felt familiar" are claims about
+  how he thinks. Draft them, but he should read each one and change it if it is not how he would say it.
+- Never claim leadership or captaincy unless he says so.
+- If the company is a sports brand, a team-culture employer, or the JD asks for something personal,
+  the football can take two sentences. Otherwise one.
+- It pairs with the `berlin-football-analystics` repo, which is deliberately **not** listed as a
+  CV project; if an interviewer picks the football up, the repo is a fun follow-up, not a credential.
 
 > *Starting point.* Before any of this I spent a year playing in the third tier of the Indian
-> football league. It is the only thing I have done that taught me as much about preparation as
-> running a business did.
+> football league with Lonestar FC in Jammu and Kashmir. [Then one linking sentence from the table.]
 
 ---
 
@@ -293,4 +308,4 @@ or "research I completed".
 | Research-leaning / ML team | S4 A/B test | S5 self-taught |
 | Any junior role, background queried | S5 self-taught | S2 eight years |
 
-Close every letter with S6 in one line.
+Close every letter with S6 in one line. **Football (S8) goes in every letter**, as one sentence linked to the story it fits best, per the table in S8.

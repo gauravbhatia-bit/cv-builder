@@ -10,6 +10,8 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 | `data/projects.md` | Every project: tags, stack, metrics, repos, bullet bank. **The only source of project content.** |
 | `RULES.md` | How a JD becomes a CV. Bullet budgets, project picking, honesty guardrails. §10 maps JD requirements to the right experience. |
 | `COVER-LETTER-BUILDER.md` | The stories behind the facts, for cover letters. Narrative only, never a source of a number. |
+| `letters/base.md` | The saved base cover letter. Every custom letter starts here. `letters/sample-energy-analyst.md` is a worked example. |
+| `scripts/sync_repos.py` | Compares GitHub with `projects.md`; reports new and changed repos. Reports only, never edits. |
 | `STYLE.md` | How everything is written. Gaurav's own voice rules. Overrides any default phrasing. |
 | `templates/base.html` | The neutral base CV, **one page**, 3 projects. The default. |
 | `templates/base-2page.html` | **Two-page** variant, 9 projects in priority order, thesis permanent, fuller experience bullets. For roles where project depth is the evidence. |
@@ -19,6 +21,7 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 
 ## Procedure
 
+0. **Sync projects.** `python scripts/sync_repos.py`. If it lists NEW or CHANGED repos, read each README, update `data/projects.md`, then run it again with `--done`. Skip only if it was run in the last day or two. It changes nothing by itself: a README change must never silently rewrite a CV claim.
 1. **Read the JD.** Write `jd/<company>-<role>.md` using the extraction table in `RULES.md` §1.
 2. **Check blockers.** C1 German, 5+ years, existing permit, on-site outside Berlin. Say so before building.
 3. **Check open questions.** `master.md` §2. If a `G#` affects a line on this CV, ask Gaurav first — do not guess.
@@ -31,9 +34,9 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
    - Swap the three `.entry` project blocks.
    - Set `<title>` — the "Save edited HTML" button uses it as the filename.
 6. **Verify** against the checklist in `RULES.md` §9.
-7. **Cover letter**, if one is wanted: `COVER-LETTER-BUILDER.md`. Research the company first, pick two stories via `RULES.md` §10, respect each story's stated limit.
+7. **Cover letter**, if one is wanted: start from `letters/base.md` (the saved reference), keep its structure and voice, and change only `[WHY]`, `[PROOF]` and `[LINK]`. Research the company first, pick two stories via `RULES.md` §10, respect each story's stated limit, and **always include the football sentence**, linked to the story it fits (`COVER-LETTER-BUILDER.md` S8). Save to `out/` (gitignored). `letters/sample-energy-analyst.md` shows a finished one.
 8. **Report** to Gaurav: what was picked, what was cut, and anything that had to be left out for honesty.
-8. **Commit and push.** One commit per application: `cv: <Company> <Role>`.
+9. **Commit and push.** One commit per application: `cv: <Company> <Role>`.
 
 ## Voice
 
