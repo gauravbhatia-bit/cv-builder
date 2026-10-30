@@ -13,8 +13,9 @@ this file disagrees with the repo, the repo wins.
 ## 1. Get the repo, fresh, every time
 
 ```bash
-gh repo clone gauravbhatia-bit/cv-builder cv-builder      # or, without gh:
-# fetch https://raw.githubusercontent.com/gauravbhatia-bit/cv-builder/master/<path>
+git clone https://github.com/gauravbhatia-bit/cv-builder.git cv-builder
+# gh repo clone also works locally, but is blocked in cloud sessions. Last resort, per file:
+# https://raw.githubusercontent.com/gauravbhatia-bit/cv-builder/master/<path>
 ```
 
 Read in this order, and follow them rather than summarising from memory:
@@ -24,7 +25,7 @@ Read in this order, and follow them rather than summarising from memory:
 3. `STYLE.md`: voice. No em dashes, no banned phrases, plain direct language.
 4. `data/master.md` (career) and `data/projects.md` (projects). **The only allowed source of any claim.**
 5. `COVER-LETTER-BUILDER.md` and `letters/base.md`: the story bank and the saved base letter.
-6. `templates/base.html` (one page, default) or `templates/base-2page.html`.
+6. `templates/base-2page.html` (two pages, the default), `templates/base.html` (one page, only on request) and `templates/letter.html` (letter page with the photo header).
 
 **If GitHub is unreachable, stop and say so.** Do not fall back to memory or an old copy. A CV built
 from stale facts is worse than no CV.
@@ -35,9 +36,9 @@ Work inside the clone's `out/` folder (it is gitignored). In short, per `CLAUDE.
 
 - Read the JD; write the note; check blockers (C1 German, 5+ years, work-authorisation requirements, on-site outside Berlin) and name them to Gaurav before building.
 - **Never mention his visa, residence or work-permit status in any CV, letter or email**, and never assert anything about it either way. Availability is a date. If a form or recruiter asks directly, flag it for Gaurav to answer.
-- Pick content per `RULES.md` sections 4, 5 and 10. Edit a copy of the template: headline, profile, skills order, bullets, three projects.
-- **Cover letter:** start from `letters/base.md`, change only the marked parts, research the company first, use two stories, and **always include the football sentence, linked to a real story**. Under 300 words. Save as `out/Gaurav_Bhatia_Letter_<Company>.md`.
-- Names: `Gaurav_Bhatia_CV_<Company>.html` and `.pdf`, plus the letter.
+- Pick content per `RULES.md` sections 4, 5 and 10. **Two pages is the default:** edit a copy of `templates/base-2page.html` (headline, profile, skills order, bullets, project order). Use the one-page `templates/base.html` only when the ad or Gaurav asks for one page.
+- **Cover letter:** start from `letters/base.md`, change only the marked parts, research the company first, use two stories, and **always include the football sentence, linked to a real story**. Under 300 words. Save as `out/Gaurav_Bhatia_Letter_<Company>.md`, then run `python scripts/build_letter.py out/Gaurav_Bhatia_Letter_<Company>.md "<Company>"` to get the designed letter page with the same photo header as the CV.
+- Names: `Gaurav_Bhatia_CV_<Company>.html` and `.pdf`, and `Gaurav_Bhatia_Letter_<Company>.md`, `.html` and `.pdf`.
 
 ## 3. Verify, then deliver
 
@@ -46,11 +47,16 @@ attached or sent. It enforces the rules mechanically: em dashes, banned phrases,
 traceable to the data files, unchanged titles and dates, letter length and the football sentence,
 no contact details in the repo. If it fails, fix the document. Never loosen the check.
 
-## 4. Contact details and photo: never from the repo
+## 4. Photo from the repo; contact details never from the repo
 
-The templates contain `[EMAIL]`, `[PHONE]` and `[PHOTO]` on purpose. Fill them at render time from
-the host automation's private configuration (the private `job-search-automation` repo holds them).
-Never write a real email, phone or photo into any file that could be committed to the public repo.
+**Photo:** always `assets/photo.jpg` in the repo. It is public on purpose. Every CV template and the
+letter template already point at it (`src="../assets/photo.jpg"`), so a fresh clone has it. Never
+leave it off, and never take a photo from anywhere else.
+
+**Contact details:** the templates contain `[EMAIL]` and `[PHONE]` on purpose. Fill them at render
+time from private configuration (`private/contact.md` on Gaurav's laptop, or the private
+`job-search-automation` repo). Never write a real email or phone into any file that could be
+committed to the public repo.
 
 ## 5. Interactive versus unattended
 
@@ -59,10 +65,13 @@ Never write a real email, phone or photo into any file that could be committed t
 
 ## 6. Rendering
 
-The repo's templates are HTML; print to PDF with headless Chrome (`render.cmd` does this on Windows).
+The repo's templates are HTML; print to PDF with headless Chrome. On Windows `render.cmd` does it and
+embeds the photo. Elsewhere, render the file **from inside `out/`** (so `../assets/photo.jpg`
+resolves) with headless Chromium or Playwright, A4, and count the pages of the PDF.
 If the host automation compiles its own LaTeX (moderncv) template, keep using that layout, but fill it
-only from the repo's data and keep the repo's wording rules. One page by default; the two-page
-template only where `RULES.md` hard rule 2 allows; never three.
+only from the repo's data and keep the repo's wording rules. **Two pages by default**, exactly two;
+one page only when asked; never three. The cover letter is always one page. Check the photo is
+visible on both before delivering.
 
 ## 7. Keeping this skill current
 

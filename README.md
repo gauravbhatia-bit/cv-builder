@@ -10,7 +10,7 @@ Then open that file in Chrome → **Print / Save as PDF** → destination "Save 
 
 ## Edit by hand
 
-Every CV file is editable in the browser. Click any text and type. The toolbar at the top adjusts text size and spacing to fit one page, and **Save edited HTML** downloads the edited file so the change can be committed. The toolbar does not print.
+Every CV file is editable in the browser. Click any text and type. The toolbar at the top adjusts text size and spacing to fit the page count, and **Save edited HTML** downloads the edited file so the change can be committed. The toolbar does not print.
 
 ## What is where
 
@@ -23,9 +23,11 @@ Every CV file is editable in the browser. Click any text and type. The toolbar a
 | `STYLE.md` | Your voice rules. Applied to every CV and letter. |
 | `letters/` | `base.md` is your saved base cover letter. `sample-energy-analyst.md` shows a finished custom one. |
 | `scripts/sync_repos.py` | Checks GitHub against your project list. Reports only, never edits. |
-| `render.cmd` | Turns the HTML CVs into PDFs, filling in your photo and contact details. |
-| `templates/base.html` | The one-page base CV. The default. |
-| `templates/base-2page.html` | The two-page version, 9 projects including your thesis. For roles where the project detail is the point. |
+| `render.cmd` | Turns the HTML CVs and letters into PDFs, embedding your photo and filling in contact details. |
+| `templates/base-2page.html` | The two-page CV, with your thesis and full project set. **The default.** |
+| `templates/base.html` | The one-page CV, for ads that ask for one page. |
+| `templates/letter.html` | The cover-letter page, with the same photo header as the CV. |
+| `assets/photo.jpg` | Your photo, public, used on every CV and letter. |
 | `jd/` | Notes on each job description. |
 | `out/` | Finished CVs. |
 | `CLAUDE.md` | Procedure Claude follows. |

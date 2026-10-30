@@ -14,8 +14,10 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 | `skill/cv-builder/SKILL.md` | This project as a Claude skill for the job-search automation. Holds **no facts**, only the procedure and a pointer to this repo. `check.py` fails if it gains a date or a retired claim. |
 | `scripts/sync_repos.py` | Compares GitHub with `projects.md`; reports new and changed repos. Reports only, never edits. |
 | `STYLE.md` | How everything is written. Gaurav's own voice rules. Overrides any default phrasing. |
-| `templates/base.html` | The neutral base CV, **one page**, 3 projects. The default. |
-| `templates/base-2page.html` | **Two-page** variant, 9 projects in priority order, thesis permanent, fuller experience bullets. For roles where project depth is the evidence. |
+| `templates/base-2page.html` | **Two-page** CV, the full project set in priority order, thesis permanent, fuller experience bullets. **The default** (30 Oct 2026). |
+| `templates/base.html` | **One-page** CV, 3 projects. Only when the ad or Gaurav asks for one page. |
+| `templates/letter.html` | Cover-letter page with the same photo header as the CV. Filled by `scripts/build_letter.py`. |
+| `assets/photo.jpg` | His photo. **Public on purpose** (Gaurav, 30 Oct 2026). Every CV and letter uses it. |
 | `jd/` | One markdown note per job description, before building. |
 | `out/` | Finished CVs. **Gitignored** — these carry real contact details. |
 | `private/contact.md` | Real email and phone. **Gitignored.** |
@@ -27,15 +29,15 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 2. **Check blockers.** C1 German, 5+ years, EU citizenship or existing work authorisation, on-site outside Berlin. Say so to Gaurav before building, in the JD note, never in a document.
 3. **Check open questions.** `master.md` §2. If a `G#` affects a line on this CV, ask Gaurav first — do not guess.
 4. **Pick content** per `RULES.md` §4 and §5. Write the picks into the JD note so the choice is reviewable.
-5. **Build.** `cp templates/base.html out/Gaurav_Bhatia_CV_<Company>.html`, then edit:
+5. **Build.** `cp templates/base-2page.html out/Gaurav_Bhatia_CV_<Company>.html` (or `base.html` if one page was asked for), then edit:
    - `<h2>` right after the header block = the headline. Match the JD's job title.
    - The `<p>` under it = the Profile. Rewrite per `RULES.md` §3.
    - Reorder `<dt>/<dd>` skill rows; the JD's top requirement goes first.
    - Trim/swap `<li>` bullets to the budget.
-   - Swap the three `.entry` project blocks.
+   - Reorder and swap the `.entry` project blocks so the JD's best matches come first.
    - Set `<title>` — the "Save edited HTML" button uses it as the filename.
 6. **Verify.** Run `python scripts/check.py --render`; it must report 0 failures. Then the checklist in `RULES.md` §9 for what a script cannot judge.
-7. **Cover letter**, if one is wanted: start from `letters/base.md` (the saved reference), keep its structure and voice, and change only `[WHY]`, `[PROOF]` and `[LINK]`. Research the company first, pick two stories via `RULES.md` §10, respect each story's stated limit, and **always include the football sentence**, linked to the story it fits (`COVER-LETTER-BUILDER.md` S8). Save to `out/Gaurav_Bhatia_Letter_<Company>.md` (gitignored; the `Letter` in the name is what makes `check.py` apply the letter rules to it). `letters/sample-energy-analyst.md` shows a finished one.
+7. **Cover letter**, if one is wanted: start from `letters/base.md` (the saved reference), keep its structure and voice, and change only `[WHY]`, `[PROOF]` and `[LINK]`. Research the company first, pick two stories via `RULES.md` §10, respect each story's stated limit, and **always include the football sentence**, linked to the story it fits (`COVER-LETTER-BUILDER.md` S8). Save to `out/Gaurav_Bhatia_Letter_<Company>.md` (gitignored; the `Letter` in the name is what makes `check.py` apply the letter rules to it). `letters/sample-energy-analyst.md` shows a finished one. Then run `python scripts/build_letter.py out/Gaurav_Bhatia_Letter_<Company>.md "<Company>"` to make the designed page (same photo header as the CV), and render it to PDF like the CV.
 8. **Report** to Gaurav: what was picked, what was cut, and anything that had to be left out for honesty.
 9. **Commit and push.** One commit per application: `cv: <Company> <Role>`.
 
@@ -47,13 +49,14 @@ hyphen. En dashes in ranges (`Aug 2026 – Present`) are fine.
 
 ## Photo
 
-**Gaurav wants a photo** (30 Oct 2026). Drop `photo.jpg`, `.jpeg` or `.png` into `private/` and
-`render.cmd` embeds it top-right as base64. With no such file the `[PHOTO]` placeholder is removed
-and the layout still works, just airier. `private/` is gitignored, so the photo never reaches
-GitHub. Portrait, about 4:5 (it renders at 22 × 28 mm), ideally 400 × 500 px or larger.
-The current `private/photo.jpg` is a head-and-shoulders crop (316 × 402 px region, resized to
-440 × 560) of the original `private/photo.png`. `render.cmd` takes `.jpg` before `.png`, so the
-original stays as the untouched source. To change the crop, redo it from `photo.png`.
+**The photo is public and lives in the repo** at `assets/photo.jpg` (Gaurav's decision, 30 Oct
+2026: it is meant to be seen). Every CV template and the letter template point at it with
+`src="../assets/photo.jpg"`, so it shows when a file in `templates/` or `out/` is opened directly,
+and `render.cmd` embeds it as base64 so the PDF carries it. Any machine that clones the repo gets the
+photo, so cloud and scheduled runs use the same one. It is the only image `check.py` allows to be
+tracked. Portrait, about 4:5 (it renders at 22 × 28 mm). The current file is a head-and-shoulders
+crop (440 × 560) of the original `private/photo.png`, which stays private as the untouched source.
+To change the photo, replace `assets/photo.jpg` and commit.
 
 **Running `render.cmd` from PowerShell 5.1:** `&&` is not supported there. Use the full path,
 `C:\Users\gaura\cv-builder\render.cmd`, which works from any folder in PowerShell or cmd.
@@ -79,9 +82,9 @@ still carry the phone number. They are off the branch but remain fetchable from 
 Gaurav weighed this on 30 Oct 2026 and chose to leave them. The rule above still applies to every
 new commit.
 
-## One page
+## Page count
 
-The template holds one page at its defaults (`--fs: 9.5pt`, `--gap: 2px`) with 3 jobs, 3 projects and 6 skill rows — that is already tight, so anything added must displace something. Check with `render.cmd` and count pages before handing over. Below 9pt, cut content instead — see `RULES.md` §4.
+**Two pages is the default** and must render to exactly two. The one-page template is for when one page is asked for. It holds one page at its defaults (`--fs: 9.5pt`, `--gap: 2px`) with 3 jobs, 3 projects and 6 skill rows — that is already tight, so anything added must displace something. Check with `render.cmd` and count pages before handing over. Below 9pt, cut content instead — see `RULES.md` §4.
 
 ## Guardrails
 
@@ -91,7 +94,7 @@ The rules in this repo are enforced by `scripts/check.py`, not by good intention
 - a number on a CV that appears in neither `master.md` nor `projects.md` (every number must be traceable)
 - a changed job title, employer or date, or a retired claim ("Croud", "January 2027")
 - a cover letter over 300 words, with a leftover `[WHY]` marker, or **without the football sentence**
-- a contact detail in any tracked file, or a PDF, photo or `private/` file that is tracked
+- a contact detail in any tracked file, or a tracked PDF, `private/` file or image (the one exception is the public `assets/photo.jpg`)
 - a duplicate or broken project ID, or a CV that renders to the wrong page count (`--render`)
 
 It runs automatically three ways: a **pre-commit hook** (so a bad commit is refused), a **GitHub
@@ -121,7 +124,7 @@ When Gaurav mentions a new job, project, repo or metric, write it down **in the 
 
 - Invent a metric, tool, date or title.
 - Drop a job to save space.
-- Go to three pages. Two is allowed via `templates/base-2page.html`; see `RULES.md` hard rule 2 for when.
+- Go to three pages. Two is the default; see `RULES.md` hard rule 2.
 - Put anything in this repo that should not be public — it is a public repo.
 - Source anything from the Apr 2026 hospitality CVs — their *dates* are wrong, though their pre-2020 roles are real side ventures. See `master.md` §2.
 - Shorten "Deloitte Data Analytics Job Simulation" to "Deloitte Data Analytics".

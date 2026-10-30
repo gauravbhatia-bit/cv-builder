@@ -28,7 +28,7 @@ body{font-family:Lato,"Segoe UI",Arial,sans-serif;color:var(--ink)}
 
 /* ---------- header ---------- */
 .head{display:flex; align-items:center; gap:14px}
-/* Photo is optional. render.cmd fills [PHOTO] from private/photo.*; with none, the name block just sits at the left. */
+/* Photo is public, in assets/photo.jpg (Gaurav's call, 30 Oct 2026). render.cmd embeds it so the PDF carries it. */
 .photo{width:22mm; height:28mm; object-fit:cover; border:1px solid var(--rule); flex:0 0 auto}
 h1{font-size:2.45em; line-height:1; margin:0 0 2px; letter-spacing:-.5px}
 .links{font-size:.95em}
@@ -102,13 +102,13 @@ body{padding-top:44px}
   <label>Spacing <input type="range" id="gp" min="2" max="12" step="1" value="2"><span id="gpv">2px</span></label>
   <button onclick="print()">Print / Save as PDF</button>
   <button class="ghost" onclick="save()">Save edited HTML</button>
-  <span class="hint">Click any text to edit it. Aim for one page.</span>
+  <span class="hint">Click any text to edit it. Aim for exactly two pages.</span>
 </div>
 
 <div class="page" contenteditable="true" spellcheck="false">
 
   <div class="head">
-    [PHOTO]
+    <img class="photo" src="../assets/photo.jpg" alt="Gaurav Bhatia">
     <div class="id">
       <h1>Gaurav Bhatia</h1>
       <div class="contact">Berlin, Germany | [EMAIL] | [PHONE]</div>

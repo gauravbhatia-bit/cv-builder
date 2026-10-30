@@ -8,7 +8,7 @@ How a job description turns into a CV. Read with `data/master.md` (career),
 ## 0. Hard rules — never break these
 
 1. **Nothing goes on a CV that is not in `data/master.md` or `data/projects.md`.** No invented metrics, tools, dates or titles.
-2. **One page by default** (`templates/base.html`). A **two-page variant exists** (`templates/base-2page.html`, 9 projects, thesis permanent) — Gaurav asked for it on 30 Oct 2026. Use one page unless the JD asks for depth the one-pager cannot hold: senior/mid roles wanting 3–5 years, research or ML-engineering roles where the project detail *is* the evidence, or an application with no cover letter. **German applications default to one page.** Never three.
+2. **Two pages by default** (`templates/base-2page.html`, the full project set, thesis permanent). Gaurav's decision, 30 Oct 2026, replacing the earlier one-page default; it applies to German applications too. Use the **one-page** `templates/base.html` only when the ad or the portal asks for a one-page CV, or Gaurav asks for one. Never three.
 3. **Never remove a job to save space.** Gaps look worse than a less relevant role. Shrink it to one bullet instead. The one exception is an entry with **nothing delivered** — Croud Control is registered-but-idle and is off the CV for that reason, not for space. See `master.md` section 4.
 4. **Every number on the CV must be traceable** to a README, a dashboard or a report. If a number cannot be shown in an interview, it does not go on. **This bans unprovable numbers, not projects without one** — in-progress work goes on the CV described by its *scope* (sources, geography, window, techniques) in the present tense. Add the number when it exists. See `projects.md` → In-flight.
 5. **Do not claim German above A2** and do not hide it either. It is on the CV as A2, improving.
@@ -63,7 +63,11 @@ Rules:
 
 ---
 
-## 4. Bullet budget (one page, fits reliably)
+## 4. Bullet budget
+
+**Two-page CV (the default):** start from `templates/base-2page.html`, which already holds the full experience bullets and the project set in priority order. Tailor by reordering projects so the JD's three strongest come first, swapping the weakest for a better match, and trimming bullets that do not serve this JD. It must still land on exactly two pages, never spilling onto a third.
+
+**One-page CV (only on request), fits reliably:**
 
 Three roles, not four — Croud Control is off the CV (hard rule 3).
 
@@ -178,7 +182,8 @@ The job-search automation had stored 526 jobs. Counts only, no postings, in this
 
 Before handing over a CV:
 
-- [ ] One page when printed to A4
+- [ ] Exactly two pages when printed to A4 (one page only if the ad or Gaurav asked for it)
+- [ ] Photo shows top-right (`assets/photo.jpg`) on the CV and the cover letter
 - [ ] Headline matches the JD's job title
 - [ ] Profile names the top 3 JD requirements and ends with the availability line
 - [ ] JD's top requirement appears in Skills row 1

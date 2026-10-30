@@ -18,7 +18,8 @@ REQUIRED_FILES = [
     "CLAUDE.md", "README.md", "RULES.md", "STYLE.md", "COVER-LETTER-BUILDER.md", "render.cmd",
     "data/master.md", "data/projects.md", "data/.last-sync", "letters/base.md",
     "templates/base.html", "templates/base-2page.html", "scripts/sync_repos.py",
-    "skill/cv-builder/SKILL.md",
+    "skill/cv-builder/SKILL.md", "assets/photo.jpg", "templates/letter.html",
+    "scripts/build_letter.py",
 ]
 GITIGNORE_MUST_HAVE = ["private/", "out/", "*.pdf"]
 
@@ -39,9 +40,11 @@ REQUIRED_IN_CV = [
     "Mar 2024 – Jul 2025", "Nov 2015 – Jan 2024", "Aug 2026 – Present", "Sep 2025 – Dec 2026",
     "Operations & Supply Chain Analyst", "Business Manager", "Data Science Intern", "KnowGuard AI",
     "Troika International Pvt. Ltd.", "Bhatia Traders", "GISMA", "Civil Engineering", "December 2026",
-    "[EMAIL]", "[PHONE]", "[PHOTO]",
+    "[EMAIL]", "[PHONE]", "../assets/photo.jpg",
 ]
 PAGES = {"templates/base.html": 1, "templates/base-2page.html": 2}
+# The photo is public on purpose (Gaurav, 30 Oct 2026). It is the only image allowed in the repo.
+PUBLIC_PHOTO = "assets/photo.jpg"
 LETTER_WORD_LIMIT = 300
 PHONE = re.compile(r"\+\d{2}[ \d]{9,}")
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
@@ -124,6 +127,8 @@ def run_checks(render=False):
 
     files = tracked_files()
     for f in files:
+        if f == PUBLIC_PHOTO:
+            continue
         if f.lower().endswith((".pdf", ".jpg", ".jpeg", ".png")) or f.startswith(("private/", "out/")):
             fails.append(f"must never be tracked (carries personal details): {f}")
 

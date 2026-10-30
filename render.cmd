@@ -2,6 +2,7 @@
 REM Render a CV HTML to PDF.  Usage:  render out\Gaurav_Bhatia_CV_Enpal.html
 REM No argument renders every HTML in out\ plus the base template.
 REM [EMAIL] and [PHONE] placeholders are filled from private\contact.md, which is never committed.
+REM The photo comes from assets\photo.jpg (public) and is embedded so the PDF carries it.
 setlocal
 set CHROME=%ProgramFiles%\Google\Chrome\Application\chrome.exe
 if not exist "%CHROME%" set CHROME=%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe
@@ -22,11 +23,9 @@ powershell -NoProfile -Command ^
   "$h = Get-Content -Raw -Encoding UTF8 '%~1';" ^
   "if ($mail) { $h = $h -replace '\[EMAIL\]', ('<a href=\"mailto:' + $mail + '\">' + $mail + '</a>') }" ^
   "if ($tel)  { $h = $h -replace '\[PHONE\]', $tel }" ^
-  "$pic = @(Get-ChildItem -Path '%~dp0private\photo.jpg','%~dp0private\photo.jpeg','%~dp0private\photo.png' -ErrorAction SilentlyContinue)[0];" ^
-  "if ($pic) { $b64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes($pic.FullName));" ^
-  "  $mime = if ($pic.Extension -eq '.png') { 'image/png' } else { 'image/jpeg' };" ^
-  "  $h = $h -replace '\[PHOTO\]', ('<img class=\"photo\" src=\"data:' + $mime + ';base64,' + $b64 + '\" alt=\"\">') }" ^
-  "else { $h = $h -replace '\[PHOTO\]', '' }" ^
+  "$pic = '%~dp0assets\photo.jpg';" ^
+  "if (Test-Path $pic) { $b64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes($pic));" ^
+  "  $h = $h.Replace('../assets/photo.jpg', 'data:image/jpeg;base64,' + $b64) }" ^
   "[IO.File]::WriteAllText('%TEMP%\cvrender.html', $h, (New-Object Text.UTF8Encoding $false))"
 if exist "%TEMP%\cvrender.html" set SRC=%TEMP%\cvrender.html
 "%CHROME%" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="%~dp0out\%~n1.pdf" "file:///%SRC%" 2>nul
