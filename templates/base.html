@@ -142,7 +142,6 @@ body{padding-top:44px}
     <ul>
       <li><strong>Benchmark LLMs against baselines</strong> and design <strong>cost-effective evaluation workflows</strong> for model selection</li>
       <li>Ran a <strong>paired A/B test on AWS</strong> comparing a fine-tuned model against the review arm: <strong>+0.0318 AUPRC</strong> (95% CI 0.022–0.0418), below the pre-set 0.05 practical-effect threshold</li>
-      <li>Build <strong>RAG pipelines</strong> and <strong>multi-agent systems</strong></li>
     </ul>
   </div>
 
@@ -195,24 +194,25 @@ body{padding-top:44px}
 
   <div class="entry">
     <div class="prow">
-      <span class="pname">BI Data-Quality Pipeline</span>
-      <span class="pstack">Python, pandas, NumPy</span>
-      <span class="plink"><a href="https://github.com/gauravbhatia-bit/bi-data-quality-pipeline">Source</a></span>
+      <span class="pname">Self-Learning Token-Reduction Layer</span>
+      <span class="pstack">LLM gateway, semantic caching, model routing</span>
+      <span class="plink">In progress</span>
     </div>
     <ul>
-      <li>Automated <strong>45 validation checks</strong> (missing values, duplicates, referential integrity, outliers, row counts) across a 7-table star schema; <strong>41/45 passed (91.1%)</strong></li>
-      <li>Traced two silent data losses (614 payment rows, 551 review rows) to their root cause and documented fixes in an auto-generated report</li>
+      <li>Building an <strong>LLM gateway</strong> that cuts token spend through exact and <strong>semantic caching</strong>, <strong>model routing</strong>, and an online learning loop that adapts from observed traffic rather than fixed rules</li>
+      <li>Evaluating savings against a measured baseline <strong>and</strong> a task-quality floor, since a router can always cut tokens by downgrading the model</li>
     </ul>
   </div>
 
   <div class="entry">
     <div class="prow">
-      <span class="pname">Demand Forecasting Engine</span>
-      <span class="pstack">Python, Prophet, XGBoost, Streamlit</span>
-      <span class="plink"><a href="https://github.com/gauravbhatia-bit/demand-forecasting-engine">Source</a></span>
+      <span class="pname">Odd-Jobs Aggregator for Students in Germany</span>
+      <span class="pstack">Multi-source ingestion, dedup, LLM drafting</span>
+      <span class="plink"></span>
     </div>
     <ul>
-      <li>Compared ARIMA, Prophet and XGBoost on 5 years of weekly sales for 12 SKUs on a 12-week hold-out; <strong>Prophet best at 6.07% MAPE</strong> vs. 15.49% for ARIMA</li>
+      <li>Built a <strong>multi-source aggregator</strong> collecting listings posted in the last <strong>24 hours</strong> across Kleinanzeigen, Craigslist and further pluggable sources, for students who cannot search them by hand</li>
+      <li>Generates the message and a tailored CV per listing, then applies once the user approves a shortlist — <strong>human-in-the-loop</strong> by design</li>
     </ul>
   </div>
 
