@@ -47,7 +47,7 @@ new commit.
 
 ## One page
 
-The template holds one page at its defaults (`--fs: 9.5pt`, `--gap: 2px`) with 4 jobs, 3 projects and 6 skill rows — that is already tight, so anything added must displace something. Check with `render.cmd` and count pages before handing over. Below 9pt, cut content instead — see `RULES.md` §4.
+The template holds one page at its defaults (`--fs: 9.5pt`, `--gap: 2px`) with 3 jobs, 3 projects and 6 skill rows — that is already tight, so anything added must displace something. Check with `render.cmd` and count pages before handing over. Below 9pt, cut content instead — see `RULES.md` §4.
 
 ## Keeping the data current
 
@@ -59,5 +59,8 @@ When Gaurav mentions a new job, project, repo or metric, add it to `data/master.
 - Drop a job to save space.
 - Go to two pages.
 - Put anything in this repo that should not be public — it is a public repo.
-- Source anything from the Apr 2026 hospitality CVs. See `master.md` §2.
+- Source anything from the Apr 2026 hospitality CVs — their *dates* are wrong, though their pre-2020 roles are real side ventures. See `master.md` §2.
 - Shorten "Deloitte Data Analytics Job Simulation" to "Deloitte Data Analytics".
+- Re-add **Croud Control** as a job. He is registered on the marketplace with nothing delivered. `master.md` §4 says why.
+- Put **SQL** in a Troika bullet, or **Power BI** in a Bhatia Traders bullet. Neither is true. `master.md` §4 says why.
+- Write "January 2027" as the availability. It is **December 2026**.

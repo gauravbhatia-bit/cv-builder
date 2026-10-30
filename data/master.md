@@ -18,7 +18,7 @@ Tags: `[DA]` Data Analyst / BI · `[DS]` Data Scientist / ML · `[AI]` AI / GenA
 | Portfolio | https://gauravbhatia-bit.github.io/ |
 | GitHub | https://github.com/gauravbhatia-bit |
 | LinkedIn | https://www.linkedin.com/in/gauravbhatia-bit/ |
-| Availability | Full-time in Berlin from January 2027 — see G11, December may be possible |
+| Availability | Full-time in Berlin from **December 2026** |
 | Languages | English (C1), German (A2, improving), Hindi (native) |
 
 ### Headline options (the line under the name — swap per JD)
@@ -34,31 +34,36 @@ Tags: `[DA]` Data Analyst / BI · `[DS]` Data Scientist / ML · `[AI]` AI / GenA
 
 Do **not** guess these. Ask before they go on a CV.
 
-| # | Open question | Why it matters |
-|---|---|---|
-| G2 | What were you doing 2015 to Jun 2020? | 5-year gap. Being covered in the career conversation. |
-| G11 | Availability: the permit starts in December. Can you start work in **December 2026**, or does the thesis run to the end of the month? | The CV currently says January 2027. A month earlier is a real advantage, and it is a free win if true. |
+**None open.** The career walkthrough on 30 Oct 2026 closed every outstanding question. Anything
+new goes in the table above before it goes on a CV.
 
 ### Resolved — do not re-ask
 
 | # | Answer | Source |
 |---|---|---|
 | G1 | MSc runs **Sep 2025 – Dec 2026 (expected)**, GISMA **Potsdam** | Gaurav, confirmed 30 Oct 2026 |
-| G3 | **Croud Control (Croudie Network)**, Remote — spelling is correct | DKB CV, Sep 2026 |
-| G6 | **Troika International Pvt. Ltd., Panchkula, India** | DKB CV, Sep 2026 |
+| G2 | **There is no 2015–2020 gap.** Bhatia Traders ran **Nov 2015 – Jan 2024**. The pre-2020 roles on the hospitality CVs were *concurrent side ventures*, not separate employment — see section 4 | Gaurav, career walkthrough 30 Oct 2026 |
+| G3 | **Croud Control (Croudie Network)** — registered on the marketplace, **no projects delivered yet. Off the CV.** See section 4 | Gaurav, 30 Oct 2026 |
+| G6 | **Troika International Pvt. Ltd., Panchkula, India** — permanent, full-time, **Mar 2024 – Jul 2025** | Gaurav, 30 Oct 2026 |
+| G11 | **Available from December 2026.** Permit and thesis both clear by then | Gaurav, 30 Oct 2026 |
+| G12 | KnowGuard hours, pay and team split: **Gaurav declined to put these on the CV.** Do not ask again and do not infer them | Gaurav, 30 Oct 2026 |
 | G8 | Deloitte Data Analytics **Job Simulation** (Deloitte/Forage, 07/2026) and Introduction to Cloud Infrastructure: Describe Cloud Concepts (Microsoft, 07/2026) | DKB CV, Sep 2026 |
 | G9 | LinkedIn is **linkedin.com/in/gauravbhatia-bit** | Most recent CV and repo READMEs |
 | G4 | **No end date on the CV.** The internship shows as "Aug 2026 – Present" | Gaurav, 30 Oct 2026 |
 | G5 | **Job seeker / post-study permit from December 2026.** Allows full-time work | Gaurav, 30 Oct 2026 |
 | G7 | KnowGuard metric supplied — see the Experience section | Gaurav, 30 Oct 2026 |
 | G10 | B.Tech is **Civil Engineering** | Gaurav, 30 Oct 2026 |
-| — | Bhatia Traders is **Jun 2020 – Jan 2024** | Gaurav, confirmed 30 Oct 2026 |
+| — | Bhatia Traders is **Nov 2015 – Jan 2024**. An earlier answer of "Jun 2020" was the point he went full-time on it; the business itself started in 2015 and the longer span is the one to use | Gaurav, 30 Oct 2026 (supersedes the earlier answer) |
 
 ### Conflicting old CVs — ignore these
 
 `Gaurav_Bhatia_hotel_cv.pdf`, `Gaurav_Bhatia_MotelOne_CV.pdf` and `Gaurav_Bhatia_Kitchen_CV.pdf` (Apr 2026, hospitality applications) give a **different MSc start (Jan 2023)** and **different Bhatia Traders dates (May 2022 – Jun 2025)**. Gaurav has confirmed these are wrong. Never source content from them.
 
-They do mention two pre-2020 roles — Mathematics Teacher at Ellipse Institute and Manager/Receptionist at Pandit Parantha King — which are pending confirmation in the career conversation (G2).
+**But their pre-2020 roles are real.** Mathematics tutoring and managing Pandit Parantha King both
+happened — they were **side ventures running alongside Bhatia Traders**, not jobs before it. The
+hospitality CVs promoted them to main employment and shuffled the dates to suit a hotel application.
+That is why they looked like a contradiction. The truth is in section 4; the dates in those files
+are still wrong and still must not be used.
 
 ---
 
@@ -96,22 +101,69 @@ Each role lists more bullets than will ever fit. Pick 2-4 per role, highest-rele
 > did not support shipping. Lead with it for DS and AI roles. Do not round 0.0318 to "0.03" — the precision
 > is the point. Confirm with KnowGuard before quoting it to a competitor of theirs.
 
-### Freelance Data Scientist — Croud Control (Croudie Network), Remote (Aug 2026 – Present)
-- `[DS] [EN]` Build time-series demand and energy forecasts with ARIMA, Prophet and XGBoost, using seasonality decomposition to explain patterns
-- `[DS]` Deliver forecasts as documented, rerunnable pipelines rather than one-off notebooks
+### ~~Croud Control (Croudie Network)~~ — NOT CV CONTENT
 
-### Data Analyst, Operations & Supply Chain — Troika International Pvt. Ltd., Panchkula, India (Mar 2024 – May 2025)
-- `[DA] [BIZ]` Analysed data for 700+ vendors and 500+ SKUs with SQL and Excel
+> **Do not put this on a CV.** Gaurav is registered on the Croudie freelancer marketplace and is
+> waiting to be matched to a project. Nothing has been delivered. A "Freelance Data Scientist,
+> Aug 2026 – Present" entry with forecasting bullets would not survive the question "tell me about
+> a client you worked with", and it buys nothing — the internship already carries the current-work
+> story. It stays here only so nobody re-adds it from an old CV. Revisit the moment a real project
+> lands, and move the forecasting bullets below into the role then.
+>
+> Parked bullets, for when there is real delivery to describe:
+> - `[DS] [EN]` Build time-series demand and energy forecasts with ARIMA, Prophet and XGBoost, using seasonality decomposition to explain patterns
+> - `[DS]` Deliver forecasts as documented, rerunnable pipelines rather than one-off notebooks
+
+### Operations & Supply Chain Analyst — Troika International Pvt. Ltd., Panchkula, India (Mar 2024 – Jul 2025)
+
+Permanent, full-time. Day to day: pulled operational reports out of **Tally**, monitored inventory
+and supply-chain movement, built the BI reporting on top, and ran the communication with the
+logistics department, vendors, clients and internal stakeholders.
+
+- `[DA] [BIZ]` Monitored inventory and demand across 700+ vendors and 500+ SKUs, working from Tally and Excel
 - `[DA]` Built Power BI dashboards across 3 divisions, turning operational data into clear views for non-technical stakeholders
+- `[BIZ]` Rescued a stalled **₹2.75M export order** — 500 meditation chairs to a client in Lithuania — by moving the shipment from sea cargo to **air freight** to hold the delivery window, and renegotiating terms with the client
+- `[BIZ]` Owned the vendor, logistics and client relationships for that order end to end, from costing at ₹5,500/unit through to delivery
 - `[BIZ]` Worked directly with operations and supply-chain stakeholders to turn recurring questions into standing reports
 
-### Business Manager — Bhatia Traders (Jun 2020 – Jan 2024)
-- `[BIZ] [DA]` Built SQL pipelines and Power BI reporting for 20+ suppliers
+> **Why the title changed.** It used to read "Data Analyst, Operations & Supply Chain". Gaurav's own
+> description of the work is inventory and demand monitoring, BI reporting and stakeholder
+> communication — he did not write SQL here, he read Tally. "Operations & Supply Chain Analyst" is
+> both honest and still has "Analyst" in it. The SQL depth on the CV is carried by the projects,
+> where it is provable. Do not put SQL back into a Troika bullet.
+
+> **The export order is the best non-technical story he has.** A deal about to die on a delivery
+> timeline, a mode-of-transport decision that costs more per unit but saves the order, and a
+> renegotiation to make it work. It demonstrates commercial judgement under a deadline, which is
+> exactly what a pricing, supply-chain or commercial-analyst interview probes for. ₹2.75M is
+> 500 × ₹5,500. At roughly ₹95–100/EUR that is about €28–29K — quote the rupee figure as the fact
+> and the euro figure only as an approximation, because the rate moves.
+
+### Business Manager — Bhatia Traders, India (Nov 2015 – Jan 2024)
+- `[BIZ]` Ran a product business end to end for **8 years** — purchasing, pricing, stock and supplier relationships across 20+ suppliers — and used the data to make those calls
 - `[BIZ]` Analysis-led changes cut excess-inventory cost by 10% and identified a ~15% stockout-reduction potential
-- `[BIZ]` Ran a product business end to end — purchasing, pricing, stock and supplier relationships — and used the data to make those calls
+- `[BIZ]` Ran three ventures alongside it: **Guru Disha Home Tuitions** (a marketplace matching local home tutors to families), **Shopify e-commerce stores**, and **Pandit Parantha King**, a restaurant
 - `[DS]` Demand patterns from this business became the basis of the Demand Forecasting Engine project
 
-**Framing note:** for [DS]/[AI] roles keep Bhatia Traders to 1 bullet and lead with the data work. For [BIZ] roles this is the strongest entry on the CV — give it 3 bullets and lead with ownership.
+**Framing note:** for [DS]/[AI] roles keep Bhatia Traders to 1 bullet and lead with the data work. For [BIZ] roles this is the strongest entry on the CV — give it 3 bullets, lead with ownership, and include the side-ventures bullet, which is what turns "ran the family business" into "builds businesses".
+
+> **Do not write "Built SQL pipelines and Power BI reporting for 20+ suppliers" as a Bhatia Traders
+> bullet.** It was on the CV and it was wrong. Gaurav analysed this business's data **later, as a
+> self-taught SQL project** (`bhatia-traders-sales-analysis`, built Jan 2026), not while running it.
+> The analysis is real and belongs in Projects as P19. The supplier count belongs in the ownership
+> bullet. Keeping the two apart is the difference between a true CV and one that collapses when an
+> interviewer asks what the stack was.
+
+### Not on the CV, but keep for interviews
+
+- **Professional football, 2019–2020.** Took a break inside the Bhatia Traders years to play in the
+  **third tier of the Indian football league** with Lonestar FC, Jammu & Kashmir. Not CV content for
+  a data role and there is no space for it, but it is a genuinely strong answer to "tell me
+  something about yourself", it reads well in Germany where semi-professional sport is respected, and
+  it explains any dip in the 2019–2020 business period if one ever comes up. It also pairs with the
+  `berlin-football-analystics` repo if a conversation ever turns that way.
+- **Mathematics tutoring**, part-time, across the Bhatia Traders years. Feeds the Guru Disha venture
+  story. Only worth raising for teaching, enablement or customer-facing roles.
 
 ---
 
@@ -218,7 +270,7 @@ Pull from here; never list everything at once. 5-6 rows maximum on a CV.
 |---|---|
 | **Methods** | Regression (incl. log-log OLS elasticity), A/B testing (paired designs, confidence intervals, pre-set effect thresholds), time-series (ARIMA, Prophet, LSTM, Chronos, seasonality decomposition), RFM segmentation, anomaly detection (Z-score, Isolation Forest), event study, Granger causality, model evaluation (MAE, RMSE, MAPE), SHAP explainability |
 | **Programming / stats** | Python (pandas, NumPy, statsmodels, scikit-learn, XGBoost, Optuna, TensorFlow/Keras), SQL (CTEs, window functions), DuckDB, Snowflake SQL, SQLite |
-| **Charts & reporting** | Power BI / DAX, Plotly, Matplotlib, Streamlit dashboards, Jinja2 HTML reports, automated Markdown/KPI reports, Excel |
+| **Charts & reporting** | Power BI / DAX, Plotly, Matplotlib, Streamlit dashboards, Jinja2 HTML reports, automated Markdown/KPI reports, Excel, Tally (ERP reporting) |
 | **AI / GenAI** | LLM benchmarking against baselines, RAG (LangChain, FAISS), multi-agent systems, FinBERT / Hugging Face, Gemini, prompt design, intent classification |
 | **Cloud & data eng.** | Microsoft Azure data platform (FutureLearn coursework), AWS (A/B testing workloads, fundamentals), ETL processes, DWH / star-schema modelling, Snowflake, DuckDB, SQLite, FastAPI, Docker, Kubernetes, REST APIs |
 | **Ways of working** | Git/GitHub, GitHub Actions CI/CD, Docker, documented and reproducible pipelines, Agile (Scrum, Kanban), Jira, requirements management, stakeholder communication |
@@ -242,5 +294,7 @@ Short, true, reusable in cover letters and interviews.
 - **Ships, does not just analyse** — 4 live deployed apps (Streamlit + FastAPI), one with full Docker/Kubernetes CI/CD.
 - **German energy domain is real, not claimed** — thesis plus 6 independent energy repos using OPSD, SMARD, Open-Meteo and EPEX Spot data.
 - **Measures instead of asserting** — every model project reports a hold-out metric against a named baseline.
-- **Has run a business** — 3.5 years owning purchasing, pricing and stock, so analysis is framed as a commercial decision.
+- **Has run a business** — 8 years owning purchasing, pricing and stock, plus three side ventures, so analysis is framed as a commercial decision rather than an exercise.
+- **Commercial judgement under a deadline** — saved a ₹2.75M export order by changing freight mode and renegotiating, rather than by reporting that it was late.
+- **Eleven unbroken years** — Nov 2015 to today, across the business, Troika and the MSc. No gaps to explain.
 - **Data-quality instinct** — found and root-caused two silent data losses nobody had noticed.

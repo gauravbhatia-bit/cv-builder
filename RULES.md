@@ -8,7 +8,7 @@ How a job description turns into a CV. Read with `data/master.md`.
 
 1. **Nothing goes on a CV that is not in `data/master.md`.** No invented metrics, tools, dates or titles.
 2. **One page.** Gaurav has ~4.5 years of experience. Two pages is a mistake at this stage.
-3. **Never remove a job.** Gaps look worse than a less relevant role. Shrink it to one bullet instead.
+3. **Never remove a job to save space.** Gaps look worse than a less relevant role. Shrink it to one bullet instead. The one exception is an entry with **nothing delivered** — Croud Control is registered-but-idle and is off the CV for that reason, not for space. See `master.md` section 4.
 4. **Every number on the CV must be traceable** to a README, a dashboard or a report. If a number cannot be shown in an interview, it does not go on.
 5. **Do not claim German above A2** and do not hide it either. It is on the CV as A2, improving.
 6. If an open question in `master.md` section 2 blocks a line, **ask — do not guess**.
@@ -56,21 +56,24 @@ Three lines, roughly 45 words. Formula:
 Rules:
 - Line 1 names the role the JD is hiring for. If they want a Data Analyst, the first words are about analysis, not about AI.
 - Include **one** concrete number. Rotate it to match the role: 91.1% QA score for DA, 6.07% MAPE for DS, 55.7% repricing for BIZ, 4,444 headlines for AI, 26,280 hourly rows for EN.
-- Always end with: `Available full-time in Berlin from January 2027.`
+- Always end with: `Available full-time in Berlin from December 2026.`
 - Never write "passionate", "motivated", "team player", "results-driven".
 
 ---
 
 ## 4. Bullet budget (one page, fits reliably)
 
+Three roles, not four — Croud Control is off the CV (hard rule 3).
+
 | Role | DA / BI | DS / ML | AI / GenAI | Energy | BIZ |
 |---|---|---|---|---|---|
-| KnowGuard AI (intern) | 1 | 2 | 3 | 1 | 1 |
-| Croud Control (freelance) | 1 | 2 | 1 | 2 | 1 |
-| Troika International | 3 | 2 | 1 | 2 | 2 |
+| KnowGuard AI (intern) | 2 | 3 | 3 | 2 | 1 |
+| Troika International | 3 | 2 | 2 | 2 | 3 |
 | Bhatia Traders | 2 | 1 | 1 | 1 | 3 |
 | **Projects shown** | 3 | 3 | 3 | 3 | 3 |
 | Bullets per project | 2 | 2 | 2 | 2 | 2 |
+
+For **BIZ** roles, one of the three Troika bullets must be the ₹2.75M export order and one of the three Bhatia bullets must be the side ventures. Those two lines are what separate him from an analyst who has only ever reported on someone else's decisions.
 
 If it spills past one page, cut in this order: **any bullet without a number** → the 2nd bullet of project 3 → the weakest Bhatia Traders bullet → a skills row → Certifications. Keep Certifications if the JD mentions cloud or data engineering. Never shrink the Profile below 3 lines; never drop a project to 1 bullet.
 
@@ -123,9 +126,11 @@ ATS filters on strings, humans read for meaning. Do both:
 
 ## 8. Role families worth exploring (Gaurav asked)
 
-**Verdict on business roles: yes, and it is his second-strongest track, not a fallback.**
-Three and a half years running Bhatia Traders end to end — purchasing, pricing, stock, supplier
-terms, P&L — is operator experience, not analyst experience. Paired with elasticity modelling on
+**Verdict on business roles: yes, and after the career walkthrough it is arguably his strongest
+track, not a fallback.**
+**Eight years** running Bhatia Traders end to end — purchasing, pricing, stock, supplier
+terms, P&L — plus three side ventures and a rescued ₹2.75M export order at Troika, is operator
+experience, not analyst experience. Paired with elasticity modelling on
 15,000 SKUs, RFM segmentation and a demand-forecasting engine built on that same business, it
 makes an unusual combination: someone who has carried the commercial consequence of a pricing or
 stocking decision *and* can model it. Most analytics candidates have only the second half, and
@@ -141,8 +146,9 @@ Based on the full history, these fit beyond the four we agreed:
 
 | Role | Why it fits | What it would need |
 |---|---|---|
-| **Commercial / Pricing Analyst** | Strongest unused angle. 3.5 years running a real P&L, plus elasticity modelling on 15,000 SKUs and an RFM segmentation. Very few analyst candidates have both. | Lead with Bhatia Traders + P1. Reframe Troika as commercial, not just ops. |
-| **Supply Chain / Operations Analyst** | Troika (700+ vendors, 500+ SKUs) + demand forecasting + inventory savings is a clean, coherent story. German logistics hires heavily. | Lead with P3 + Troika. Mention the 10% inventory cost cut in the Profile. |
+| **Commercial / Pricing Analyst** | Strongest unused angle. 8 years running a real P&L, plus elasticity modelling on 15,000 SKUs and an RFM segmentation. Very few analyst candidates have both. | Lead with Bhatia Traders + P1. Reframe Troika as commercial, not just ops. |
+| **Supply Chain / Operations Analyst** | Troika (700+ vendors, 500+ SKUs) + demand forecasting + inventory savings is a clean, coherent story, and the export order proves he has carried a shipment deadline himself. German logistics hires heavily. | Lead with P3 + Troika. Mention the 10% inventory cost cut in the Profile. |
+| **Import/Export, Trade or Logistics Analyst** | New since the walkthrough. India-to-EU export execution, freight-mode economics, customs-facing vendor and client management, and Tally ERP. Berlin and Hamburg both hire for this. | Lead with the Troika export bullet and the 8 years of purchasing. Title the headline "Supply Chain Analyst", not "Data Scientist". |
 | **Energy Market / Power Trading Analyst** | Thesis is literally day-ahead price modelling on EPEX/SMARD. Berlin and Leipzig have a real market for this. | Needs the thesis finished and the long thesis variant. Likely the highest-ceiling path. |
 | **Analytics Engineer** | SQL depth (CTEs, window functions, DuckDB, star schemas) + data quality + CI/CD + Docker. | Would benefit from one dbt project. Currently the gap. |
 | **BI Developer** | Power BI/DAX across Troika, P12 and P11, plus the automated reporting suite. | Ready now. Lowest-friction path to a German role. |
