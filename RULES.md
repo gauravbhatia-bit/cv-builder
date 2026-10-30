@@ -123,6 +123,20 @@ ATS filters on strings, humans read for meaning. Do both:
 
 ## 8. Role families worth exploring (Gaurav asked)
 
+**Verdict on business roles: yes, and it is his second-strongest track, not a fallback.**
+Three and a half years running Bhatia Traders end to end — purchasing, pricing, stock, supplier
+terms, P&L — is operator experience, not analyst experience. Paired with elasticity modelling on
+15,000 SKUs, RFM segmentation and a demand-forecasting engine built on that same business, it
+makes an unusual combination: someone who has carried the commercial consequence of a pricing or
+stocking decision *and* can model it. Most analytics candidates have only the second half, and
+most commercial candidates have only the first.
+
+Where it does **not** reach: strategy consulting (needs a target-school brand or an MBB internship),
+Product Manager (no shipped product owned with a roadmap and users), and anything titled Senior
+or Lead (years). Treat "Business Analyst" postings with care — in Germany the title often means
+requirements engineering for IT projects, which is a different job; read the responsibilities, not
+the title.
+
 Based on the full history, these fit beyond the four we agreed:
 
 | Role | Why it fits | What it would need |

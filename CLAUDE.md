@@ -10,7 +10,8 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 | `RULES.md` | How a JD becomes a CV. Bullet budgets, project picking, honesty guardrails. |
 | `templates/base.html` | The neutral base CV. Rezume style, editable in a browser, prints to A4. |
 | `jd/` | One markdown note per job description, before building. |
-| `out/` | Finished CVs, one HTML per application. Open and Ctrl+P to get the PDF. |
+| `out/` | Finished CVs. **Gitignored** — these carry real contact details. |
+| `private/contact.md` | Real email and phone. **Gitignored.** |
 
 ## Procedure
 
@@ -29,9 +30,19 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 7. **Report** to Gaurav: what was picked, what was cut, and anything that had to be left out for honesty.
 8. **Commit and push.** One commit per application: `cv: <Company> <Role>`.
 
+## Contact details
+
+The committed template carries `[EMAIL]` and `[PHONE]` placeholders, never the real values.
+`render.cmd` substitutes them from `private/contact.md` at render time, so the PDF is complete
+while the repo stays clean. If a CV is edited by hand in the browser instead of rendered,
+the real details have to be typed in — the placeholders must never reach an employer.
+
+Both `private/` and `out/` are gitignored. Never commit a file containing the phone number or
+email, and never paste either into `data/master.md`, `RULES.md` or a `jd/` note.
+
 ## One page
 
-The template holds one page at `--fs: 10pt` / `--gap: 7px` with 4 jobs, 3 projects and 6 skill rows. If it spills, drop `--fs` to 9.5pt and `--gap` to 5px before cutting content. Below 9pt, cut content instead — see `RULES.md` §4.
+The template holds one page at its defaults (`--fs: 9.5pt`, `--gap: 2px`) with 4 jobs, 3 projects and 6 skill rows — that is already tight, so anything added must displace something. Check with `render.cmd` and count pages before handing over. Below 9pt, cut content instead — see `RULES.md` §4.
 
 ## Keeping the data current
 
@@ -43,3 +54,5 @@ When Gaurav mentions a new job, project, repo or metric, add it to `data/master.
 - Drop a job to save space.
 - Go to two pages.
 - Put anything in this repo that should not be public — it is a public repo.
+- Source anything from the Apr 2026 hospitality CVs. See `master.md` §2.
+- Shorten "Deloitte Data Analytics Job Simulation" to "Deloitte Data Analytics".
