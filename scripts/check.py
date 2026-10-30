@@ -18,6 +18,7 @@ REQUIRED_FILES = [
     "CLAUDE.md", "README.md", "RULES.md", "STYLE.md", "COVER-LETTER-BUILDER.md", "render.cmd",
     "data/master.md", "data/projects.md", "data/.last-sync", "letters/base.md",
     "templates/base.html", "templates/base-2page.html", "scripts/sync_repos.py",
+    "skill/cv-cover-letter-builder/SKILL.md",
 ]
 GITIGNORE_MUST_HAVE = ["private/", "out/", "*.pdf"]
 
@@ -79,6 +80,26 @@ def letter_problems(text, is_base=False):
     return out
 
 
+def has_control_chars(text):
+    """A broken escape sequence leaves invisible characters (backspace, form feed) in a file."""
+    return bool(re.search(r"[\x00-\x08\x0b\x0c\x0e-\x1f]", text))
+
+
+def skill_problems(text):
+    """The skill must point at the repo and hold no facts of its own, or it drifts (the old one did)."""
+    out = []
+    m = re.match(r"---\nname: [\w-]+\ndescription: (.+)\n---\n", text)
+    if not m:
+        out.append("frontmatter must be exactly --- name, description ---")
+    elif len(m.group(1)) > 1024:
+        out.append("description is over 1024 characters")
+    if "github.com/gauravbhatia-bit/cv-builder" not in text:
+        out.append("does not point at the cv-builder repo")
+    out += [f"holds a date or year {y!r}: facts belong in the repo" for y in sorted(set(re.findall(r"\b20\d\d\b", text)))]
+    out += [f"contains retired claim {s!r}" for s in FORBIDDEN_IN_CV if s in text]
+    return out
+
+
 def tracked_files():
     run = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, text=True)
     if run.returncode:
@@ -113,6 +134,8 @@ def run_checks(render=False):
         if f == "scripts/check.py":
             continue
         text = read(f)
+        if has_control_chars(text):
+            fails.append(f"{f}: contains an invisible control character (a broken escape sequence)")
         fails += [f"{f}: contains a private contact detail" for s in secrets if s and s in text]
         fails += [f"{f}: looks like a phone number {m.strip()!r}" for m in PHONE.findall(text)]
         fails += [f"{f}: looks like an email address {m!r}" for m in EMAIL.findall(text) if m not in EMAIL_OK]
@@ -139,6 +162,10 @@ def run_checks(render=False):
         letters += [(str(p.relative_to(ROOT)).replace("\\", "/"), False) for p in out.glob("*[Ll]etter*.md")]
     for f, is_base in letters:
         fails += [f"{f}: {p}" for p in letter_problems(read(f), is_base)]
+
+    skill = "skill/cv-cover-letter-builder/SKILL.md"
+    if (ROOT / skill).exists():
+        fails += [f"{skill}: {p}" for p in skill_problems(read(skill))]
 
     # Data files: stable project IDs, and every reference resolves.
     projects = read("data/projects.md")

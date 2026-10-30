@@ -11,6 +11,7 @@ Instructions for Claude. Gaurav reads `README.md`; this file is the working proc
 | `RULES.md` | How a JD becomes a CV. Bullet budgets, project picking, honesty guardrails. §10 maps JD requirements to the right experience. |
 | `COVER-LETTER-BUILDER.md` | The stories behind the facts, for cover letters. Narrative only, never a source of a number. |
 | `letters/base.md` | The saved base cover letter. Every custom letter starts here. `letters/sample-energy-analyst.md` is a worked example. |
+| `skill/cv-cover-letter-builder/SKILL.md` | This project as a Claude skill for the job-search automation. Holds **no facts**, only the procedure and a pointer to this repo. `check.py` fails if it gains a date or a retired claim. |
 | `scripts/sync_repos.py` | Compares GitHub with `projects.md`; reports new and changed repos. Reports only, never edits. |
 | `STYLE.md` | How everything is written. Gaurav's own voice rules. Overrides any default phrasing. |
 | `templates/base.html` | The neutral base CV, **one page**, 3 projects. The default. |
@@ -61,7 +62,7 @@ original stays as the untouched source. To change the crop, redo it from `photo.
 room: the metric-free KnowGuard "benchmark LLMs" bullet (ParetoGate now proves the same thing with
 numbers) and the Certifications section. Both are still in `master.md` and go back on any tailored
 CV with the space. Do not add content back to `templates/base.html` without re-checking with a
-photo present: it runs with ~31px spare.
+photo present: it runs with ~60px spare.
 
 ## Contact details
 

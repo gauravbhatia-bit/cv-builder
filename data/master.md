@@ -34,8 +34,14 @@ Tags: `[DA]` Data Analyst / BI · `[DS]` Data Scientist / ML · `[AI]` AI / GenA
 
 Do **not** guess these. Ask before they go on a CV.
 
-**None open.** The career walkthrough on 30 Oct 2026 closed every outstanding question. Anything
-new goes in the table above before it goes on a CV.
+| # | Open question | Why it matters |
+|---|---|---|
+| G13 | The old skill in `job-search-automation` says his residence document "allows full-time work until 30 March 2027" and lists "start date after 30 March 2027" as a blocker. Gaurav says the post-study job-seeker permit starts December 2026. Which dates are right, and is there a gap between the two? | Decides what the CV, letters and outreach may say about eligibility |
+| G14 | The same skill mentions "junior engineer roles in civil-engineering companies" that he "chose to leave off the CV". The career walkthrough never mentioned them. Real, and when? | Could affect the 2015 timeline. **Not added until he confirms** |
+
+**Also found, not a question:** the task prompts in `job-search-automation` hard-code their own copy of
+his profile, including "full-time from January 2027" in the outreach email template. That disagrees
+with December 2026 here. Fixing it is a decision for him, because that repo drives live scheduled tasks.
 
 ### Resolved — do not re-ask
 

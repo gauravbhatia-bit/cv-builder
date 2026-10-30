@@ -31,4 +31,15 @@ assert check.letter_problems(GOOD + " [WHY]", is_base=True) == []  # the base le
 # header text above the --- divider is not counted as letter body
 assert check.letter_problems("notes with — a dash\n---\n" + GOOD) == []
 
+# the skill must point at the repo and hold no facts
+OK = "---\nname: x\ndescription: does a thing\n---\nsee github.com/gauravbhatia-bit/cv-builder\n"
+assert check.skill_problems(OK) == []
+assert any("frontmatter" in p for p in check.skill_problems("no frontmatter github.com/gauravbhatia-bit/cv-builder"))
+assert any("date or year" in p for p in check.skill_problems(OK + "available from 2027"))
+assert any("retired claim" in p for p in check.skill_problems(OK + "Croud Control"))
+assert any("point at" in p for p in check.skill_problems("---\nname: x\ndescription: y\n---\nbody"))
+
+# invisible characters from a broken escape sequence
+assert check.has_control_chars("a" + chr(8) + "b") and not check.has_control_chars("a\tb\nc\r\n")
+
 print("all guardrail tests passed")
