@@ -183,7 +183,7 @@ ROLES = [
          exp=(["rag", "ab", "bench"], ["inv", "bi", "export"], ["own", "inv"]), short=False, modules=True,
          projects=[("pareto", 3), ("sales", 2), ("rag", 1), ("office", 2), ("solar", 2), ("thesis", 2), ("demand", 2), ("pricing", 2), ("jobs", 2), ("news", 2)]),
     dict(file="Applied_Scientist", title="Applied Scientist", headline="Applied Scientist",
-         profile="MSc Data Science candidate at GISMA, finishing December 2026. Applies <strong>experimental and statistical methods</strong> to real decisions: a paired A/B test with a pre-set effect threshold, <strong>event study and Granger causality</strong> on German power prices, and price elasticity on <strong>15,000 SKUs</strong>. Documents results that do not favour the idea, including a negative end-to-end run of his own LLM gateway. " + AVAIL,
+         profile="MSc Data Science candidate at GISMA, finishing December 2026. Applies <strong>experimental and statistical methods</strong> to real decisions: a paired A/B test with a pre-set effect threshold, <strong>event study and Granger causality</strong> on German power prices, and price elasticity on <strong>15,000 SKUs</strong>. Documents results that do not favour the idea, including a negative end-to-end run of ParetoGate, the LLM gateway now in development. " + AVAIL,
          skills=["methods", "prog", "ai_eval", "cloud", "bi", "lang"],
          exp=(["ab", "evalm", "bench"], ["inv", "bi", "export"], ["own", "inv"]), short=False, modules=True,
          projects=[("thesis", 2), ("pareto", 3), ("pricing", 2), ("news", 2), ("demand", 2), ("sales", 2), ("office", 2), ("solar", 2), ("jobs", 2), ("dq", 2)]),
