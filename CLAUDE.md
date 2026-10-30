@@ -102,6 +102,14 @@ On a fresh clone, enable the hook once: `git config core.hooksPath scripts/hooks
 **Never bypass it** with `--no-verify`, and never loosen a rule in `check.py` to make a failure go
 away. If a rule is wrong, tell Gaurav and change it deliberately, in its own commit.
 
+## GitHub profile
+
+Live since 30 Oct 2026 at `github.com/gauravbhatia-bit/gauravbhatia-bit` (its README is the profile
+page), with skill topics on ten public repos. **It is a copy, so it can go stale.** When projects or
+skills change in `data/`, ask whether the profile README should follow, and update it with `gh` or by
+cloning that repo. When P21 and P22 are pushed, change their "Publishing soon" lines to real links and
+give the new repos topics. Do not put an email or phone in it: it is public.
+
 ## Keeping the data current
 
 When Gaurav mentions a new job, project, repo or metric, write it down **in the same turn**, then commit — a project goes in `data/projects.md`, anything else in `data/master.md`. Never both. This repo is public on GitHub so the content library is reachable from any machine — fetch `data/master.md`, `data/projects.md` and `RULES.md` raw from `github.com/gauravbhatia-bit/cv-builder` when the local copy is not available.
