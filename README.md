@@ -56,6 +56,11 @@ every automation that uses the skill is current. To attach it:
 
 Rebuild the zip after changing the skill: it is one file in a folder, zipped.
 
+**In Claude Code on this machine** it is installed as a folder link, `C:\Users\gaura\.claude\skills\cv-builder`,
+pointing at `skill\cv-builder` in this repo, so the installed skill is always the repo's file and cannot
+drift. Claude Code reads skills when a session starts, so it appears in new sessions. On another machine,
+clone the repo and run, in PowerShell: `New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\cv-builder" -Target "<repo>\skill\cv-builder"`.
+
 ## Guardrails
 
 So the quality cannot slip, `scripts/check.py` enforces the rules automatically: no em dashes or
