@@ -46,6 +46,7 @@ A CV shows **3, at most 4**. Pick by tag match to the JD.
 | P21 | Odd-Jobs Aggregator for Students in Germany | AI DA BIZ | Multi-source listing ingestion (Kleinanzeigen, Craigslist, extensible), dedup, draft generation, human-in-the-loop approval, auto-apply | 2 sources live, pluggable; 24h window; built | **private** |
 | P22 | **ParetoGate** — cost-aware LLM gateway | AI DS | FastAPI, MiniLM, scikit-learn, SQLite semantic cache, Ollama/LM Studio, code graph | 86,416 → 11,351 input tokens on a frozen 25-task suite, all reviewed changes passing (80.8% modelled cost cut) | **private** |
 | P23 | Bhatia Traders SQL Inventory Alerts | DA BIZ | MySQL (CASE, JOINs, UPDATE) | Automated 20% low-stock alerts with reorder recommendations | `bhatia_traders_inventory_alert_system` |
+| P24 | Agent Evaluation Harness — fin-agent-eval | AI | LangGraph, Gemini, FastAPI, Streamlit, Docker, Terraform, GitHub Actions | 50 golden test cases, LLM-as-judge audit (Cohen's κ), decision/tool/consistency metrics, quality gate CI, deployed on Render | `fin-agent-eval` |
 
 Repo URL = `https://github.com/gauravbhatia-bit/<repo>`
 
