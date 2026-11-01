@@ -104,8 +104,8 @@ Pick from `data/projects.md`. Rank by `tag match + domain match + has a number`.
 |---|---|
 | Data Analyst / BI | P2 (data quality), P12 (Power BI 100K rows), P1 (pricing) |
 | Data Scientist / ML | P3 (model comparison), P1 (elasticity + XGBoost), P5 or P7 (deep learning / tuning) |
-| AI / GenAI / LLM | **P22 (token-reduction layer)**, P8 (agent + cost routing), P9 (RAG + CI/CD) — P6 if the JD is NLP-heavy |
-| AI platform / LLMOps / infra cost | **P22**, P9 (Docker/K8s CI/CD), P8 (confidence routing) |
+| AI / GenAI / LLM | **P22 (token-reduction layer)**, **P24 (evaluation harness)**, P8 (agent + cost routing), P9 (RAG + CI/CD) — pick top 3 by tag + domain match |
+| AI platform / LLMOps / infra cost | **P22**, **P24 (evaluation + Terraform/GHA deploy)**, P9 (Docker/K8s CI/CD) |
 | Startup / early team / generalist | **P21 (odd-jobs aggregator)**, **P20 (job-search automation)**, P8 — products with users and judgement, not notebooks |
 | Energy / CleanTech | P4 (thesis), P5 (solar LSTM), P7 (office energy) — swap P11 in for analyst-leaning roles |
 | Business / Commercial | P1 (pricing + margin), P3 (demand), P15 or P12 (funnel / payments) |
